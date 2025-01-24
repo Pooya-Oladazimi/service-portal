@@ -1,6 +1,7 @@
 {
   "name": "service-panel-new",
   "version": "0.1.0",
+  "homepage": "https://github.com/ts4nfdi/service-panel.git",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
