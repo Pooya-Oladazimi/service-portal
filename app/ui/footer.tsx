@@ -3,8 +3,8 @@ import Image from "next/image"; Image
 
 export default function Footer() {
   return (
-    <footer className="grid md:grid-rows-5 sm:grid-rows-2 text-xs sm:text-base md:text-x1 inset-x-0 bottom-0">
-      <div className="grid grid-cols-3 md:row-span-4 sm:row-span-1 gap-2 bg-white p-10">
+    <footer className="grid grid-rows-[1fr-auto] text-xs sm:text-base md:text-x1 h-10 bottom-0 inset-x-0 mt-auto">
+      <div className="grid grid-cols-3 gap-2 bg-white p-10">
         < div className="col-span-1" >
           <Image
             src={'/base.png'}
@@ -35,7 +35,7 @@ export default function Footer() {
           </ul>
         </div>
       </div >
-      <div className="bg-[#455469] text-white text-center row-span-1">
+      <div className="bg-[#455469] text-white text-center">
         <a href="">Contact</a>|
         <a href="" target="_blank">Imprint</a>|
         <a href="" target="_blank">Terms of Use</a>|
