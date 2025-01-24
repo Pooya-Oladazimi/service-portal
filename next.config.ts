@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  reactStrictMode: true,
+  basePath: "/service-panel"
 };
 
 export default nextConfig;

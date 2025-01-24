@@ -1,4 +1,4 @@
-import Image from "next/image"; Image
+import Image from "next/image";
 
 
 export default function Footer() {
