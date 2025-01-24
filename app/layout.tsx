@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <div className="grid grid-rows-[auto-1fr-auto] min-h-screen">
           <Header />
-          <main className="mb-auto">{children}</main>
+          <main className="mb-auto mt-auto">{children}</main>
           <Footer />
         </div>
       </body>

@@ -35,7 +35,7 @@ export default function Footer() {
           </ul>
         </div>
       </div >
-      <div className="bg-[#455469] text-white text-center">
+      <div className="bg-ts4nfdi-brand-color text-white text-center">
         <a href="">Contact</a>|
         <a href="" target="_blank">Imprint</a>|
         <a href="" target="_blank">Terms of Use</a>|
