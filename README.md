@@ -1,4 +1,4 @@
-# TS4NFDI Service Panel
+# TS4NFDI Service Portal 
 
 Coming soon ...
 

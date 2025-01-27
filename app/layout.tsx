@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TS4NFDI Service Panel",
+  title: "TS4NFDI Service Portal",
   description: "",
 };
 
