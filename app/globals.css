@@ -28,9 +28,29 @@ body {
 }
 
 .site-content{
-  @apply container grid md:grid-cols-10 sm:grid-rows-1 gap-4 h-screen pt-20 mx-auto;
+  @apply container grid md:grid-cols-10 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto;
 }
 
 .header-1{
   @apply text-5xl;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.header-2{
+  @apply text-3xl;
+  margin-bottom: 40px;
+  margin-top: 80px;
+}
+
+.card{
+  @apply border-black bg-gray-100 rounded-lg shadow-sm text-center text-sm md:max-w-xs content-center pb-2;
+}
+
+p{
+  @apply px-5 md:px-0
+}
+
+.orcid-id-btn{
+  @apply bg-[#A5CD39] text-white rounded-xl text-base p-1;
 }
