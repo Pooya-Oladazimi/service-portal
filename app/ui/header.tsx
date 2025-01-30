@@ -3,15 +3,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 export default function Header() {
-  const [path, setPath] = useState(usePathname());
+  const currentPath = usePathname();
+  const [path, setPath] = useState(currentPath);
 
-  function handleNavLinkClick(clickedLinkHref: string) {
-    setPath(clickedLinkHref);
-  }
+  // function handleNavLinkClick(clickedLinkHref: string) {
+  //   setPath(clickedLinkHref);
+  // }
+
+  useEffect(() => {
+    setPath(currentPath);
+  }, [currentPath]);
 
   return (
     <nav className="bg-ts4nfdi-brand-color h-[70px]">
@@ -38,31 +43,31 @@ export default function Header() {
                 <Link
                   href={'/'}
                   className={"navbar-links " + (path === "/home" || path === '/' ? "navbar-link-active" : "")}
-                  onClick={() => { handleNavLinkClick("/home") }}
+                // onClick={() => { handleNavLinkClick("/home") }}
                 >Home
                 </Link>
                 <Link
                   href={'/widgets'}
                   className={"navbar-links " + (path.includes("/widgets") ? "navbar-link-active" : "")}
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
+                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >Widgets
                 </Link>
                 <Link
                   href={'/help'}
                   className={"navbar-links " + (path.includes("/help") ? "navbar-link-active" : "")}
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
+                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >Help
                 </Link>
                 <Link
                   href={'/documentation'}
                   className={"navbar-links " + (path.includes("/documentation") ? "navbar-link-active" : "")}
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
+                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >Documentation
                 </Link>
                 <Link
                   href={'/about'}
                   className={"navbar-links " + (path.includes("/about") ? "navbar-link-active" : "")}
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
+                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >About
                 </Link>
               </div>
