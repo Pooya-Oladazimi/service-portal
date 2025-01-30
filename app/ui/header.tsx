@@ -43,31 +43,26 @@ export default function Header() {
                 <Link
                   href={'/'}
                   className={"navbar-links " + (path === "/home" || path === '/' ? "navbar-link-active" : "")}
-                // onClick={() => { handleNavLinkClick("/home") }}
                 >Home
                 </Link>
                 <Link
                   href={'/widgets'}
                   className={"navbar-links " + (path.includes("/widgets") ? "navbar-link-active" : "")}
-                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >Widgets
                 </Link>
                 <Link
                   href={'/help'}
                   className={"navbar-links " + (path.includes("/help") ? "navbar-link-active" : "")}
-                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >Help
                 </Link>
                 <Link
                   href={'/documentation'}
                   className={"navbar-links " + (path.includes("/documentation") ? "navbar-link-active" : "")}
-                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >Documentation
                 </Link>
                 <Link
                   href={'/about'}
                   className={"navbar-links " + (path.includes("/about") ? "navbar-link-active" : "")}
-                // onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { handleNavLinkClick((e.target as HTMLAnchorElement).href) }}
                 >About
                 </Link>
               </div>

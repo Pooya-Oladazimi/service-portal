@@ -29,9 +29,11 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <div className="grid grid-rows-[auto-1fr-auto] min-h-screen">
+        <div className="grid min-h-screen">
           <Header />
-          <main className="mb-auto mt-auto">{children}</main>
+          <main className="site-content">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

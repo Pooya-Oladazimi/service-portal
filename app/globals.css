@@ -26,3 +26,11 @@ body {
 .navbar-link-active{
   @apply bg-gray-900;
 }
+
+.site-content{
+  @apply container grid md:grid-cols-10 sm:grid-rows-1 gap-4 h-screen pt-20 mx-auto;
+}
+
+.header-1{
+  @apply text-5xl;
+}

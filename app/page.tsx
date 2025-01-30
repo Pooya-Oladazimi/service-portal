@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className='container grid md:grid-cols-10 sm:grid-rows-1 gap-4'>
+    <>
       <div className='md:col-span-4 sm:row-span-1 mx-auto'>
         <Image
           src={"/logo.png"}
@@ -22,6 +22,6 @@ export default function Home() {
           and reusable GUI widgets.
         </p>
       </div>
-    </div>
+    </>
   );
 }
