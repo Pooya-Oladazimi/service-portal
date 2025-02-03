@@ -28,7 +28,7 @@ body {
 }
 
 .site-content{
-  @apply container grid md:grid-cols-10 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto;
+  @apply container grid md:grid-cols-10 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto md:pl-10 md:pr-4;
 }
 
 .header-1{
@@ -48,7 +48,7 @@ body {
 }
 
 p{
-  @apply px-5 md:px-0
+  @apply px-5 md:px-0 mb-2;
 }
 
 a{
