@@ -36,11 +36,11 @@ export default function Footer() {
         </div>
       </div >
       <div className="bg-ts4nfdi-brand-color text-white text-center">
-        <a href="">Contact</a>|
-        <a href="" target="_blank">Imprint</a>|
-        <a href="" target="_blank">Terms of Use</a>|
-        <a href="" target="_blank">Privacy Policy</a>|
-        <a href="https://base4nfdi.de/accessibility" target="_blank">Accessibility</a>
+        <a className="text-white" href="">Contact</a>|
+        <a className="text-white" href="" target="_blank">Imprint</a>|
+        <a className="text-white" href="" target="_blank">Terms of Use</a>|
+        <a className="text-white" href="" target="_blank">Privacy Policy</a>|
+        <a className="text-white" href="https://base4nfdi.de/accessibility" target="_blank">Accessibility</a>
       </div>
     </footer >
   );

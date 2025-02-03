@@ -51,11 +51,6 @@ export default function Header() {
                 >Widgets
                 </Link>
                 <Link
-                  href={'/help'}
-                  className={"navbar-links " + (path.includes("/help") ? "navbar-link-active" : "")}
-                >Help
-                </Link>
-                <Link
                   href={'/documentation'}
                   className={"navbar-links " + (path.includes("/documentation") ? "navbar-link-active" : "")}
                 >Documentation
@@ -64,6 +59,11 @@ export default function Header() {
                   href={'/about'}
                   className={"navbar-links " + (path.includes("/about") ? "navbar-link-active" : "")}
                 >About
+                </Link>
+                <Link
+                  href={'/contact'}
+                  className={"navbar-links " + (path.includes("/contact") ? "navbar-link-active" : "")}
+                >Contact
                 </Link>
               </div>
             </div>
@@ -75,9 +75,10 @@ export default function Header() {
         <div className="space-y-1 px-2 pt-2 pb-3">
           <Link href={'/'} className="navbar-links">Home</Link>
           <Link href={'/widgets'} className="navbar-links">Widgets</Link>
-          <Link href={'/help'} className="navbar-links">Help</Link>
           <Link href={'/documentation'} className="navbar-links">Documentation</Link>
-          <Link href={'/about'} className="navbar-links">About</Link>        </div>
+          <Link href={'/about'} className="navbar-links">About</Link>
+          <Link href={'/help'} className="navbar-links">Contact</Link>
+        </div>
       </div>
     </nav >
 

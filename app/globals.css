@@ -51,6 +51,11 @@ p{
   @apply px-5 md:px-0
 }
 
+a{
+  color: blue;
+  @apply pl-1 pr-1;
+}
+
 .orcid-id-btn{
   @apply bg-[#A5CD39] text-white rounded-xl text-base p-1;
 }
