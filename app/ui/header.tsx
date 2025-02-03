@@ -36,7 +36,9 @@ export default function Header() {
           </div>
           <div className="flex flex-1 items-center sm:items-stretch justify-start">
             <div className="flex shrink-0 items-center">
-              <Image width={50} height={50} alt="logo" src={'/logo.png'} />
+              <Link href={'/'}>
+                <Image width={50} height={50} alt="logo" src={'/logo.png'} />
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
