@@ -1,0 +1,63 @@
+
+
+{
+  "sections": [
+    {
+      "title": "Principal Investigators",
+      "persons": [
+        {
+          "imagePath": "/rb.jpg",
+          "name": "Baum, Roman",
+          "affiliation": "ZB MED - Information Centre for Life Sciences, Cologne",
+          "orcid": "https://orcid.org/0000-0001-5246-9351"
+        },
+        {
+          "imagePath": "/nk.png",
+          "name": "Karam, Naouel",
+          "affiliation": "Institute for Applied Informatics (InfAI), Leipzig",
+          "orcid": "https://orcid.org/0000-0002-6762-6417"
+        },
+        {
+          "imagePath": "/ok.png",
+          "name": "Koepler, Oliver",
+          "affiliation": "TIB - Leibniz Information Centre for Science and Technology, Hannover",
+          "orcid": "https://orcid.org/0000-0003-3385-4232"
+        }
+      ]
+    },
+    {
+      "title": "Project Team Members",
+      "persons": [
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Sasse, Julia",
+          "affiliation": "ZB MED - Information Centre for Life Sciences, Cologne",
+          "orcid": "https://orcid.org/0000-0002-0660-7597"
+        },
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Bouazzouni, Syphax",
+          "affiliation": "Institute for Applied Informatics (InfAI), Leipzig",
+          "orcid": "https://orcid.org/0000-0002-2069-8739"
+        },
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Oladazimi, Pooya",
+          "affiliation": "TIB - Leibniz Information Centre for Science and Technology, Hannover",
+          "orcid": "https://orcid.org/0000-0002-5117-070X"
+        }
+      ]
+    },
+    {
+      "title": "Former Project Team Members",
+      "persons": [
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Fillies, Jan",
+          "affiliation": "Institute for Applied Informatics (InfAI), Leipzig",
+          "orcid": "https://orcid.org/0000-0002-2997-4656"
+        }
+      ]
+    }
+  ]
+}
