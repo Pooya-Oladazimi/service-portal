@@ -1,6 +1,24 @@
 'use client'
 
-import { AutocompleteWidget } from "@ts4nfdi/terminology-service-suite";
+import dynamic from 'next/dynamic';
+
+
+type AutocompleteWidgetProps = {
+  api: string;
+  hasShortSelectedLabel: boolean;
+  parameter: string;
+  placeholder: string;
+  preselected: never[];
+  selectionChangedEvent: () => void;
+  showApiSource: boolean;
+  singleSelection: boolean;
+  ts4nfdiGateway: boolean;
+};
+
+const AutocompleteWidget = dynamic<AutocompleteWidgetProps>(() =>
+  import("@ts4nfdi/terminology-service-suite").then((mod) => mod.AutocompleteWidget)
+  , { ssr: false }) as React.ComponentType<AutocompleteWidgetProps>;;
+
 import { QueryClient, QueryClientProvider } from "react-query";
 
 
@@ -20,7 +38,7 @@ export default function Widgets() {
         the widget component library. The widgets are built using React and TypeScript
         and can be used in both React and plain HTML applications. The functionality
         and arguments are the same for the React and plain HTML versions. Only the code
-        snippet you get when you click "Show code" in the Storybook is different.
+        snippet you get when you click {"Show code"} in the Storybook is different.
       </p>
       <p className="header-2">AutocompleteWidget</p>
       <QueryClientProvider client={queryClient}>
@@ -30,9 +48,9 @@ export default function Widgets() {
           ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form
         </p>
         <AutocompleteWidget
-          api="https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/"
-          hasShortSelectedLabel
-          parameter="ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form"
+          api={"https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/"}
+          hasShortSelectedLabel={true}
+          parameter={"ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form"}
           placeholder="Search for a Concept"
           preselected={[]}
           selectionChangedEvent={function noRefCheck() { }}
