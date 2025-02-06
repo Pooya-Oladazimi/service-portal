@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="md:col-span-10 sm:row-span-1">
+    <div className="md:col-span-2">
       <p className="header-1">Contact us</p>
       <p>
         Feel free to contact us at

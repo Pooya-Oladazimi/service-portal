@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <>
-      <div className='md:col-span-4 sm:row-span-1 mx-auto'>
+      <div className='md:col-span-1 mx-auto'>
         <Image
           src={"/logo.png"}
           width={400}
@@ -12,7 +12,7 @@ export default function Home() {
           alt="TS4NFDI Logo"
         />
       </div>
-      <div className='md:col-span-6 sm:row-span-1'>
+      <div className='md:col-span-2'>
         <p className='text-justify'>
           Terminology Services 4 NFDI (TS4NFDI) is a cross-domain service for the provision, curation, development,
           harmonization, and mapping of terminologies. It aims to facilitate consensus-building and interoperability

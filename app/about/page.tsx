@@ -3,7 +3,7 @@ import AboutPeople from "../ui/about/people";
 
 export default function About() {
   return (
-    <div className="md:col-span-10 sm:row-span-1 gap-4">
+    <div className="md:col-span-3 grid grid-rows-1">
       <div className="grid grid-rows-1 mb-20">
         <p className="header-1">Goals</p>
         <p className="text-justify">

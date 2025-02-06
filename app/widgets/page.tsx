@@ -25,7 +25,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 export default function Widgets() {
   const queryClient = new QueryClient();
   return (
-    <div className="md:col-span-8 sm:row-span-1">
+    <div className="md:col-span-3">
       <p className="header-1">TSS Widgets</p>
       <p className="text-justify">
         The Terminology Service Suite project, derived from the
@@ -47,17 +47,19 @@ export default function Widgets() {
           <b>Parameters: </b>
           ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form
         </p>
-        <AutocompleteWidget
-          api={"https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/"}
-          hasShortSelectedLabel={true}
-          parameter={"ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form"}
-          placeholder="Search for a Concept"
-          preselected={[]}
-          selectionChangedEvent={function noRefCheck() { }}
-          showApiSource={true}
-          singleSelection={true}
-          ts4nfdiGateway={true}
-        />
+        <div className='md:w-1/2 sm:w-full'>
+          <AutocompleteWidget
+            api={"https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/"}
+            hasShortSelectedLabel={true}
+            parameter={"ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form"}
+            placeholder="Search for a Concept"
+            preselected={[]}
+            selectionChangedEvent={function noRefCheck() { }}
+            showApiSource={true}
+            singleSelection={true}
+            ts4nfdiGateway={true}
+          />
+        </div>
       </QueryClientProvider>
     </div>
   );

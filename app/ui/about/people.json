@@ -22,6 +22,24 @@
           "name": "Koepler, Oliver",
           "affiliation": "TIB - Leibniz Information Centre for Science and Technology, Hannover",
           "orcid": "https://orcid.org/0000-0003-3385-4232"
+        },
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Voß, Jakob",
+          "affiliation": "Verbundzentrale des GBV (VZG), Göttingen",
+          "orcid": "https://orcid.org/0000-0002-7613-4123"
+        },
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Mühlhaus, Timo",
+          "affiliation": "RPTU University of Kaiserslautern-Landau",
+          "orcid": "https://orcid.org/0000-0003-3925-6778"
+        },
+        {
+          "imagePath": "/blank.jpg",
+          "name": "Posthumus, Etienne",
+          "affiliation": "FIZ Karlsruhe",
+          "orcid": "https://orcid.org/0000-0002-0006-7542"
         }
       ]
     },
