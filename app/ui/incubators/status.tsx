@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 export default function IncubatorsStatus() {
-  const [imgW, imgH] = [200, 200];
+  // const [imgW, imgH] = [200, 200];
   const [completed, ongoing, pending] = [0, 3, 0];
 
 
