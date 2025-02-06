@@ -4,7 +4,7 @@ import AboutPeople from "../ui/about/people";
 export default function About() {
   return (
     <div className="md:col-span-3 grid grid-rows-1">
-      <div className="grid grid-rows-1 mb-20">
+      <div className="grid grid-rows-1 mb-20" key={'goals'}>
         <p className="header-1">Goals</p>
         <p className="text-justify">
           Currently, TS4NFDI is in the initialization phase with the following goals:
@@ -15,7 +15,7 @@ export default function About() {
           service backend.
         </p>
       </div>
-      <AboutPeople />
+      <AboutPeople key={'people'} />
 
     </div>
   );

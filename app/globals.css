@@ -44,7 +44,7 @@ body {
 }
 
 .card{
-  @apply border-black bg-gray-100 rounded-lg shadow-sm text-center text-sm md:max-w-xs content-center pb-2;
+  @apply border-black bg-gray-100 rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
 }
 
 p{
