@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { readJsonFile } from "@/app/libs/utils";
 import {
-  peopleJsonData,
-  sectionData,
-  personData
+  PeopleJsonData,
+  SectionData,
+  PersonData
 } from "./types";
 import { CSSProperties } from "react";
 
 
 export default async function AboutPeople() {
   const [imgW, imgH] = [150, 150];
-  const peopleJson = await readJsonFile('/app/ui/about/people.json') as peopleJsonData;
+  const peopleJson = await readJsonFile('/app/ui/about/people.json') as PeopleJsonData;
   const imageContainerSyle = {
     position: "relative",
     width: `${imgW}px`,
@@ -21,13 +21,13 @@ export default async function AboutPeople() {
   return (
     <>
       {
-        peopleJson['sections'].map((section: sectionData) => {
+        peopleJson['sections'].map((section: SectionData) => {
           return (
             <>
               <p className="header-2"><b>{section.title}</b></p>
               <div className="grid md:grid-cols-3 sm:grid-rows-1 gap-4" key={section.title}>
                 {
-                  section.persons.map((person: personData) => {
+                  section.persons.map((person: PersonData) => {
                     return (
                       <div className="card" key={person.name}>
                         <div style={{ ...imageContainerSyle }} key={person.imagePath}>

@@ -1,15 +1,15 @@
-export type personData = {
+export type PersonData = {
   imagePath: string,
   name: string,
   affiliation: string,
   orcid: string
 }
 
-export type sectionData = {
+export type SectionData = {
   title: string,
-  persons: personData[]
+  persons: PersonData[]
 }
 
-export type peopleJsonData = {
-  sections: sectionData[]
+export type PeopleJsonData = {
+  sections: SectionData[]
 }

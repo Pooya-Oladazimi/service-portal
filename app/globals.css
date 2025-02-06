@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #F8F8F8;
   --foreground: #171717;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .site-content{
-  @apply container grid md:grid-cols-3 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto md:pl-10 pr-10;
+  @apply container grid md:grid-cols-3 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto md:pl-10 pr-10 pb-20;
 }
 
 .header-1{
@@ -49,8 +49,12 @@ body {
   margin-top: 80px;
 }
 
+.header-4{
+  @apply text-lg font-bold;
+}
+
 .card{
-  @apply border-black bg-gray-100 rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
+  @apply border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
 }
 
 p{

@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "title": "X1",
+      "description": "Integration Mapping Service widgets in NFDI4Chem Metadata Schema Service",
+      "consortium": ["NFDI4Chem"],
+      "contactPersons": [
+        {
+          "person": "Steffen Neumann",
+          "consortium": ["NFDI4Chem"]
+        }
+      ],
+      "logo": "nfdi4chem.jpg"
+    },
+    {
+      "title": "X2",
+      "description": "Searching over entities in the knowledge graphs registry; Reuse of mappings",
+      "consortium": ["Base4NFDI", "KGI4NFDI"],
+      "contactPersons": [
+        {
+          "person": "Konrad Förstner",
+          "consortium": ["Base4NFDI", "KGI4NFDI"]
+        }
+      ],
+      "logo": "kgi4nfdi.png"
+    },
+    {
+      "title": "X3",
+      "description": "Integration of TSS widgets to the NFDI4Health Study Hub",
+      "consortium": ["NFDI4Health"],
+      "contactPersons": [
+        {
+          "person": "Johannes Darms",
+          "consortium": ["NFDI4Health"]
+        },
+        {
+          "person": "Juliane Fluck",
+          "consortium": ["NFDI4Health"]
+        }
+      ],
+      "logo": "nfdi4health.jpg",
+      "logoW": 400,
+      "logoH": 400
+    }
+  ]
+}
