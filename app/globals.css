@@ -43,17 +43,23 @@ body {
   margin-top: 80px;
 }
 
+.header-3{
+  @apply text-xl;
+  margin-bottom: 40px;
+  margin-top: 80px;
+}
+
 .card{
   @apply border-black bg-gray-100 rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
 }
 
 p{
-  @apply px-5 md:px-0 mb-2;
+  @apply px-5 md:px-0 mb-2 sm:text-sm;
 }
 
 a{
   color: blue;
-  @apply pl-1 pr-1;
+  @apply pl-1 pr-1 sm:text-sm;
 }
 
 .orcid-id-btn{

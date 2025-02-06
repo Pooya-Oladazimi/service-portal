@@ -53,6 +53,12 @@ export default function Header() {
                 >Widgets
                 </Link>
                 <Link
+                  href={'/incubators'}
+                  className={"navbar-links " + (path.includes("/incubators") ? "navbar-link-active" : "")}
+                >Incubators Projects
+                </Link>
+
+                <Link
                   href={'/documentation'}
                   className={"navbar-links " + (path.includes("/documentation") ? "navbar-link-active" : "")}
                 >Documentation
@@ -77,6 +83,7 @@ export default function Header() {
         <div className="space-y-1 px-2 pt-2 pb-3">
           <Link href={'/'} className="navbar-links">Home</Link>
           <Link href={'/widgets'} className="navbar-links">Widgets</Link>
+          <Link href={'/incubators'} className="navbar-links">Incubators Projects</Link>
           <Link href={'/documentation'} className="navbar-links">Documentation</Link>
           <Link href={'/about'} className="navbar-links">About</Link>
           <Link href={'/help'} className="navbar-links">Contact</Link>

@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="grid grid-cols-3 gap-2 bg-white p-10">
         < div className="col-span-1" >
           <Image
-            src={'/base.png'}
+            src={'/img/base.png'}
             width={200}
             height={200}
             alt="Base4nfdi Logo"
@@ -15,7 +15,7 @@ export default function Footer() {
         </div >
         <div className="col-span-1">
           <Image
-            src={'/dfg.gif'}
+            src={'/img/dfg.gif'}
             width={300}
             height={300}
             alt="Base4nfdi Logo"

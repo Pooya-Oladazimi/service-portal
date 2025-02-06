@@ -1,0 +1,6 @@
+.status-card{
+  @apply border-black bg-gray-100 rounded-lg shadow-sm text-center items-center;
+}
+.status-card p{
+  padding-right: 0;
+}

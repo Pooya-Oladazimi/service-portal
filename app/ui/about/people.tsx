@@ -31,7 +31,7 @@ export default async function AboutPeople() {
                     return (
                       <div className="card" key={person.name}>
                         <div style={{ ...imageContainerSyle }} key={person.imagePath}>
-                          <Image src={person.imagePath} alt={person.name} fill style={{ objectFit: "contain" }}></Image>
+                          <Image src={"/img/" + person.imagePath} alt={person.name} fill style={{ objectFit: "contain" }}></Image>
                         </div>
                         <div className="pt-2">
                           <p className="text-lg"><b>{person.name}</b></p>
