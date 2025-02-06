@@ -25,7 +25,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 export default function Widgets() {
   const queryClient = new QueryClient();
   return (
-    <div className="md:col-span-3">
+    <div className="md:col-span-2">
       <p className="header-1">TSS Widgets</p>
       <p className="text-justify">
         The Terminology Service Suite project, derived from the
@@ -42,6 +42,15 @@ export default function Widgets() {
       </p>
       <p className="header-2">AutocompleteWidget</p>
       <QueryClientProvider client={queryClient}>
+        <p>
+          You can use this widget to search and pick classes, properties, individuals,
+          and terminologies from variaty of Terminology Service supported by our Gateway.
+          To try and check the possible options use:
+          <a
+            href='https://ts4nfdi.github.io/terminology-service-suite/comp/latest/?path=/docs/react_search-and-autocomplete-autocompletewidget--docs'
+            target='_blank'
+          >AutocompleteWidget Storybook</a>
+        </p>
         <p><b>API:</b> https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/</p>
         <p>
           <b>Parameters: </b>
