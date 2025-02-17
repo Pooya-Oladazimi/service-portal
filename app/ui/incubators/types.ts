@@ -13,6 +13,15 @@ export type Project = {
   logoH?: number
 }
 
+export type ProjectStatus = "In preparation" | "Running" | "Requested" | "Finished" | "First contact" | "Postponed";
+
 export type IncubatorProjectList = {
-  projects: Project[]
+  projects: Project[],
+  stats: {
+    [key in ProjectStatus]: number
+  }
+}
+
+export type InucbatorsStatusCmpProps = {
+  projectsJson: IncubatorProjectList
 }

@@ -1,4 +1,12 @@
 {
+  "stats": {
+    "In preparation": 3,
+    "Running": 3,
+    "Requested": 0,
+    "Finished": 0,
+    "First contact": 0,
+    "Postponed": 0
+  },
   "projects": [
     {
       "title": "X1",
