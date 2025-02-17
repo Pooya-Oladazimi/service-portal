@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  @apply overflow-x-hidden;
 }
 
 .navbar-links{
@@ -28,7 +29,7 @@ body {
 }
 
 .site-content{
-  @apply container grid md:grid-cols-3 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto md:pl-10 pr-10 pb-20;
+  @apply container grid md:grid-cols-3 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto md:pl-10 md:pr-10 pb-20;
 }
 
 .header-1{
@@ -58,7 +59,7 @@ body {
 }
 
 p{
-  @apply px-5 md:px-0 mb-2 sm:text-sm;
+  @apply md:px-0 mb-2 sm:text-sm;
 }
 
 a{
@@ -68,4 +69,16 @@ a{
 
 .orcid-id-btn{
   @apply bg-[#A5CD39] text-white rounded-xl text-base p-1;
+}
+
+.badge{
+  @apply text-black text-xs font-medium me-2 px-2.5 py-0.5 rounded-full whitespace-nowrap;
+}
+
+.status-badge{
+  @apply badge bg-yellow-300;
+}
+
+.name-badge{
+  @apply badge bg-blue-950 !text-white;
 }

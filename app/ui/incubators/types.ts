@@ -5,6 +5,10 @@ export type Person = {
 
 export type Project = {
   title: string,
+  round: number,
+  status: ProjectStatus,
+  start: string,
+  end: string,
   description: string,
   consortium: string[],
   contactPersons: Person[],

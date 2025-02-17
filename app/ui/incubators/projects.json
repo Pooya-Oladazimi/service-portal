@@ -9,46 +9,122 @@
   },
   "projects": [
     {
-      "title": "X1",
-      "description": "Integration Mapping Service widgets in NFDI4Chem Metadata Schema Service",
+      "title": "TS integration for RADAR",
+      "round": 1,
+      "status": "In preparation",
+      "start": "21.02.2025",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Chem", "NFDI4Culture", "NFDI4Memory"],
+      "contactPersons": [
+        {
+          "person": "Soltau, Kerstin",
+          "consortium": []
+        }
+      ],
+      "logo": "radar.png"
+    },
+    {
+      "title": "TS integration for WDCC",
+      "round": 1,
+      "status": "In preparation",
+      "start": "26.02.2025",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Earth"],
+      "contactPersons": [
+        {
+          "person": "Martens, Claudia",
+          "consortium": []
+        },
+        {
+          "person": "Löhden, Anne",
+          "consortium": []
+        }
+      ],
+      "logo": "nfdi4earth.png",
+      "logoW": 400,
+      "logoH": 400
+    },
+    {
+      "title": "nmrXiv TSS integration",
+      "round": 0,
+      "status": "Running",
+      "start": "~",
+      "end": "~",
+      "description": "",
       "consortium": ["NFDI4Chem"],
       "contactPersons": [
         {
-          "person": "Steffen Neumann",
-          "consortium": ["NFDI4Chem"]
+          "person": "Nainala, Chandu",
+          "consortium": []
         }
       ],
       "logo": "nfdi4chem.jpg"
     },
     {
-      "title": "X2",
-      "description": "Searching over entities in the knowledge graphs registry; Reuse of mappings",
-      "consortium": ["Base4NFDI", "KGI4NFDI"],
+      "title": "ChEBI TSS integration",
+      "round": 1,
+      "status": "Running",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": [],
       "contactPersons": [
         {
-          "person": "Konrad Förstner",
-          "consortium": ["Base4NFDI", "KGI4NFDI"]
-        }
-      ],
-      "logo": "kgi4nfdi.png"
-    },
-    {
-      "title": "X3",
-      "description": "Integration of TSS widgets to the NFDI4Health Study Hub",
-      "consortium": ["NFDI4Health"],
-      "contactPersons": [
-        {
-          "person": "Johannes Darms",
-          "consortium": ["NFDI4Health"]
+          "person": "Moreno, Carlos",
+          "consortium": []
         },
         {
-          "person": "Juliane Fluck",
-          "consortium": ["NFDI4Health"]
+          "person": "Arsalan, Muhammad ",
+          "consortium": []
         }
       ],
-      "logo": "nfdi4health.jpg",
+      "logo": "chebi.png",
       "logoW": 400,
       "logoH": 400
+    },
+    {
+      "title": "Coconut TSS integration",
+      "round": 0,
+      "status": "Running",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Chem"],
+      "contactPersons": [
+        {
+          "person": "Nainala, Chandu",
+          "consortium": []
+        }
+      ],
+      "logo": "nfdi4chem.jpg"
+    },
+    {
+      "title": "NFDI4Cat Central Data Repository (Repo4Cat)",
+      "round": 1,
+      "status": "In preparation",
+      "start": "12.02.2025",
+      "end": "13.08.2025",
+      "description": "",
+      "consortium": ["NFDI4Cat"],
+      "contactPersons": [
+        {
+          "person": "Linke, David",
+          "consortium": []
+        },
+        {
+          "person": "Kushnarenko, Volodymyr",
+          "consortium": []
+        },
+        {
+          "person": "Bönisch, Thomas",
+          "consortium": []
+        }
+      ],
+      "logo": "nfdi4cat.png",
+      "logoW": 300,
+      "logoH": 200
     }
   ]
 }

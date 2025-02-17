@@ -11,14 +11,14 @@ export default async function Incubators() {
   const projectsJson = await readJsonFile('/app/ui/incubators/projects.json') as IncubatorProjectList;
 
   return (
-    <div className="md:col-span-3">
+    <div className="md:col-span-3 w-full">
       <div className="gird grid-rows-1">
         <p className="header-1" key={'Incubatorsstatusheader'}>Incubators</p>
         <IncubatorsStatus key={'Incubatorsstatus'} projectsJson={projectsJson}></IncubatorsStatus>
         <br />
         <br />
         <p className="header-1" key={'IncubatorProjectsHeader'}>Projects</p>
-        <IncubatorProjects key={'IncubatorProjects'}></IncubatorProjects>
+        <IncubatorProjects key={'IncubatorProjects'} projectsJson={projectsJson}></IncubatorProjects>
       </div>
     </div>
   );

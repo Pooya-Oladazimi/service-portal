@@ -6,5 +6,5 @@
 }
 
 .incubator-project-card{
-  @apply border-black bg-white rounded-lg shadow-sm text-center items-center p-10;
+  @apply border-black bg-white rounded-lg shadow-sm items-center p-10;
 }
