@@ -11,7 +11,7 @@ export default function IncubatorsStatus(props: InucbatorsStatusCmpProps) {
       <div className="grid md:grid-cols-3 grid-rows-1 gap-10">
         {
           Object.keys(stats).map((key) => {
-            let status = key as ProjectStatus;
+            const status = key as ProjectStatus;
             return (
               <div className="status-card" key={status}>
                 <p className="lg:text-xl ">{status}: <b>{stats[status]}</b></p>
