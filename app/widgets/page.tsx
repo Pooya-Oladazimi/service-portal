@@ -1,19 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic';
-
-
-type AutocompleteWidgetProps = {
-  api: string;
-  hasShortSelectedLabel: boolean;
-  parameter: string;
-  placeholder: string;
-  preselected: never[];
-  selectionChangedEvent: () => void;
-  showApiSource: boolean;
-  singleSelection: boolean;
-  ts4nfdiGateway: boolean;
-};
+import { AutocompleteWidgetProps } from '@ts4nfdi/terminology-service-suite';
 
 const AutocompleteWidget = dynamic<AutocompleteWidgetProps>(() =>
   import("@ts4nfdi/terminology-service-suite").then((mod) => mod.AutocompleteWidget)
@@ -56,7 +44,7 @@ export default function Widgets() {
           <b>Parameters: </b>
           ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form
         </p>
-        <div className='md:w-1/2 sm:w-full'>
+        <div className='w-full'>
           <AutocompleteWidget
             api={"https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/"}
             hasShortSelectedLabel={true}
@@ -65,8 +53,9 @@ export default function Widgets() {
             preselected={[]}
             selectionChangedEvent={function noRefCheck() { }}
             showApiSource={true}
-            singleSelection={true}
             ts4nfdiGateway={true}
+            singleSelection={false}
+            className='truncate'
           />
         </div>
       </QueryClientProvider>

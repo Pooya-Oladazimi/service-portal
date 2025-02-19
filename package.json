@@ -12,7 +12,8 @@
   "dependencies": {
     "@elastic/eui": "^97.3.1",
     "@emotion/react": "^11.13.5",
-    "@ts4nfdi/terminology-service-suite": "^4.0.1",
+    "@ts4nfdi/terminology-service-suite": "^4.2.0",
+    "axios": "^1.7.9",
     "next": "15.1.6",
     "react": "^18.3.1",
     "react-dom": "^18.2.0",
