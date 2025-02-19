@@ -1,11 +1,11 @@
 {
   "stats": {
     "In preparation": 3,
-    "Running": 3,
-    "Requested": 0,
-    "Finished": 0,
+    "Running": 4,
+    "Requested": 3,
+    "Finished": 4,
     "First contact": 0,
-    "Postponed": 0
+    "Postponed": 1
   },
   "projects": [
     {
@@ -125,6 +125,160 @@
       "logo": "nfdi4cat.png",
       "logoW": 300,
       "logoH": 200
+    },
+    {
+      "title": "Terminology Service for BERD@NFDI",
+      "round": 0,
+      "status": "Finished",
+      "start": "29.05.2024",
+      "end": "19.11.2024",
+      "description": "",
+      "consortium": ["BERD@NFDI"],
+      "contactPersons": [
+        {
+          "person": "Shigapov, Renat",
+          "consortium": []
+        }
+      ],
+      "logo": "berd.png",
+      "logoW": 300,
+      "logoH": 200
+    },
+    {
+      "title": "Terminology Service for Plasma Physics",
+      "round": 0,
+      "status": "Finished",
+      "start": "~",
+      "end": "19.11.2024",
+      "description": "",
+      "consortium": ["NFDI4BIOIMAGE"],
+      "contactPersons": [
+        {
+          "person": "Becker, Markus",
+          "consortium": []
+        }
+      ],
+      "logo": "bioimage.jpeg",
+      "logoW": 300,
+      "logoH": 300
+    },
+    {
+      "title": "preVIEW TSS integration",
+      "round": 0,
+      "status": "Finished",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Health"],
+      "contactPersons": [],
+      "logo": "nfdi4health.png",
+      "logoW": 300,
+      "logoH": 300
+    },
+    {
+      "title": "Metadata Annotation Workbench TSS Integration",
+      "round": 0,
+      "status": "Finished",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Health"],
+      "contactPersons": [
+        {
+          "person": "Sasse, Julia",
+          "consortium": []
+        }
+      ],
+      "logo": "nfdi4health.png",
+      "logoW": 300,
+      "logoH": 300
+    },
+    {
+      "title": "TSS widgets for DiscussData",
+      "round": 1,
+      "status": "In preparation",
+      "start": "09.10.2024",
+      "end": "~",
+      "description": "",
+      "consortium": ["Text+"],
+      "contactPersons": [
+        {
+          "person": "Kurzawe, Daniel",
+          "consortium": []
+        },
+        {
+          "person": "Hynek, Stefan",
+          "consortium": []
+        }
+      ],
+      "logo": "textplus.png"
+    },
+    {
+      "title": "Open Energy Platform",
+      "round": 2,
+      "status": "Requested",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Energy"],
+      "contactPersons": [
+        {
+          "person": "Hülk, Ludwig",
+          "consortium": []
+        }
+      ],
+      "logo": "NFDI4Energy.png",
+      "logoW": 300,
+      "logoH": 300
+    },
+    {
+      "title": "Curation workflow (DPBO)",
+      "round": "-",
+      "status": "Requested",
+      "start": "04.09.2024",
+      "end": "~",
+      "description": "",
+      "consortium": ["DataPLANT"],
+      "contactPersons": [
+        {
+          "person": "Kranz, Angela",
+          "consortium": []
+        },
+        {
+          "person": "Dörpholz, Hannah",
+          "consortium": []
+        }
+      ],
+      "logo": "dataplant.png",
+      "logoW": 200,
+      "logoH": 200
+    },
+    {
+      "title": "Sensor Management System",
+      "round": "-",
+      "status": "Requested",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Earth"],
+      "contactPersons": [
+        {
+          "person": "Brinckmann, Nils",
+          "consortium": []
+        },
+        {
+          "person": "Mühlbauer, Felix",
+          "consortium": []
+        },
+        {
+          "person": "Hanisch, Marc",
+          "consortium": []
+        }
+      ],
+      "logo": "nfdi4earth.png",
+      "logoW": 400,
+      "logoH": 400
     }
+
   ]
 }
