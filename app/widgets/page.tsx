@@ -1,19 +1,18 @@
 'use client'
 
-import dynamic from 'next/dynamic';
-import { AutocompleteWidgetProps } from '@ts4nfdi/terminology-service-suite';
-
-const AutocompleteWidget = dynamic<AutocompleteWidgetProps>(() =>
-  import("@ts4nfdi/terminology-service-suite").then((mod) => mod.AutocompleteWidget)
-  , { ssr: false }) as React.ComponentType<AutocompleteWidgetProps>;;
-
-import { QueryClient, QueryClientProvider } from "react-query";
+import AutoCompleteTSS from "../ui/widgets/autocomplete";
+import MetadataWidgetTSS from "../ui/widgets/MetadataWidget";
+import '../ui/widgets/styles.css';
+import { useState } from 'react';
+import { AutoCompleteSelectedTermType } from "../ui/widgets/types";
 
 
 export default function Widgets() {
-  const queryClient = new QueryClient();
+  const [selectedTerm, setSelectedTerm] = useState<AutoCompleteSelectedTermType>({});
+
+
   return (
-    <div className="md:col-span-2">
+    <div className="md:col-span-3">
       <p className="header-1">TSS Widgets</p>
       <p className="text-justify">
         The Terminology Service Suite project, derived from the
@@ -28,37 +27,15 @@ export default function Widgets() {
         and arguments are the same for the React and plain HTML versions. Only the code
         snippet you get when you click {"Show code"} in the Storybook is different.
       </p>
-      <p className="header-2">AutocompleteWidget</p>
-      <QueryClientProvider client={queryClient}>
-        <p>
-          You can use this widget to search and pick classes, properties, individuals,
-          and terminologies from variaty of Terminology Service supported by our Gateway.
-          To try and check the possible options use:
-          <a
-            href='https://ts4nfdi.github.io/terminology-service-suite/comp/latest/?path=/docs/react_search-and-autocomplete-autocompletewidget--docs'
-            target='_blank'
-          >AutocompleteWidget Storybook</a>
-        </p>
-        <p><b>API:</b> https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/</p>
-        <p>
-          <b>Parameters: </b>
-          ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form
-        </p>
-        <div className='w-full'>
-          <AutocompleteWidget
-            api={"https://ts4nfdi-api-gateway.prod.km.k8s.zbmed.de/api-gateway/"}
-            hasShortSelectedLabel={true}
-            parameter={"ontology=mesh,efo&type=class&collection=nfdi4health&fieldList=description,label,iri,ontology_name,type,short_form"}
-            placeholder="Search for a Concept"
-            preselected={[]}
-            selectionChangedEvent={function noRefCheck() { }}
-            showApiSource={true}
-            ts4nfdiGateway={true}
-            singleSelection={false}
-            className='truncate'
-          />
+      <div className="grid md:grid-cols-3 grid-rows-1 gap-10">
+        <div className="md:col-span-1 overflow-hidden break-words widget-box">
+          <AutoCompleteTSS setSelectedTerm={(term: AutoCompleteSelectedTermType) => { setSelectedTerm(term) }} />
         </div>
-      </QueryClientProvider>
+        <div className="md:col-span-2 widget-box">
+          <MetadataWidgetTSS selectedTerm={selectedTerm} />
+        </div>
+      </div>
+
     </div>
   );
 }
