@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Project, Person, InucbatorsStatusCmpProps } from "./types";
+import { Project, InucbatorsStatusCmpProps } from "./types";
 
 
 export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
