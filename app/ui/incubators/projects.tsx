@@ -28,17 +28,17 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
               </div>
               <p key={'period'}>{`From ${project.start} To ${project.end}`}</p>
               <p key={'description'}>{project.description}</p>
-              <br />
-              <p className="header-4">People</p>
-              {
-                project.contactPersons.map((personData: Person) => {
-                  return (
-                    <ul key={personData.person}>
-                      <li>{personData.person} {personData.consortium.length !== 0 ? `(${personData.consortium})` : ""}</li>
-                    </ul>
-                  )
-                })
-              }
+              {/*<br />*/}
+              {/*<p className="header-4">People</p>*/}
+              {/*{*/}
+              {/*  project.contactPersons.map((personData: Person) => {*/}
+              {/*    return (*/}
+              {/*      <ul key={personData.person}>*/}
+              {/*        <li>{personData.person} {personData.consortium.length !== 0 ? `(${personData.consortium})` : ""}</li>*/}
+              {/*      </ul>*/}
+              {/*    )*/}
+              {/*  })*/}
+              {/*}*/}
             </div>
           )
         })
