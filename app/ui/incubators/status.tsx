@@ -12,7 +12,7 @@ export default function IncubatorsStatus(props: InucbatorsStatusCmpProps) {
         {
           Object.keys(stats).map((key) => {
             const status = key as ProjectStatus;
-            if(statusToSkip.includes(status)){
+            if (statusToSkip.includes(status)) {
               return;
             }
             return (
