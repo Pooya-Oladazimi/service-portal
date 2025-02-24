@@ -5,11 +5,15 @@ import { Project, InucbatorsStatusCmpProps } from "./types";
 export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
 
   const projectsJson = props.projectsJson.projects;
+  const statusToSkip = ['Requested', 'First contact', 'Postponed'];
 
   return (
     <div className="grid md:grid-cols-3 grid-rows-1 gap-8">
       {
         projectsJson.map((project: Project) => {
+            if(statusToSkip.includes(project.status)){
+              return;
+            }
           return (
             <div className="incubator-project-card" key={project.title}>
               <div className="w-full" key={'image'}>

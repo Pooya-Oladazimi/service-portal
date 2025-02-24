@@ -3,7 +3,7 @@ import { InucbatorsStatusCmpProps, ProjectStatus } from "./types";
 
 export default function IncubatorsStatus(props: InucbatorsStatusCmpProps) {
   const stats = props.projectsJson.stats;
-
+  const statusToSkip = ['Requested', 'First contact', 'Postponed'];
 
   return (
     <>
@@ -12,6 +12,9 @@ export default function IncubatorsStatus(props: InucbatorsStatusCmpProps) {
         {
           Object.keys(stats).map((key) => {
             const status = key as ProjectStatus;
+            if(statusToSkip.includes(status)){
+              return;
+            }
             return (
               <div className="status-card" key={status}>
                 <p className="lg:text-xl ">{status}: <b>{stats[status]}</b></p>
