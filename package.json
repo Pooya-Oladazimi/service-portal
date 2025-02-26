@@ -15,6 +15,7 @@
     "@ts4nfdi/terminology-service-suite": "^4.2.0",
     "axios": "^1.7.9",
     "next": "15.1.6",
+    "nodemailer": "^6.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.2"
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

@@ -82,3 +82,19 @@ a{
 .name-badge{
   @apply badge bg-blue-950 !text-white;
 }
+
+.form{
+  @apply bg-[#FFFFFF] p-10;
+}
+
+.form-input-group{
+  @apply mx-auto mb-5 w-4/5;
+}
+
+input{
+  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
+}
+
+textarea{
+  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
+}
