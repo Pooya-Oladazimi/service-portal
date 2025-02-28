@@ -1,6 +1,15 @@
 'use client'
 
-import { Editor } from 'react-draft-wysiwyg';
+
+import dynamic from 'next/dynamic';
+import { EditorProps } from 'react-draft-wysiwyg'
+
+
+const Editor = dynamic<EditorProps>(() =>
+  import("react-draft-wysiwyg").then((mod) => mod.Editor)
+  , { ssr: false }) as React.ComponentType<EditorProps>;
+
+//import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import { convertToRaw, EditorState, convertFromRaw, ContentState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';

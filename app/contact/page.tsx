@@ -3,6 +3,7 @@
 import { EditorState } from "draft-js";
 import { sendContactForm } from "../actions/contact";
 import TextEditor from "../ui/commons/TextEditor/TextEditor";
+import { getTextEditorContent } from "../ui/commons/TextEditor/TextEditor";
 import { useState } from "react";
 
 
@@ -10,6 +11,8 @@ export default function Contact() {
   const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
 
   function onTextEditorChange(newState: EditorState) {
+    let hiddenInput = document.getElementById('hidden-content')! as HTMLInputElement;
+    hiddenInput.value = getTextEditorContent(newState);
     setEditorState(newState);
   }
 
@@ -37,6 +40,7 @@ export default function Contact() {
               textSizeOptions={['Normal', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code']}
             />
           </div>
+          <input type="hidden" name="content" id="hidden-content" value="" />
           <div className="text-center">
             <button type="submit" className="btn">Submit</button>
           </div>

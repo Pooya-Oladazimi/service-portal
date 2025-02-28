@@ -8,6 +8,12 @@ export async function sendContactForm(formData: FormData) {
 	let title = formData.get('title') as string;
 	let content = formData.get('content') as string;
 
+	if (!title || !content) {
+		console.info(title)
+		console.info(content)
+		return;
+	}
+
 	const transporter = nodemailer.createTransport({
 		host: process.env.SMTP_HOST_NAME,
 		port: process.env.SMTP_PORT,
