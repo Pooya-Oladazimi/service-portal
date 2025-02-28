@@ -63,8 +63,7 @@ p{
 }
 
 a{
-  color: blue;
-  @apply pl-1 pr-1 sm:text-sm;
+  @apply pl-1 pr-1 sm:text-sm text-[#445669] font-bold;
 }
 
 .orcid-id-btn{
@@ -98,3 +97,5 @@ input{
 textarea{
   @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
 }
+
+

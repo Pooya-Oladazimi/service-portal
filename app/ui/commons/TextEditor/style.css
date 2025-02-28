@@ -1,0 +1,15 @@
+.contact-text-editor-wrapper{
+  @apply bg-gray-50 w-full rounded-lg border border-gray-300; 
+}
+
+.contact-text-editor{
+ @apply bg-gray-50 text-sm p-2; 
+}
+
+.rdw-editor-toolbar{
+  @apply !bg-gray-50;
+}
+
+.rdw-editor-main{
+  @apply !h-[400px];
+}
