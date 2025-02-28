@@ -9,8 +9,6 @@ export async function sendContactForm(formData: FormData) {
 	let content = formData.get('content') as string;
 
 	if (!title || !content) {
-		console.info(title)
-		console.info(content)
 		return;
 	}
 
@@ -33,11 +31,11 @@ export async function sendContactForm(formData: FormData) {
 		return;
 	}
 	const info = await transporter.sendMail({
-		from: "brad@sandboxbccd49a83c3742bcb00d487d6018d9ea.mailgun.org",
-		to: "pooya.oladazimi@gmail.com",
+		from: process.env.SERVICE_EMAIL,
+		to: process.env.CONTACT_RECV_EMAIL,
 		subject: title,
-		text: content,
-		//html: html ? html : '',
+		//text: content,
+		html: content,
 	});
 	console.log(info);
 

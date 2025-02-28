@@ -68,6 +68,17 @@ export function getTextEditorContent(editorState: EditorState) {
   return JSON.stringify(convertToRaw(content));
 }
 
+export function createHtmlFromEditorState(editorState: EditorState) {
+  try {
+    let noteContent = convertToRaw(editorState.getCurrentContent());
+    let htmlContent = draftToHtml(noteContent);
+    return DOMPurify.sanitize(htmlContent, { USE_PROFILES: { html: true } });
+  }
+  catch (e) {
+    return "";
+  }
+}
+
 
 export function createTextEditorStateFromJson(jsonInput: any) {
   try {
