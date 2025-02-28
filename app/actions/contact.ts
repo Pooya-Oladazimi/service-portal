@@ -2,14 +2,15 @@
 
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { ActionResponse } from './types';
+import { ActionResponse, ContactForm } from './types';
 
 
-export async function sendContactForm(formData: FormData): Promise<ActionResponse> {
-	let title = formData.get('title') as string;
-	let content = formData.get('content') as string;
+export async function sendContactForm(formData: ContactForm): Promise<ActionResponse> {
+	let title = formData.title;
+	let content = formData.content;
+	let email = formData.email;
 
-	if (!title || !content) {
+	if (!title || !content || !email) {
 		return { status: false, content: "Mandatory fields are missing" };
 	}
 

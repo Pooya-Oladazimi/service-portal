@@ -102,4 +102,9 @@ textarea{
   @apply bg-[#445669] w-max text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2;
 }
 
+.required-label::after{
+    content:" *";
+    color: red;
+}
+
 
