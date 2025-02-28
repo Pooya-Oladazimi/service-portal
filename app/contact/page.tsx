@@ -37,7 +37,9 @@ export default function Contact() {
               textSizeOptions={['Normal', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code']}
             />
           </div>
-          <button type="submit">Send</button>
+          <div className="text-center">
+            <button type="submit" className="btn">Submit</button>
+          </div>
         </div>
       </form>
     </div>
