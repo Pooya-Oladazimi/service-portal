@@ -2,14 +2,15 @@
 
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import { ActionResponse } from './types';
 
 
-export async function sendContactForm(formData: FormData) {
+export async function sendContactForm(formData: FormData): Promise<ActionResponse> {
 	let title = formData.get('title') as string;
 	let content = formData.get('content') as string;
 
 	if (!title || !content) {
-		return;
+		return { status: false, content: "Mandatory fields are missing" };
 	}
 
 	const transporter = nodemailer.createTransport({
@@ -27,16 +28,17 @@ export async function sendContactForm(formData: FormData) {
 		const isVerified = await transporter.verify();
 		console.log(isVerified)
 	} catch (error) {
-		console.error('Something Went Wrong', error);
-		return;
+		return { status: false, content: "something went wrong" };
 	}
 	const info = await transporter.sendMail({
 		from: process.env.SERVICE_EMAIL,
 		to: process.env.CONTACT_RECV_EMAIL,
 		subject: title,
-		//text: content,
 		html: content,
 	});
-	console.log(info);
+	if (info.accepted.length > 0) {
+		return { status: true, content: "sent" }
+	}
 
+	return { status: false, content: "something went wrong" };
 }
