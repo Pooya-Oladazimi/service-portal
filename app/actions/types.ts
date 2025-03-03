@@ -8,3 +8,11 @@ export type ContactForm = {
 	content: string,
 	email: string
 }
+
+export type NewIncubatorForm = {
+	title: string,
+	description: string,
+	email: string,
+	lodo: File
+
+}

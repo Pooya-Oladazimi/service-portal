@@ -1,4 +1,4 @@
-import { TextInputProps } from "./types";
+import { TextInputProps, FileInputProps } from "./types";
 
 
 export function TextInput(props: TextInputProps) {
@@ -6,6 +6,17 @@ export function TextInput(props: TextInputProps) {
     <div className="form-input-group">
       <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")}>{props.labelText}</label>
       <input type={props.type} name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} />
+    </div>
+  );
+
+}
+
+
+export function FileInput(props: FileInputProps) {
+  return (
+    <div className="form-input-group">
+      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")}>{props.labelText}</label>
+      <input type="file" className="file-input" name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} />
     </div>
   );
 

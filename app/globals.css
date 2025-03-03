@@ -94,6 +94,10 @@ input{
   @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
 }
 
+.file-input{
+  @apply block w-full text-sm border border-gray-300 rounded-lg cursor-pointer p-0 file:bg-[#445669] file:text-white file:rounded-lg file:mr-3 file:py-2 file:px-4 file:border-0; 
+}
+
 textarea{
   @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
 }

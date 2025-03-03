@@ -1,6 +1,6 @@
 export type TextEditorProps = {
-	wrapperClassName: string,
-	editorClassName: string,
+	wrapperClassName?: string,
+	editorClassName?: string,
 	placeholder: string,
 	wrapperId: string,
 	textSizeOptions: any,
@@ -17,3 +17,5 @@ export type TextInputProps = {
 	placeHolder: string,
 	labelText: string
 }
+
+export type FileInputProps = Omit<TextInputProps, 'type'>

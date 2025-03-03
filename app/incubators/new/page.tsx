@@ -1,45 +1,32 @@
 'use client'
 
-import { sendContactForm } from "../actions/contact";
-import TextEditor from "../ui/commons/TextEditor/TextEditor";
-import { highlightEditorIsEmpty, isTextEditorEmpty } from "../ui/commons/TextEditor/TextEditor";
 import { useState } from "react";
-import { ActionResponse, ContactForm } from "../actions/types";
-import { Loading, SuccessAlert, ErrorAlert, TextInput } from "../ui/commons/snippets";
+import TextEditor from "../../ui/commons/TextEditor/TextEditor";
+import { highlightEditorIsEmpty, isTextEditorEmpty } from "../../ui/commons/TextEditor/TextEditor";
+import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../ui/commons/snippets";
+import { sendIncubatorRequest } from "@/app/actions/incubators";
+import { LeftArrowIcon } from "@/app/ui/commons/icons";
 
 
-export default function Contact() {
+export default function AddIncubator() {
   const [formIsSubmitted, setFormIsSubmited] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
 
-
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    let form = document.querySelector('form')!;
-    let formData = new FormData(form);
-    let contactFormData: ContactForm = {
-      title: formData.get('title')! as string,
-      email: formData.get('email')! as string,
-      content: formData.get('content') as string
-    };
-    if (isTextEditorEmpty()) {
-      highlightEditorIsEmpty();
-      return;
-    }
-    setFormIsSubmited(true);
-    setLoading(true);
-    let res = await sendContactForm(contactFormData) as ActionResponse;
-    if (!res.status) {
-      setError(true);
-    }
-    setLoading(false);
+  function submit() {
+    return;
   }
+
 
   return (
     <div className="md:col-span-2">
-      <p className="header-1">Contact us</p>
+      <p className="header-1">Send us your incubator project info</p>
+      <a className="btn" href="/incubators/">
+        <LeftArrowIcon />
+        incubators list
+      </a>
+      <br /> <br />
       {!formIsSubmitted &&
         <form onSubmit={submit}>
           <div className="grid grid-rows-1 form">
@@ -47,7 +34,7 @@ export default function Contact() {
               id="title-input"
               type="text"
               name="title"
-              placeHolder="Please enter your topic"
+              placeHolder="Please enter your project title"
               labelText="Title"
               required={true}
             />
@@ -60,11 +47,18 @@ export default function Contact() {
               required={true}
             />
             <TextEditor
-              placeholder="Please describe your query..."
+              placeholder="Please describe your project..."
               wrapperId=""
               textSizeOptions={['Normal', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code']}
-              labelText="Message"
-              name="content"
+              labelText="Description"
+              name="description"
+              required={true}
+            />
+            <FileInput
+              id="logo-input"
+              name="logo"
+              placeHolder={"Please submit a logo image for your project"}
+              labelText="Project Logo"
               required={true}
             />
             <div className="text-center">
@@ -73,10 +67,11 @@ export default function Contact() {
           </div>
         </form>
       }
+
       {loading && <Loading />}
       {formIsSubmitted && !error && !loading &&
         <SuccessAlert
-          message="Thank you for your message! We will contact you as soon as possible."
+          message="Thank you for your query! We will contact you as soon as possible."
         />
       }
       {formIsSubmitted && error && !loading &&
@@ -85,8 +80,9 @@ export default function Contact() {
         />
       }
       {formIsSubmitted && !loading &&
-        <a className="btn" href={'/contact'}>New message</a>
+        <a className="btn" href={'/incubators/new/'}>New request</a>
       }
+
     </div>
   );
 }
