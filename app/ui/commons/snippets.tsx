@@ -1,3 +1,17 @@
+import { TextInputProps } from "./types";
+
+
+export function TextInput(props: TextInputProps) {
+  return (
+    <div className="form-input-group">
+      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")}>{props.labelText}</label>
+      <input type={props.type} name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} />
+    </div>
+  );
+
+}
+
+
 export function Loading() {
   return (
     <>
@@ -23,7 +37,7 @@ export function SuccessAlert(props: { message: string }) {
 }
 
 
-export function ErrotAlert(props: { message: string }) {
+export function ErrorAlert(props: { message: string }) {
   return (
     <div className="text-center font-bold p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
       {props.message}

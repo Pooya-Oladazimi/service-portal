@@ -1,28 +1,19 @@
 'use client'
 
-import { EditorState } from "draft-js";
 import { sendContactForm } from "../actions/contact";
 import TextEditor from "../ui/commons/TextEditor/TextEditor";
-import { createHtmlFromEditorState } from "../ui/commons/TextEditor/TextEditor";
+import { highlightEditorIsEmpty, isTextEditorEmpty } from "../ui/commons/TextEditor/TextEditor";
 import { useState } from "react";
 import { ActionResponse, ContactForm } from "../actions/types";
-import { Loading, SuccessAlert, ErrotAlert } from "../ui/commons/snippets";
+import { Loading, SuccessAlert, ErrorAlert, TextInput } from "../ui/commons/snippets";
 
 
 export default function Contact() {
-  const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
   const [formIsSubmitted, setFormIsSubmited] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
 
-  function onTextEditorChange(newState: EditorState) {
-    //@ts-ignore
-    document.getElementsByClassName('rdw-editor-main')[0].style.border = '';
-    let hiddenInput = document.getElementById('hidden-content')! as HTMLInputElement;
-    hiddenInput.value = createHtmlFromEditorState(newState);
-    setEditorState(newState);
-  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -33,9 +24,8 @@ export default function Contact() {
       email: formData.get('email')! as string,
       content: formData.get('content') as string
     };
-    if (!contactFormData.content || contactFormData.content === "<p></p>") {
-      //@ts-ignore
-      document.getElementsByClassName('rdw-editor-main')[0].style.border = '#445669 !important';
+    if (isTextEditorEmpty()) {
+      highlightEditorIsEmpty();
       return;
     }
     setFormIsSubmited(true);
@@ -53,27 +43,32 @@ export default function Contact() {
       {!formIsSubmitted &&
         <form onSubmit={submit}>
           <div className="grid grid-rows-1 form">
-            <div className="form-input-group">
-              <label htmlFor={"title-input"} className="block required-label">Title</label>
-              <input type="text" name="title" id="title-input" placeholder="Please enter your topic" required />
-            </div>
-            <div className="form-input-group">
-              <label htmlFor={"email-input"} className="block required-label">Email</label>
-              <input type="email" name="email" id="email-input" placeholder="Please enter your email" required />
-            </div>
-            <div className="form-input-group">
-              <label htmlFor={""} className="block required-label">Message</label>
-              <TextEditor
-                editorState={editorState}
-                textChangeHandlerFunction={onTextEditorChange}
-                wrapperClassName="contact-text-editor-wrapper"
-                editorClassName="contact-text-editor"
-                placeholder="Please describe your query..."
-                wrapperId=""
-                textSizeOptions={['Normal', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code']}
-              />
-            </div>
-            <input type="hidden" name="content" id="hidden-content" />
+            <TextInput
+              id="title-input"
+              type="text"
+              name="title"
+              placeHolder="Please enter your topic"
+              labelText="Title"
+              required={true}
+            />
+            <TextInput
+              id="email-input"
+              type="email"
+              name="email"
+              placeHolder="Please enter your email"
+              labelText="E-mail"
+              required={true}
+            />
+            <TextEditor
+              wrapperClassName="contact-text-editor-wrapper"
+              editorClassName="contact-text-editor"
+              placeholder="Please describe your query..."
+              wrapperId=""
+              textSizeOptions={['Normal', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code']}
+              labelText="Message"
+              name="content"
+              required={true}
+            />
             <div className="text-center">
               <button type="submit" className="btn">Submit</button>
             </div>
@@ -87,7 +82,7 @@ export default function Contact() {
         />
       }
       {formIsSubmitted && error && !loading &&
-        <ErrotAlert
+        <ErrorAlert
           message="Sorry! Something went wrong."
         />
       }

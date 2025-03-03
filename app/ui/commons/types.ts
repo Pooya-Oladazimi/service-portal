@@ -1,12 +1,19 @@
-import { EditorState } from "draft-js"
-
 export type TextEditorProps = {
-	editorState: any,
-	textChangeHandlerFunction: (newState: EditorState) => void,
 	wrapperClassName: string,
 	editorClassName: string,
 	placeholder: string,
 	wrapperId: string,
-	textSizeOptions: any
+	textSizeOptions: any,
+	labelText: string,
+	required: boolean,
+	name: string
+}
 
+export type TextInputProps = {
+	id: string,
+	required: boolean,
+	type: "text" | "email",
+	name: string,
+	placeHolder: string,
+	labelText: string
 }

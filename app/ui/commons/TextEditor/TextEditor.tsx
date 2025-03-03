@@ -15,10 +15,14 @@ import { convertToRaw, EditorState, convertFromRaw, ContentState } from 'draft-j
 import draftToHtml from 'draftjs-to-html';
 import DOMPurify from 'dompurify';
 import { TextEditorProps } from '../types';
+import { useState } from 'react';
 import './style.css';
 
 
 const TextEditor = (props: TextEditorProps) => {
+
+
+  const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
 
   function onModalClick() {
     setTimeout(() => {
@@ -33,34 +37,56 @@ const TextEditor = (props: TextEditorProps) => {
   }
 
 
+  function onTextEditorChange(newState: EditorState) {
+    (document.getElementsByClassName('rdw-editor-wrapper')[0] as HTMLElement).style.borderColor = '';
+    let hiddenInput = document.getElementById('hidden-input')! as HTMLInputElement;
+    hiddenInput.value = createHtmlFromEditorState(newState);
+    setEditorState(newState);
+  }
+
+
 
   return (
-    <div onClick={onModalClick}>
-      <Editor
-        editorState={props.editorState}
-        onEditorStateChange={props.textChangeHandlerFunction}
-        wrapperClassName={props.wrapperClassName}
-        editorClassName={props.editorClassName}
-        placeholder={props.placeholder}
-        toolbar={{
-          options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'colorPicker', 'link'],
-          inline: {
-            options: ['bold', 'italic', 'underline', 'strikethrough'],
-          },
-          blockType: {
-            inDropdown: true,
-            options: props.textSizeOptions,
-          },
-          list: {
-            inDropdown: true,
-            options: ['unordered', 'ordered'],
-          },
-        }}
-      />
+    <div className="form-input-group">
+      <label htmlFor={""} className={"block " + (props.required ? "required-label" : "")}>{props.labelText}</label>
+      <div onClick={onModalClick}>
+        <Editor
+          editorState={editorState}
+          onEditorStateChange={onTextEditorChange}
+          wrapperClassName={props.wrapperClassName}
+          editorClassName={props.editorClassName}
+          placeholder={props.placeholder}
+          toolbar={{
+            options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'colorPicker', 'link'],
+            inline: {
+              options: ['bold', 'italic', 'underline', 'strikethrough'],
+            },
+            blockType: {
+              inDropdown: true,
+              options: props.textSizeOptions,
+            },
+            list: {
+              inDropdown: true,
+              options: ['unordered', 'ordered'],
+            },
+          }}
+        />
+        <input type="hidden" name={props.name} id="hidden-input" />
+      </div>
     </div>
   );
 }
 
+
+export function highlightEditorIsEmpty() {
+  (document.getElementsByClassName('rdw-editor-wrapper')[0] as HTMLElement).style.borderColor = '#445669';
+}
+
+
+export function isTextEditorEmpty() {
+  let hiddenValue = (document.getElementById("hidden-input")! as HTMLInputElement).value;
+  return (!hiddenValue || hiddenValue.trim() === "<p></p>")
+}
 
 
 export function getTextEditorContent(editorState: EditorState) {
