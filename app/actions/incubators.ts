@@ -9,10 +9,11 @@ import { ActionResponse } from "./types";
 export async function sendIncubatorRequest(formData: NewIncubatorForm): Promise<ActionResponse> {
 	let title = formData.title;
 	let desc = formData.description;
-	let logo = formData.file;
+	let logo = formData.logo;
 	let email = formData.email;
 
-	let result = await sendEmail({ subject: title, html: "" });
+
+	let result = await sendEmail({ subject: title, html: desc, file: logo, senderEmail: email });
 
 	if (result) {
 		return { status: true, content: "sent" };

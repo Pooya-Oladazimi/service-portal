@@ -13,6 +13,6 @@ export type NewIncubatorForm = {
 	title: string,
 	description: string,
 	email: string,
-	lodo: File
+	logo: File
 
 }

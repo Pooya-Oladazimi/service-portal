@@ -13,7 +13,7 @@ export async function sendContactForm(formData: ContactForm): Promise<ActionResp
 		return { status: false, content: "Mandatory fields are missing" };
 	}
 
-	let result = await sendEmail({ subject: title, html: content });
+	let result = await sendEmail({ subject: title, html: content, senderEmail: email });
 	if (result) {
 		return { status: true, content: "sent" };
 	}

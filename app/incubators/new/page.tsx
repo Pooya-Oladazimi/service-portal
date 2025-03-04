@@ -6,6 +6,7 @@ import { highlightEditorIsEmpty, isTextEditorEmpty } from "../../ui/commons/Text
 import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../ui/commons/snippets";
 import { sendIncubatorRequest } from "@/app/actions/incubators";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
+import { NewIncubatorForm } from "@/app/actions/types";
 
 
 export default function AddIncubator() {
@@ -14,7 +15,24 @@ export default function AddIncubator() {
   const [loading, setLoading] = useState<boolean>(false);
 
 
-  function submit() {
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    let form = document.querySelector('form')!;
+    let formData = new FormData(form);
+    let newIncubatorFormData: NewIncubatorForm = {
+      title: formData.get('title')! as string,
+      email: formData.get('email')! as string,
+      description: formData.get('description')! as string,
+      logo: formData.get('logo')! as File
+    };
+    setFormIsSubmited(true);
+    setLoading(true);
+    let result = await sendIncubatorRequest(newIncubatorFormData);
+    if (!result.status) {
+      setError(true);
+    }
+    setLoading(false);
+
     return;
   }
 

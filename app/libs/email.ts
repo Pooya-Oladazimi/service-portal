@@ -1,12 +1,28 @@
 
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import EmailTemplate from '../ui/email/template';
 
 
 type InputProps = {
   subject: string,
-  html?: string
+  html?: string,
+  file?: File,
+  senderEmail: string
 
+}
+
+
+type EmailMessage = {
+  from?: string,
+  to?: string,
+  subject: string,
+  html: string,
+  attachments?: {
+    filename: string,
+    content: any,
+    encoding: string
+  }[]
 }
 
 
@@ -23,17 +39,32 @@ export async function sendEmail(props: InputProps): Promise<Boolean> {
 
 
   try {
-    const isVerified = await transporter.verify();
-    console.log(isVerified)
+    const smtpServerVerfied = await transporter.verify();
+    console.log(smtpServerVerfied)
   } catch (error) {
     return false;
   }
-  const info = await transporter.sendMail({
+
+  const message: EmailMessage = {
     from: process.env.SERVICE_EMAIL,
     to: process.env.CONTACT_RECV_EMAIL,
     subject: props.subject,
-    html: props.html ?? "",
-  });
+    html: EmailTemplate({ title: props.subject, content: props.html ?? "", senderEmail: props.senderEmail })
+  };
+
+  if (props.file) {
+    const fileBuffer = await props.file.arrayBuffer()!;
+    const buffer = new Uint8Array(fileBuffer) as Buffer;
+    message['attachments'] = [
+      {
+        filename: props.file.name,
+        content: buffer,
+        encoding: 'base64'
+      },
+    ]
+  }
+
+  const info = await transporter.sendMail(message);
   if (info.accepted.length > 0) {
     return true;
   }
