@@ -1,11 +1,11 @@
-import { TextInputProps, FileInputProps } from "./types";
+import { TextInputProps, FileInputProps, SelectionInputProps } from "./types";
 
 
 export function TextInput(props: TextInputProps) {
   return (
     <div className="form-input-group">
-      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")}>{props.labelText}</label>
-      <input type={props.type} name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} />
+      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")} key={"label"}>{props.labelText}</label>
+      <input type={props.type} name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} key={"input"} />
     </div>
   );
 
@@ -15,8 +15,26 @@ export function TextInput(props: TextInputProps) {
 export function FileInput(props: FileInputProps) {
   return (
     <div className="form-input-group">
-      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")}>{props.labelText}</label>
-      <input type="file" className="file-input" name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} />
+      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")} key={"label"}>{props.labelText}</label>
+      <input type="file" className="file-input" name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} key={"input"} />
+    </div>
+  );
+
+}
+
+
+export function SelectionInput(props: SelectionInputProps) {
+  return (
+    <div>
+      <label htmlFor={props.id} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" key={"label"}>{props.label}</label>
+      <select id={props.id} defaultValue={0} onChange={props.onSelection} key={"input"}>
+        <option value={0} key={"defaultValue"}>{props.defaultOptionLabel}</option>
+        {props.options.map((stat) => {
+          return (
+            <option value={stat.value} key={stat.label}>{stat.label}</option>
+          )
+        })}
+      </select>
     </div>
   );
 
