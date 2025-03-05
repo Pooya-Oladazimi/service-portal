@@ -7,7 +7,7 @@ import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../u
 import { sendIncubatorRequest } from "@/app/actions/incubators";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
 import { NewIncubatorForm } from "@/app/actions/types";
-import DatePicker from 'react-date-picker';
+import { title } from "process";
 
 
 
@@ -27,6 +27,10 @@ export default function AddIncubator() {
       description: formData.get('description')! as string,
       logo: formData.get('logo')! as File
     };
+    if (isTextEditorEmpty()) {
+      highlightEditorIsEmpty();
+      return;
+    }
     setFormIsSubmited(true);
     setLoading(true);
     let result = await sendIncubatorRequest(newIncubatorFormData);
@@ -42,10 +46,12 @@ export default function AddIncubator() {
   return (
     <div className="md:col-span-2">
       <p className="header-1">Send us your incubator project info</p>
-      <a className="btn" href="/incubators/">
-        <LeftArrowIcon />
-        incubators list
-      </a>
+      {!loading &&
+        <a className="btn" href="/incubators/">
+          <LeftArrowIcon />
+          incubators list
+        </a>
+      }
       <br /> <br />
       {!formIsSubmitted &&
         <form onSubmit={submit}>

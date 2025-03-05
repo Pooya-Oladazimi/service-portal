@@ -12,6 +12,10 @@ export async function sendIncubatorRequest(formData: NewIncubatorForm): Promise<
 	let logo = formData.logo;
 	let email = formData.email;
 
+	if (!title || !desc || !logo || !email) {
+
+		return { status: false, content: "mandatory fields are missing" };
+	}
 
 	let result = await sendEmail({ subject: title, html: desc, file: logo, senderEmail: email });
 
