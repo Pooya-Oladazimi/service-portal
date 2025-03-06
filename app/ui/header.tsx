@@ -50,7 +50,7 @@ export default function Header() {
                 <Link
                   href={'/widgets'}
                   className={"navbar-links " + (path.includes("/widgets") ? "navbar-link-active" : "")}
-                >Widgets
+                >Lookup Service
                 </Link>
                 <Link
                   href={'/incubators'}
@@ -82,7 +82,7 @@ export default function Header() {
       <div className="sm:hidden" id="mobile-menu">
         <div className="space-y-1 px-2 pt-2 pb-3">
           <Link href={'/'} className="navbar-links">Home</Link>
-          <Link href={'/widgets'} className="navbar-links">Widgets</Link>
+          <Link href={'/widgets'} className="navbar-links">Lookup Service</Link>
           <Link href={'/incubators'} className="navbar-links">Incubators Projects</Link>
           <Link href={'/documentation'} className="navbar-links">Documentation</Link>
           <Link href={'/about'} className="navbar-links">About</Link>

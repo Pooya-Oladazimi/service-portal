@@ -18,7 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  @apply overflow-x-hidden;
+  @apply overflow-x-hidden text-base;
 }
 
 .navbar-links{
@@ -59,11 +59,11 @@ body {
 }
 
 p{
-  @apply md:px-0 mb-2 sm:text-sm;
+  @apply md:px-0 mb-2;
 }
 
 a{
-  @apply pl-1 pr-1 sm:text-sm text-[#445669] font-bold;
+  @apply pl-1 pr-1 sm:text-sm text-[#054484] font-bold;
 }
 
 .orcid-id-btn{

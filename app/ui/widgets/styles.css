@@ -1,3 +1,7 @@
 .widget-box{
   @apply border-solid border-2 p-5 bg-gray-100;
 }
+
+.function-big-btn{
+  @apply p-7 rounded-lg text-white bg-ts4nfdi-brand-color text-center;
+}
