@@ -4,7 +4,7 @@ import { LeftArrowIcon } from "@/app/ui/commons/icons";
 import TerminologyListWidgetTSS from "@/app/ui/widgets/terminologyList";
 
 
-export default function TerminologtList(props: any) {
+export default function TerminologtList() {
 
 
 

@@ -26,7 +26,7 @@ type EmailMessage = {
 }
 
 
-export async function sendEmail(props: InputProps): Promise<Boolean> {
+export async function sendEmail(props: InputProps): Promise<boolean> {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST_NAME,
     port: process.env.SMTP_PORT,
@@ -41,7 +41,7 @@ export async function sendEmail(props: InputProps): Promise<Boolean> {
   try {
     const smtpServerVerfied = await transporter.verify();
     console.log(smtpServerVerfied)
-  } catch (error) {
+  } catch {
     return false;
   }
 

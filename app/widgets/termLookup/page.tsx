@@ -7,7 +7,7 @@ import { AutoCompleteSelectedTermType } from "@/app/ui/widgets/types";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
 
 
-export default function TermLookup(props: any) {
+export default function TermLookup() {
 
   const [selectedTerm, setSelectedTerm] = useState<AutoCompleteSelectedTermType>({});
 

@@ -100,7 +100,7 @@ export function createHtmlFromEditorState(editorState: EditorState) {
     let htmlContent = draftToHtml(noteContent);
     return DOMPurify.sanitize(htmlContent, { USE_PROFILES: { html: true } });
   }
-  catch (e) {
+  catch {
     return "";
   }
 }
@@ -110,7 +110,7 @@ export function createTextEditorStateFromJson(jsonInput: any) {
   try {
     return EditorState.createWithContent(convertFromRaw(JSON.parse(jsonInput)));
   }
-  catch (e) {
+  catch {
     let empty = createTextEditorEmptyText();
     return empty;
   }
@@ -125,7 +125,7 @@ export function createHtmlFromEditorJson(jsonInput: any) {
     let htmlContent = draftToHtml(noteContent);
     return DOMPurify.sanitize(htmlContent, { USE_PROFILES: { html: true } });
   }
-  catch (e) {
+  catch {
     return "";
   }
 }
