@@ -7,7 +7,7 @@ import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../u
 import { sendIncubatorRequest } from "@/app/actions/incubators";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
 import { NewIncubatorForm } from "@/app/actions/types";
-import { title } from "process";
+import { Captcha } from "@/app/ui/commons/captcha";
 
 
 
@@ -25,7 +25,8 @@ export default function AddIncubator() {
       title: formData.get('title')! as string,
       email: formData.get('email')! as string,
       description: formData.get('description')! as string,
-      logo: formData.get('logo')! as File
+      logo: formData.get('logo')! as File,
+      captcha: formData.get("frc-captcha-response") as string
     };
     if (isTextEditorEmpty()) {
       highlightEditorIsEmpty();
@@ -87,6 +88,7 @@ export default function AddIncubator() {
               labelText="Project Logo"
               required={true}
             />
+            <Captcha />
             <div className="text-center">
               <button type="submit" className="btn">Submit</button>
             </div>

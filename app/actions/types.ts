@@ -6,13 +6,15 @@ export type ActionResponse = {
 export type ContactForm = {
 	title: string,
 	content: string,
-	email: string
+	email: string,
+	captcha: string
 }
 
 export type NewIncubatorForm = {
 	title: string,
 	description: string,
 	email: string,
-	logo: File
+	logo: File,
+	captcha: string
 
 }

@@ -5,7 +5,7 @@ import { MetadataWidgetProps } from '@ts4nfdi/terminology-service-suite';
 
 const MetadataWidget = dynamic<MetadataWidgetProps>(() =>
   import("@ts4nfdi/terminology-service-suite").then((mod) => mod.MetadataWidget)
-  , { ssr: false }) as React.ComponentType<MetadataWidgetProps>;;
+  , { ssr: false }) as React.ComponentType<MetadataWidgetProps>;
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AutoCompleteSelectedTermType } from './types';

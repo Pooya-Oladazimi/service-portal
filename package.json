@@ -12,6 +12,7 @@
   "dependencies": {
     "@elastic/eui": "^97.3.1",
     "@emotion/react": "^11.13.5",
+    "@friendlycaptcha/sdk": "^0.1.19",
     "@ts4nfdi/terminology-service-suite": "^4.2.0",
     "@types/draftjs-to-html": "^0.8.4",
     "axios": "^1.7.9",

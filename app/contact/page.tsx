@@ -6,13 +6,13 @@ import { highlightEditorIsEmpty, isTextEditorEmpty } from "../ui/commons/TextEdi
 import { useState } from "react";
 import { ActionResponse, ContactForm } from "../actions/types";
 import { Loading, SuccessAlert, ErrorAlert, TextInput } from "../ui/commons/snippets";
+import { Captcha } from "../ui/commons/captcha";
 
 
 export default function Contact() {
   const [formIsSubmitted, setFormIsSubmited] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-
 
 
   async function submit(e: React.FormEvent) {
@@ -22,7 +22,8 @@ export default function Contact() {
     let contactFormData: ContactForm = {
       title: formData.get('title')! as string,
       email: formData.get('email')! as string,
-      content: formData.get('content') as string
+      content: formData.get('content') as string,
+      captcha: formData.get("frc-captcha-response") as string
     };
     if (isTextEditorEmpty()) {
       highlightEditorIsEmpty();
@@ -36,6 +37,7 @@ export default function Contact() {
     }
     setLoading(false);
   }
+
 
   return (
     <div className="md:col-span-2">
@@ -67,6 +69,7 @@ export default function Contact() {
               name="content"
               required={true}
             />
+            <Captcha />
             <div className="text-center">
               <button type="submit" className="btn">Submit</button>
             </div>
