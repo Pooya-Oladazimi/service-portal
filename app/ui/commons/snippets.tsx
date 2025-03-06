@@ -27,8 +27,8 @@ export function SelectionInput(props: SelectionInputProps) {
   return (
     <div>
       <label htmlFor={props.id} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" key={"label"}>{props.label}</label>
-      <select id={props.id} defaultValue={0} onChange={props.onSelection} key={"input"}>
-        <option value={0} key={"defaultValue"}>{props.defaultOptionLabel}</option>
+      <select id={props.id} defaultValue={""} onChange={props.onSelection} key={"input"}>
+        <option value={""} key={"defaultValue"}>{props.defaultOptionLabel}</option>
         {props.options.map((stat) => {
           return (
             <option value={stat.value} key={stat.label}>{stat.label}</option>

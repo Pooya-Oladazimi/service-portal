@@ -10,8 +10,8 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
 
   const [selectedStatus, setSelectedStatus] = useState<string>("");
   const [selectedConsortium, setSelectedConsortium] = useState<string>("");
+  const [projectsList, setProjectsList] = useState<Project[]>(props.projectsJson.projects);
 
-  const projectsJson = props.projectsJson.projects;
   const statusToSkip = ['Requested', 'First contact', 'Postponed'];
 
   let projectsStatusOptions = [];
@@ -24,7 +24,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
 
 
   let consortiumOptions: { label: string, value: string }[] = [];
-  for (let project of projectsJson) {
+  for (let project of props.projectsJson.projects) {
     for (let consortia of project.consortium) {
       let option = { label: consortia, value: consortia };
       if (!consortiumOptions.find((el) => el.label === option.label)) {
@@ -35,6 +35,15 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
 
 
   useEffect(() => {
+    let filteredProjectsList: Project[] = [];
+    filteredProjectsList = props.projectsJson.projects.filter((p) => {
+      if (!selectedConsortium) { return true }
+      return p.consortium.includes(selectedConsortium);
+    });
+    setProjectsList(filteredProjectsList.filter((p) => {
+      if (!selectedStatus) { return true };
+      return p.status === selectedStatus;
+    }));
 
   }, [selectedStatus, selectedConsortium]);
 
@@ -44,7 +53,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
         <SelectionInput
           id="status"
           label="Status"
-          defaultOptionLabel="Choose status"
+          defaultOptionLabel="any"
           options={projectsStatusOptions}
           onSelection={(e: React.ChangeEvent<HTMLSelectElement>) => { setSelectedStatus(e.target.value) }}
           key={"status-dropdown"}
@@ -52,7 +61,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
         <SelectionInput
           id="consortium"
           label="Consortium"
-          defaultOptionLabel="Choose consortium"
+          defaultOptionLabel="any"
           options={consortiumOptions}
           onSelection={(e: React.ChangeEvent<HTMLSelectElement>) => { setSelectedConsortium(e.target.value) }}
           key={"consortium-dropdown"}
@@ -60,7 +69,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
       </div>
       <div className="grid md:grid-cols-3 grid-rows-1 gap-8" key={"incubators-grid"}>
         {
-          projectsJson.map((project: Project) => {
+          projectsList.map((project: Project) => {
             if (statusToSkip.includes(project.status)) {
               return;
             }
