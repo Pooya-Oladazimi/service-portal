@@ -15,6 +15,11 @@ export async function sendIncubatorRequest(formData: NewIncubatorForm): Promise<
 		let email = formData.email;
 		let captcha = formData.captcha;
 
+		const acceptableMimeTypes = ["image/png", "image/jpeg", "image/svg+xml"]
+		if (!acceptableMimeTypes.includes(logo.type)) {
+			return { status: false, content: "file type is not accepted" };
+		}
+
 		if (!title || !desc || !logo || !email || !await captchaIsValid(captcha)) {
 			return { status: false, content: "mandatory fields are missing" };
 		}

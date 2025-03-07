@@ -18,7 +18,9 @@ export type TextInputProps = {
 	labelText: string
 }
 
-export type FileInputProps = Omit<TextInputProps, 'type'>
+export type FileInputProps = Omit<TextInputProps, 'type'> & {
+	accept: string
+}
 
 
 export type SelectionInputProps = {

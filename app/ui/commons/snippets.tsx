@@ -5,7 +5,14 @@ export function TextInput(props: TextInputProps) {
   return (
     <div className="form-input-group">
       <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")} key={"label"}>{props.labelText}</label>
-      <input type={props.type} name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} key={"input"} />
+      <input
+        type={props.type}
+        name={props.name}
+        id={props.id}
+        placeholder={props.placeHolder}
+        required={props.required}
+        key={"input"}
+      />
     </div>
   );
 
@@ -15,8 +22,17 @@ export function TextInput(props: TextInputProps) {
 export function FileInput(props: FileInputProps) {
   return (
     <div className="form-input-group">
-      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")} key={"label"}>{props.labelText}</label>
-      <input type="file" className="file-input" name={props.name} id={props.id} placeholder={props.placeHolder} required={props.required} key={"input"} />
+      <label htmlFor={props.id} className={"block " + (props.required ? "required-label" : "")} key={"label"} dangerouslySetInnerHTML={{ __html: props.labelText }}></label>
+      <input
+        type="file"
+        className="file-input"
+        name={props.name}
+        id={props.id}
+        placeholder={props.placeHolder}
+        required={props.required}
+        key={"input"}
+        accept={props.accept}
+      />
     </div>
   );
 

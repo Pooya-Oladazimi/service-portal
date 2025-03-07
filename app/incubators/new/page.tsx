@@ -16,6 +16,8 @@ export default function AddIncubator() {
   const [error, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
+  const acceptedFileExt = [".jpg", ".jpeg", ".png", ".PNG", ".svg"];
+
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -85,8 +87,9 @@ export default function AddIncubator() {
               id="logo-input"
               name="logo"
               placeHolder={"Please submit a logo image for your project"}
-              labelText="Project Logo"
+              labelText={`Project Logo <small>(only image file: ${acceptedFileExt.join(", ")})</small>`}
               required={true}
+              accept={acceptedFileExt.join(", ")}
             />
             <Captcha />
             <div className="text-center">
