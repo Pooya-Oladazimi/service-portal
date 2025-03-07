@@ -33,19 +33,19 @@ export default function Widgets() {
       <div className="grid md:grid-cols-3 grid-rows-1 gap-10 mt-20">
         <Link href={"/widgets/termLookup/"}>
           <div className="function-big-btn">
-            <BookOpenIcon size="10" />
+            <BookOpenIcon width={20} height={20} />
             <b className='inline text-xl'>Term Lookup</b>
           </div>
         </Link>
         <Link href={"/widgets/terminologyList/"}>
           <div className="function-big-btn">
-            <ListIcon size="10" />
+            <ListIcon width={20} height={20} />
             <b className='inline text-xl'>Terminology List</b>
           </div>
         </Link>
         <Link href={"/widgets/search/"}>
           <div className="function-big-btn">
-            <SearchIcon size="10" />
+            <SearchIcon width={20} height={20} />
             <b className='inline text-xl'>Search</b>
           </div>
         </Link>
