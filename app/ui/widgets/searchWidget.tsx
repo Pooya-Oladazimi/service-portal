@@ -17,9 +17,10 @@ export default function SearchResultsListWidgetTSS() {
   return (
     <>
       <p className='header-2'>SearchResultsListWidget</p>
+      <p>Search in the collection <b>DataPLANT</b> hosted by TIB (OLS4: https://api.terminology.tib.eu/api/)</p>
       <QueryClientProvider client={queryClient}>
         <SearchResultsListWidget
-          api="https://semanticlookup.zbmed.de/api/"
+          api="https://api.terminology.tib.eu/api/"
           initialItemsPerPage={10}
           itemsPerPageOptions={[
             10,
@@ -27,9 +28,9 @@ export default function SearchResultsListWidgetTSS() {
             50,
             100
           ]}
-          parameter="collection=safety&fieldList=description,label,iri,ontology_name,type,short_form"
+          parameter="classification=DataPLANT&schema=collection&fieldList=description,label,iri,ontology_name,type,short_form"
           preselected={[]}
-          query="d*"
+          query=""
           targetLink=""
           useLegacy
         />

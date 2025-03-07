@@ -16,10 +16,11 @@ export default function TerminologyListWidgetTSS() {
   return (
     <>
       <p className='header-2'>ResourcesWidget</p>
+      <p>Terminology list hosted by <b>Zbmed</b> (https://semanticlookup.zbmed.de/ols/api/)</p>
       <QueryClientProvider client={queryClient}>
         <ResourcesWidget
           actions={[]}
-          api="https://www.ebi.ac.uk/ols4/api/"
+          api="https://semanticlookup.zbmed.de/ols/api/"
           initialEntriesPerPage={100}
           initialSortDir="asc"
           initialSortField="config.preferredPrefix"
@@ -30,8 +31,8 @@ export default function TerminologyListWidgetTSS() {
             50,
             100
           ]}
-          parameter=""
-        //targetLink="https://semanticlookup.zbmed.de/dev/"
+          parameter="collection=nfdi4health"
+          useLegacy
         />
       </QueryClientProvider>
     </>
