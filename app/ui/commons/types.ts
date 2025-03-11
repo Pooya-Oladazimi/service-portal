@@ -12,7 +12,7 @@ export type TextEditorProps = {
 export type TextInputProps = {
 	id: string,
 	required: boolean,
-	type: "text" | "email",
+	type: "text" | "email" | "password",
 	name: string,
 	placeHolder: string,
 	labelText: string

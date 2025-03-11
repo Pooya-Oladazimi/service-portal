@@ -1,6 +1,7 @@
 
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { signIn } from "next-auth/react";
 
 
 export const authOptions = ({
@@ -41,6 +42,9 @@ export const authOptions = ({
       session.user.username = token.username as string;
       return session;
     }
+  },
+  pages: {
+    signIn: "auth/login"
   },
   secret: process.env.NEXTAUTH_SECRET
 });
