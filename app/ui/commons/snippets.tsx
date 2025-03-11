@@ -90,6 +90,14 @@ export function ErrorAlert(props: { message: string }) {
   );
 }
 
+export function WarningAlert(props: { message: string }) {
+  return (
+    <div className="text-center font-bold p-4 mb-4 text-sm text-black rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      {props.message}
+    </div>
+  );
+}
+
 export function InfoAlert(props: { title: string, body: string }) {
   return (
     <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md mb-4" role="alert">
