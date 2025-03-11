@@ -4,9 +4,9 @@ import { useState } from "react";
 import TextEditor from "../../ui/commons/TextEditor/TextEditor";
 import { highlightEditorIsEmpty, isTextEditorEmpty } from "../../ui/commons/TextEditor/TextEditor";
 import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../ui/commons/snippets";
-import { sendIncubatorRequest } from "@/app/actions/incubators";
+import { sendIncubatorRequest } from "@/app/api/actions/incubators";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
-import { NewIncubatorForm } from "@/app/actions/types";
+import { NewIncubatorForm } from "@/app/api/actions/types";
 import { Captcha } from "@/app/ui/commons/captcha";
 
 

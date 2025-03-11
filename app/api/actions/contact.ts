@@ -1,8 +1,8 @@
 'use server';
 
 import { ActionResponse, ContactForm } from './types';
-import { sendEmail } from '../libs/email';
-import { captchaIsValid } from '../libs/captcha';
+import { sendEmail } from '@/app/libs/email';
+import { captchaIsValid } from '@/app/libs/captcha';
 
 
 export async function sendContactForm(formData: ContactForm): Promise<ActionResponse> {

@@ -1,10 +1,10 @@
 'use client'
 
-import { sendContactForm } from "../actions/contact";
+import { sendContactForm } from "../api/actions/contact";
 import TextEditor from "../ui/commons/TextEditor/TextEditor";
 import { highlightEditorIsEmpty, isTextEditorEmpty } from "../ui/commons/TextEditor/TextEditor";
 import { useState } from "react";
-import { ActionResponse, ContactForm } from "../actions/types";
+import { ActionResponse, ContactForm } from "../api/actions/types";
 import { Loading, SuccessAlert, ErrorAlert, TextInput } from "../ui/commons/snippets";
 import { Captcha } from "../ui/commons/captcha";
 

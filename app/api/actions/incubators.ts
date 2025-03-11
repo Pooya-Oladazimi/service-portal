@@ -1,9 +1,9 @@
 'use server'
 
 import { NewIncubatorForm } from "./types";
-import { sendEmail } from "../libs/email";
+import { sendEmail } from "@/app/libs/email";
 import { ActionResponse } from "./types";
-import { captchaIsValid } from "../libs/captcha";
+import { captchaIsValid } from "@/app/libs/captcha";
 
 
 
