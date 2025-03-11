@@ -2,14 +2,19 @@
 
 import { TextInput } from "@/app/ui/commons/snippets";
 import { signIn } from "next-auth/react";
-import { ErrorAlert } from "@/app/ui/commons/snippets";
+import { ErrorAlert, SuccessAlert } from "@/app/ui/commons/snippets";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 
 export default function LoginForm() {
 
+  const urlParams = useSearchParams();
+
   const [internalError, setInternalError] = useState<boolean>(false);
   const [wrongCred, setWrongCred] = useState<boolean>(false);
+
+  const isSignUpValid = urlParams.get('signup') === "true";
 
   async function submitLogin(e: React.FormEvent) {
     try {
@@ -41,6 +46,9 @@ export default function LoginForm() {
         {!wrongCred && internalError &&
           <ErrorAlert message="Something went wrong from ourside. Please try later." />
         }
+        {!wrongCred && !internalError && isSignUpValid &&
+          <SuccessAlert message="You signed up successfully! Please login." />
+        }
         <form id="login-form" onSubmit={submitLogin}>
           <TextInput
             id="login-username"
@@ -62,6 +70,9 @@ export default function LoginForm() {
           />
           <div className="text-center">
             <button type="submit" className="btn mx-auto">Login</button>
+          </div>
+          <div className="mt-5 ml-10">
+            <a href="/auth/signup/">Not a user yet? Click and signup.</a>
           </div>
         </form>
       </div>
