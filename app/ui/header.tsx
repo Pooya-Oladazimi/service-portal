@@ -1,5 +1,5 @@
 import NavBarOptions, { NavBarOptionsMobile } from "./navbar";
-import UserProfileMenu from "./profileMenu";
+import UserProfileMenu from "./user/profileMenu";
 
 export default function Header() {
 

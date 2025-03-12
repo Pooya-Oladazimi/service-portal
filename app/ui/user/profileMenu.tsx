@@ -1,5 +1,6 @@
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
+import './style.css';
 
 
 export default async function UserProfileMenu() {
@@ -30,10 +31,13 @@ export default async function UserProfileMenu() {
         </div>
         <ul className="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+            <a href="#" className="profile-menu-item">Dashboard</a>
           </li>
           <li>
-            <a href="/api/auth/signout" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+            <a href="/collection/myCollections/" className="profile-menu-item">My Collections</a>
+          </li>
+          <li>
+            <a href="/api/auth/signout" className="profile-menu-item">Sign out</a>
           </li>
         </ul>
       </div>

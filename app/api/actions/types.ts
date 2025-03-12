@@ -16,5 +16,11 @@ export type NewIncubatorForm = {
 	email: string,
 	logo: File,
 	captcha: string
+}
 
+export type Collection = {
+	id?: string,
+	description: string,
+	label: string,
+	terminologies: string[]
 }
