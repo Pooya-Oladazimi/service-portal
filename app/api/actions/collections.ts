@@ -20,7 +20,7 @@ export async function getUserCollectionList(): Promise<ActionResponse> {
 		});
 
 		if (!resp.ok) {
-			return { status: false, content: "something went wrong" }
+			return { status: false, content: "request failed" }
 		}
 		let res: Collection[] = await resp.json();
 		return { status: true, content: res }

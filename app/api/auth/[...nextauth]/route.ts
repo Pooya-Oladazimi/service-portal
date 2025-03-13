@@ -33,11 +33,18 @@ export const authOptions = ({
       if (user) {
         token.token = user.token;
         token.username = user.username;
+        token.expiration = user.expiration;
+      }
+      if (token?.expiration && new Date(token.expiration).getTime() < Date.now()) {
+        return null;
       }
       return token;
     },
     //@ts-ignore
     async session({ session, token }) {
+      if (!token) {
+        return null;
+      }
       session.user.token = token.token as string;
       session.user.username = token.username as string;
       return session;
