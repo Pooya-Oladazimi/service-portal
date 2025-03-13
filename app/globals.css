@@ -5,6 +5,8 @@
 :root {
   --background: #F8F8F8;
   --foreground: #171717;
+  --fontFamily: Arial, Helvetica, sans-serif;
+  --siteMainColor: #445669;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +19,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--fontFamily);
   @apply overflow-x-hidden text-base;
 }
 
@@ -30,6 +32,10 @@ body {
 
 .site-content{
   @apply container grid md:grid-cols-3 sm:grid-rows-1 gap-4 min-h-screen pt-20 mx-auto md:pl-10 md:pr-10 pb-20;
+}
+
+.content-panel{
+  @apply bg-white p-4;
 }
 
 .header-1{
@@ -91,19 +97,19 @@ a{
 }
 
 input{
-  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
+  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[var(--siteMainColor)] focus:border-2;
 }
 
 .file-input{
-  @apply block w-full text-sm border border-gray-300 rounded-lg cursor-pointer p-0 file:bg-[#445669] file:text-white file:rounded-lg file:mr-3 file:py-2 file:px-4 file:border-0; 
+  @apply block w-full text-sm border border-gray-300 rounded-lg cursor-pointer p-0 file:bg-[var(--siteMainColor)] file:text-white file:rounded-lg file:mr-3 file:py-2 file:px-4 file:border-0; 
 }
 
 textarea{
-  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[#445669] focus:border-2;
+  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[var(--siteMainColor)] focus:border-2;
 }
 
 .btn{
-  @apply bg-[#445669] w-max text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2;
+  @apply bg-[var(--siteMainColor)] w-max text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2;
 }
 
 .required-label::after{
@@ -113,6 +119,14 @@ textarea{
 
 select{
   @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+
+.autocomplete-in-form input{
+  @apply placeholder:text-sm placeholder:text-[#9197A3] font-[var(--fontFamily)] pl-0;
+}
+
+.autocomplete-in-form div{
+  @apply bg-[#F9FAFB] text-sm;
 }
 
 

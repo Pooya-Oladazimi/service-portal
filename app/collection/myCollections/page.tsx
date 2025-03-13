@@ -22,9 +22,9 @@ export default async function MyCollections() {
   let collections = collectionsResp.content as Collection[];
 
   return (
-    <div className="md:col-span-3 bg-white p-4">
+    <div className="md:col-span-3 content-panel">
       <p className="header-2">My Collections</p>
-      <a href="" className="btn">Create Collection</a>
+      <a href="/collection/new/" className="btn">Create Collection</a>
       <br />
       {collections.map((col: Collection) => {
         return (

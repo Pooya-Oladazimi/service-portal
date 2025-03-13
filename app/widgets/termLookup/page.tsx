@@ -18,7 +18,11 @@ export default function TermLookup() {
       <p className="header-1">Term Lookup</p>
       <div className="grid md:grid-cols-3 grid-rows-1 gap-10">
         <div className="md:col-span-1 overflow-hidden break-words widget-box">
-          <AutoCompleteTSS setSelectedTerm={(term: AutoCompleteSelectedTermType) => { setSelectedTerm(term) }} />
+          <AutoCompleteTSS
+            setSelectedTerm={(term: AutoCompleteSelectedTermType) => { setSelectedTerm(term) }}
+            withDescription
+            singleSelect
+          />
         </div>
         <div className="md:col-span-2 widget-box">
           <MetadataWidgetTSS selectedTerm={selectedTerm} />
