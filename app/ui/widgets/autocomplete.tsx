@@ -12,20 +12,22 @@ import { AutoCompleteSelectedTermType } from './types';
 
 
 type CmpType = {
-  setSelectedTerm: (term: AutoCompleteSelectedTermType) => void,
+  setSelectedTerm: (terms: AutoCompleteSelectedTermType[]) => void,
   withDescription?: boolean,
   label?: string,
   required?: boolean,
   singleSelect?: boolean,
   className?: string,
-  placeholder?: string
+  placeholder?: string,
+  parameter?: string,
+  api?: string
 }
 
 export default function AutoCompleteTSS(props: CmpType) {
   const queryClient = new QueryClient();
 
   function handleSelection(terms: AutoCompleteSelectedTermType[]) {
-    props.setSelectedTerm(terms[0]);
+    props.setSelectedTerm(terms);
   }
 
   return (
@@ -59,17 +61,16 @@ export default function AutoCompleteTSS(props: CmpType) {
         <div className='w-full' key={"autocomplete-box"}>
           {props.label && <label htmlFor='' className={"block " + (props.required ? "required-label" : "")}>{props.label}</label>}
           <AutocompleteWidget
-            api={process.env.NEXT_PUBLIC_API_GATEWAY_ENDPOINT as string}
+            api={props.api ?? process.env.NEXT_PUBLIC_API_GATEWAY_ENDPOINT as string}
             hasShortSelectedLabel={true}
-            parameter={process.env.NEXT_PUBLIC_API_GATEWAY_DEFAULT_PARAMETERS as string}
+            parameter={props.parameter ?? process.env.NEXT_PUBLIC_API_GATEWAY_DEFAULT_PARAMETERS as string}
             placeholder={props.placeholder ?? "Search for a Concept"}
             preselected={[]}
             selectionChangedEvent={handleSelection}
             showApiSource={true}
-            ts4nfdiGateway={true}
+            ts4nfdiGateway={props.api ? false : true}
             singleSelection={props.singleSelect}
             className={props.className ?? ""}
-
           />
         </div>
       </QueryClientProvider>
