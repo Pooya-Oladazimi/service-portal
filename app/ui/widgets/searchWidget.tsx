@@ -30,9 +30,10 @@ export default function SearchResultsListWidgetTSS() {
           ]}
           parameter="classification=DataPLANT&schema=collection&fieldList=description,label,iri,ontology_name,type,short_form"
           preselected={[]}
-          query=""
+          query="*"
           targetLink=""
-          useLegacy
+          useLegacy={false}
+
         />
       </QueryClientProvider>
     </>
