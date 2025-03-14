@@ -4,6 +4,7 @@ import { Collection } from "@/app/api/actions/types";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
+import CollectionCard from "@/app/ui/collection/collectionCard";
 
 
 export default async function MyCollections() {
@@ -24,13 +25,14 @@ export default async function MyCollections() {
   return (
     <div className="md:col-span-3 bg-white p-4">
       <p className="header-2">My Collections</p>
-      <a href="" className="btn">Create Collection</a>
-      <br />
+      <a href="/collection/new/" className="btn">Create Collection</a>
       {collections.map((col: Collection) => {
         return (
-          <div>
-            {col.id}
-          </div>
+          <>
+            <div className="pt-5" key={"collections-list-container"}>
+              <CollectionCard collection={col} />
+            </div>
+          </>
         )
       })}
 
