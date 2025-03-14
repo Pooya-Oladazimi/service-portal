@@ -33,7 +33,6 @@ export default function TerminologyListWidgetTSS() {
           ]}
           parameter="collection=nfdi4health"
           useLegacy
-          responsiveBreakpoint={false}
         />
       </QueryClientProvider>
     </>
