@@ -31,8 +31,6 @@ export default function NewCollection() {
         label: formData.get("collection-title")! as string,
         terminologies: selectedTermonologies.map((terminilogy: AutoCompleteSelectedTermType) => terminilogy.ontology_name!)
       };
-      console.log(collectionData)
-      return
 
       if (selectedTermonologies.length === 0) {
         (document.getElementsByClassName('autocomplete-in-form')[0]! as HTMLDivElement).style.border = "1px solid #445669";
@@ -94,7 +92,7 @@ export default function NewCollection() {
             key={"collection-desc"}
             required
             labelText="Description"
-            name="collection-decs"
+            name="collection-desc"
             placeholder="please add a description for your collection ..."
             textSizeOptions={['Normal', 'H3', 'H4', 'H5', 'H6', 'Blockquote', 'Code']}
             wrapperId=""
