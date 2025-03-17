@@ -45,13 +45,12 @@ export default function NewCollection() {
       setLoading(true);
 
       let res = await createCollection(collectionData);
-
       if (!res.status) {
         setError(true);
       }
 
       setLoading(false);
-      window.location.href = `/collection/myCollections?created=${error}`;
+      window.location.href = `/collection/myCollections?created=${!error}`;
 
     } catch {
       return;

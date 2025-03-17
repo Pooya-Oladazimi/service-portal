@@ -5,14 +5,17 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 import CollectionCard from "@/app/ui/collection/collectionCard";
+import { ErrorAlert, SuccessAlert } from "@/app/ui/commons/snippets";
 
 
-export default async function MyCollections() {
+export default async function MyCollections({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
 
   let session = await getServerSession(authOptions);
   if (!session?.user) {
     notFound();
   }
+
+  const collectionCreated = searchParams?.created;
 
   let collectionsResp = await getUserCollectionList();
   if (!collectionsResp.status) {
@@ -24,6 +27,12 @@ export default async function MyCollections() {
 
   return (
     <div className="md:col-span-3 bg-white p-4">
+      {collectionCreated === "true" &&
+        <SuccessAlert message="Collection has been created successfully." />
+      }
+      {collectionCreated === "false" &&
+        <ErrorAlert message="Something went wrong with your collection creation. Please try later." />
+      }
       <p className="header-2">My Collections</p>
       <a href="/collection/new/" className="btn">Create Collection</a>
       {collections.map((col: Collection) => {
@@ -35,7 +44,6 @@ export default async function MyCollections() {
           </>
         )
       })}
-
     </div>
   );
 }

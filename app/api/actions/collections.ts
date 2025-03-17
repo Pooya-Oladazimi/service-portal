@@ -3,7 +3,6 @@
 import { ActionResponse, Collection } from "./types";
 import { authOptions } from "../auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
-import { format } from "path";
 
 
 export async function getUserCollectionList(): Promise<ActionResponse> {
@@ -19,7 +18,6 @@ export async function getUserCollectionList(): Promise<ActionResponse> {
 				'Authorization': `Bearer ${session.user.token}`
 			}
 		});
-
 		if (!resp.ok) {
 			return { status: false, content: "request failed" }
 		}
@@ -53,6 +51,8 @@ export async function createCollection(formData: Collection): Promise<ActionResp
 			body: JSON.stringify(formData)
 		});
 
+		//console.log("collection resp is: ", resp.status)
+		//console.log("collection resp is: ", resp.text)
 		if (!resp.ok) {
 			return { status: false, content: "request failed" }
 		}
