@@ -35,7 +35,7 @@ export function Modal(props: ModalProps) {
   return (
     <>
       <div className="modal-bg hidden" key={"modal-bg"}></div>
-      <div id={props.id} tabIndex={-1} aria-hidden="true" data-modal-backdrop="static" className="hidden overflow-y-auto overflow-x-hidden fixed top-1/4 lg:right-1/3 right-1/4 z-50 justify-center items-center" key={"modal"}>
+      <div id={props.id} tabIndex={-1} aria-hidden="true" data-modal-backdrop="static" className="hidden overflow-y-auto overflow-x-hidden fixed inset-0 flex z-50 justify-center items-center" key={"modal"}>
         <div className="relative p-4 w-full max-w-2xl max-h-full">
           <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200" key={"modal-header"}>
