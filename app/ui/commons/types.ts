@@ -31,3 +31,15 @@ export type SelectionInputProps = {
 	options: { label: string, value: string }[],
 	onSelection: (event: React.ChangeEvent<HTMLSelectElement>) => void
 }
+
+
+export type ModalButtonProps = {
+	label: string | React.ReactNode,
+	targetModalId: string
+}
+
+
+export type ModalProps = {
+	id: string,
+	title: string
+}

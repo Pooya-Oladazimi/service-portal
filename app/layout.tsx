@@ -18,14 +18,14 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <div className="grid min-h-screen">
+        <div className="grid min-h-screen" id="app-layout">
           <Header />
-          <main className="site-content">
+          <main className="site-content" key={"site-content"}>
             {children}
           </main>
           <Footer />
         </div>
-        <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
       </body>
     </html>
   );

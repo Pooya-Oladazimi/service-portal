@@ -26,7 +26,7 @@ export default async function MyCollections({ searchParams }: { searchParams: { 
   let collections = collectionsResp.content as Collection[];
 
   return (
-    <div className="md:col-span-3 bg-white p-4">
+    <div className="md:col-span-3 bg-white p-4" key={"my_collection"}>
       {collectionCreated === "true" &&
         <SuccessAlert message="Collection has been created successfully." />
       }

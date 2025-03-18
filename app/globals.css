@@ -109,7 +109,7 @@ textarea{
 }
 
 .btn{
-  @apply bg-[var(--siteMainColor)] w-max text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2;
+  @apply bg-[var(--siteMainColor)] w-max text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2;
 }
 
 .required-label::after{
@@ -129,4 +129,6 @@ select{
   @apply bg-[#F9FAFB] text-sm;
 }
 
-
+.modal-bg{
+  @apply fixed top-0 left-0 z-10 w-screen h-screen bg-black/40 backdrop-blur-md;
+}
