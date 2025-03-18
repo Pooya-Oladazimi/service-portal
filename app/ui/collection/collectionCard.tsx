@@ -3,6 +3,7 @@
 import { Collection } from "@/app/api/actions/types";
 import { TrashIcon } from "../commons/icons";
 import { ModalButton, Modal } from "../commons/modal";
+import { WarningAlert } from "../commons/snippets";
 import './styles.css';
 
 
@@ -24,7 +25,14 @@ export default function CollectionCard(props: CmpProps) {
         <p key={"collection-desc"} dangerouslySetInnerHTML={{ __html: props.collection.description }}></p>
         <p key={"collection-terminologies"}><b>Terminologies:</b> {props.collection.terminologies.join(", ")}</p>
       </div>
-      <Modal id={"delete-collection-conf-" + props.collection.id} title={"Delete Collection: " + props.collection.label} />
+      <Modal
+        id={"delete-collection-conf-" + props.collection.id}
+        title={"Delete Collection: " + props.collection.label}
+        content={<WarningAlert message="Are you sure about deleting this collection? This action is irreversible!" />}
+        actionBtn
+        actionBtnLabel="Yes, I am sure"
+        actionBtnCallback={() => { }}
+      />
     </>
   );
 }

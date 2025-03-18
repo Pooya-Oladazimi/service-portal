@@ -41,5 +41,10 @@ export type ModalButtonProps = {
 
 export type ModalProps = {
 	id: string,
-	title: string
+	title: string,
+	content: string | React.ReactNode,
+	withCloseBtn?: boolean,
+	actionBtn?: boolean,
+	actionBtnLabel?: string,
+	actionBtnCallback?: () => void
 }
