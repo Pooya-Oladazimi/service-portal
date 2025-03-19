@@ -51,13 +51,41 @@ export async function createCollection(formData: Collection): Promise<ActionResp
 			body: JSON.stringify(formData)
 		});
 
-		//console.log("collection resp is: ", resp.status)
-		//console.log("collection resp is: ", resp.text)
 		if (!resp.ok) {
 			return { status: false, content: "request failed" }
 		}
 		let res: Collection = await resp.json();
 		return { status: true, content: res }
+
+	} catch {
+		return { status: false, content: "something went wrong" }
+	}
+}
+
+
+export async function deleteCollection(collectionId: string): Promise<ActionResponse> {
+	try {
+		let session = await getServerSession(authOptions);
+		if (!session?.user?.token) {
+			return { status: false, content: "action not allowed" }
+		}
+		if (!collectionId) {
+			return { status: false, content: "mandatory fields are missing" };
+		}
+
+		let resp = await fetch((process.env.GATEWAY_BASE_URL! as string) + "/users/collections/" + collectionId, {
+			method: "DELETE",
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept': 'application/json',
+				'Authorization': `Bearer ${session.user.token}`
+			}
+		});
+		if (!resp.ok) {
+			return { status: false, content: "request failed" }
+		}
+		return { status: true, content: "deleted" }
+
 
 	} catch {
 		return { status: false, content: "something went wrong" }

@@ -4,6 +4,7 @@ import { Collection } from "@/app/api/actions/types";
 import { TrashIcon } from "../commons/icons";
 import { ModalButton, Modal } from "../commons/modal";
 import { WarningAlert } from "../commons/snippets";
+import { deleteCollection } from "@/app/api/actions/collections";
 import './styles.css';
 
 
@@ -24,7 +25,10 @@ export default function CollectionCard(props: CmpProps) {
             content={<WarningAlert message="Are you sure about deleting this collection? This action is irreversible!" />}
             actionBtn
             actionBtnLabel="Yes, I am sure"
-            actionBtnCallback={() => { }}
+            actionBtnCallback={async () => {
+              let resp = await deleteCollection(props.collection.id!);
+              window.location.href = `/collection/myCollections?deleted=${resp.status}`;
+            }}
           />
 
         </div>
