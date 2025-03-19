@@ -5,6 +5,9 @@ import { TrashIcon } from "../commons/icons";
 import { ModalButton, Modal } from "../commons/modal";
 import { WarningAlert } from "../commons/snippets";
 import { deleteCollection } from "@/app/api/actions/collections";
+import { CopyToClipboard } from "../commons/snippets";
+import { TickIcon } from "../commons/icons";
+import { useState } from "react";
 import './styles.css';
 
 
@@ -13,6 +16,10 @@ type CmpProps = {
 }
 
 export default function CollectionCard(props: CmpProps) {
+  const [idCopied, setIdCopied] = useState<boolean>(false);
+
+
+
   return (
     <div className="collection-card" key={props.collection.id}>
       <div className="grid grid-cols-10" key={"collection-card-header"}>
@@ -33,7 +40,11 @@ export default function CollectionCard(props: CmpProps) {
 
         </div>
       </div>
-      <p key={"collection-id"}>{props.collection.id}</p>
+      <div key={"label-and-copy"}>
+        <p key={"collection-id"} className="inline-block">{props.collection.id}</p>
+        {!idCopied && <CopyToClipboard textToCopy={props.collection.id!} key={"copy"} setCopyFlag={setIdCopied} />}
+        {idCopied && <TickIcon key={"check"} />}
+      </div>
       <p key={"collection-desc"} dangerouslySetInnerHTML={{ __html: props.collection.description }}></p>
       <p key={"collection-terminologies"}><b>Terminologies:</b> {props.collection.terminologies.join(", ")}</p>
     </div>
