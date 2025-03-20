@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #F8F8F8;
+  --background: #dae3ed ;
   --foreground: #171717;
   --fontFamily: Arial, Helvetica, sans-serif;
   --siteMainColor: #445669;
