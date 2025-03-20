@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
         <div className="col-span-1">
           Resources
-          <ul>
+          <ul className="dark:!bg-white">
             <li>
               <a href="https://ts4nfdi.github.io/terminology-service-suite/comp/latest/?path=/docs/overview--docs" target="_blank">
                 TSS Widgets

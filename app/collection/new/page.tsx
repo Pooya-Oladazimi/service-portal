@@ -80,7 +80,6 @@ export default function NewCollection() {
                 (document.getElementsByClassName('autocomplete-in-form')[0]! as HTMLDivElement).style.border = "";
               }}
               label="Terminologies"
-              className="autocomplete-in-form"
               placeholder="Choose your terminologies ..."
               parameter="type=ontology"
               api="https://api.terminology.tib.eu/api/"

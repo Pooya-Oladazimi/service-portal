@@ -11,5 +11,5 @@
 }
 
 .rdw-editor-main{
-  @apply !h-[400px];
+  @apply !h-[400px] dark:bg-gray-800;
 }

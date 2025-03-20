@@ -9,6 +9,7 @@ const MetadataWidget = dynamic<MetadataWidgetProps>(() =>
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AutoCompleteSelectedTermType } from './types';
+import './styles.css';
 
 type CmpProp = {
   selectedTerm: AutoCompleteSelectedTermType
@@ -56,6 +57,7 @@ export default function MetadataWidgetTSS(props: CmpProp) {
             termLink=""
             terminologyInfoTab
             useLegacy={false}
+            className='metadata-widget'
           />
         </QueryClientProvider>
       }

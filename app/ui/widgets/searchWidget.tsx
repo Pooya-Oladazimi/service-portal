@@ -9,6 +9,7 @@ const SearchResultsListWidget = dynamic<SearchResultsListWidgetProps>(() =>
   , { ssr: false }) as React.ComponentType<SearchResultsListWidgetProps>;
 
 import { QueryClient, QueryClientProvider } from "react-query";
+import './styles.css';
 
 
 export default function SearchResultsListWidgetTSS() {
@@ -33,6 +34,7 @@ export default function SearchResultsListWidgetTSS() {
           query="*"
           targetLink=""
           useLegacy={false}
+          className='search-widget'
 
         />
       </QueryClientProvider>

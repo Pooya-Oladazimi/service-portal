@@ -9,6 +9,7 @@ const AutocompleteWidget = dynamic<AutocompleteWidgetProps>(() =>
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AutoCompleteSelectedTermType } from './types';
+import './styles.css';
 
 
 type CmpType = {
@@ -58,7 +59,7 @@ export default function AutoCompleteTSS(props: CmpType) {
             <p><b>API:</b> {process.env.NEXT_PUBLIC_API_GATEWAY_ENDPOINT}</p>
           </>
         }
-        <div className='w-full' key={"autocomplete-box"}>
+        <div className='w-full autocomplete-in-form' key={"autocomplete-box"}>
           {props.label && <label htmlFor='' className={"block " + (props.required ? "required-label" : "")}>{props.label}</label>}
           <AutocompleteWidget
             api={props.api ?? process.env.NEXT_PUBLIC_API_GATEWAY_ENDPOINT as string}
@@ -70,7 +71,7 @@ export default function AutoCompleteTSS(props: CmpType) {
             showApiSource={true}
             ts4nfdiGateway={props.api ? false : true}
             singleSelection={props.singleSelect}
-            className={props.className ?? ""}
+            className={props.className ?? "" + " autocomplete-widget"}
           />
         </div>
       </QueryClientProvider>

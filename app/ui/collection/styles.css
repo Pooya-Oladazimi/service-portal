@@ -1,3 +1,3 @@
 .collection-card{
-  @apply bg-[#eaeaea] rounded border-ts4nfdi-brand-color p-4 w-3/4;
+  @apply bg-[#eaeaea] rounded border-ts4nfdi-brand-color p-4 w-3/4 dark:bg-black;
 }

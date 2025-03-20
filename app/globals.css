@@ -20,7 +20,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--fontFamily);
-  @apply overflow-x-hidden text-base;
+  @apply overflow-x-hidden text-base dark:text-white;
 }
 
 .navbar-links{
@@ -35,7 +35,7 @@ body {
 }
 
 .content-panel{
-  @apply bg-white p-4;
+  @apply bg-white p-4 dark:bg-gray-800;
 }
 
 .header-1{
@@ -61,7 +61,7 @@ body {
 }
 
 .card{
-  @apply border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
+  @apply border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2 dark:bg-gray-800;
 }
 
 p{
@@ -69,7 +69,7 @@ p{
 }
 
 a{
-  @apply pl-1 pr-1 sm:text-sm text-[#054484] font-bold;
+  @apply pl-1 pr-1 sm:text-sm text-[#054484] font-bold dark:text-blue-400;
 }
 
 .orcid-id-btn{
@@ -89,7 +89,7 @@ a{
 }
 
 .form{
-  @apply bg-[#FFFFFF] p-10;
+  @apply bg-[#FFFFFF] p-10 dark:bg-gray-900;
 }
 
 .form-input-group{
@@ -97,7 +97,7 @@ a{
 }
 
 input{
-  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[var(--siteMainColor)] focus:border-2;
+  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[var(--siteMainColor)] focus:border-2 dark:!bg-gray-800 dark:!text-white;
 }
 
 .file-input{
@@ -125,10 +125,14 @@ select{
   @apply placeholder:text-sm placeholder:text-[#9197A3] font-[var(--fontFamily)] pl-0;
 }
 
-.autocomplete-in-form div{
-  @apply bg-[#F9FAFB] text-sm;
-}
-
 .modal-bg{
   @apply fixed top-0 left-0 z-10 w-screen h-screen bg-black/40 backdrop-blur-md;
+}
+
+ul{
+  @apply dark:!bg-gray-800;
+}
+
+li{
+  @apply hover:!bg-gray-400;
 }
