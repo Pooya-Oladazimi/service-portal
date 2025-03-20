@@ -1,7 +1,7 @@
 'use server'
 
 import { ActionResponse, Collection } from "./types";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "../auth/[...nextauth]/authOptions";
 import { getServerSession } from "next-auth";
 
 

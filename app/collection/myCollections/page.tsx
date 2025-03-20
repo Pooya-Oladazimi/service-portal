@@ -1,11 +1,12 @@
 
 import { getUserCollectionList } from "@/app/api/actions/collections";
 import { Collection } from "@/app/api/actions/types";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 import CollectionCard from "@/app/ui/collection/collectionCard";
 import { CollectionListMessages } from "@/app/ui/collection/collectionListMessages";
+import { Suspense } from "react";
 
 
 export default async function MyCollections() {
@@ -27,7 +28,7 @@ export default async function MyCollections() {
 
   return (
     <div className="md:col-span-3 bg-white p-4" key={"my_collection"}>
-      <CollectionListMessages />
+      <Suspense> <CollectionListMessages /> </Suspense>
       <p className="header-2">My Collections</p>
       <a href="/collection/new/" className="btn">Create Collection</a>
       {collections.map((col: Collection) => {

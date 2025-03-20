@@ -2,7 +2,7 @@
 
 import { SuccessAlert, ErrorAlert } from "../commons/snippets";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 export function CollectionListMessages() {
@@ -12,11 +12,12 @@ export function CollectionListMessages() {
   const [collectionCreated, setCollectionCreated] = useState<string | null>(searchParams.get('created'));
   const [collectionDeleted, setCollectionDeleted] = useState<string | null>(searchParams.get('deleted'));
 
-
-  setTimeout(() => {
-    setCollectionCreated("");
-    setCollectionDeleted("");
-  }, 3000);
+  useEffect(() => {
+    setTimeout(() => {
+      setCollectionCreated("");
+      setCollectionDeleted("");
+    }, 3000);
+  }, []);
 
   return (
     <>

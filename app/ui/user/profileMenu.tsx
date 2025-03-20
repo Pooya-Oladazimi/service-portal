@@ -1,5 +1,7 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { getServerSession } from "next-auth";
+import Link from "next/link";
+import Image from "next/image";
 import './style.css';
 
 
@@ -22,7 +24,7 @@ export default async function UserProfileMenu() {
     <>
       <button type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span className="sr-only">Open user menu</span>
-        <img className="w-8 h-8 rounded-full" src="/img/blank.jpg" alt="user photo" />
+        <Image className="rounded-full" width={35} height={35} src="/img/blank.jpg" alt="user photo" />
       </button>
       <div className="z-50 hidden my-4 text-base list-none bg-gray-200 divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
         <div className="px-4 py-3">
@@ -31,13 +33,13 @@ export default async function UserProfileMenu() {
         </div>
         <ul className="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="#" className="profile-menu-item">Dashboard</a>
+            <Link href="#" className="profile-menu-item">Dashboard</Link>
           </li>
           <li>
-            <a href="/collection/myCollections/" className="profile-menu-item">My Collections</a>
+            <Link href="/collection/myCollections/" className="profile-menu-item">My Collections</Link>
           </li>
           <li>
-            <a href="/api/auth/signout" className="profile-menu-item">Sign out</a>
+            <Link href="/api/auth/signout" className="profile-menu-item">Sign out</Link>
           </li>
         </ul>
       </div>

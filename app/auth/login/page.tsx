@@ -3,11 +3,19 @@
 import { TextInput } from "@/app/ui/commons/snippets";
 import { signIn } from "next-auth/react";
 import { ErrorAlert, SuccessAlert } from "@/app/ui/commons/snippets";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 
-export default function LoginForm() {
+export default function LoginFormWrapper() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
 
   const urlParams = useSearchParams();
 
@@ -31,7 +39,7 @@ export default function LoginForm() {
         return
       }
       window.location.href = "/";
-    } catch (e) {
+    } catch {
       setInternalError(true);
     }
   }
