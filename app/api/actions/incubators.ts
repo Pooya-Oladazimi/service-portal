@@ -15,16 +15,19 @@ export async function sendIncubatorRequest(formData: NewIncubatorForm): Promise<
 		let email = formData.email;
 		let captcha = formData.captcha;
 
+		let fileIsAttached = logo && logo.size !== 0;
+
 		const acceptableMimeTypes = ["image/png", "image/jpeg", "image/svg+xml"]
-		if (!acceptableMimeTypes.includes(logo.type)) {
+		//@ts-ignore
+		if (fileIsAttached && !acceptableMimeTypes.includes(logo.type)) {
 			return { status: false, content: "file type is not accepted" };
 		}
 
-		if (!title || !desc || !logo || !email || !await captchaIsValid(captcha)) {
+		if (!title || !desc || !email || !await captchaIsValid(captcha)) {
 			return { status: false, content: "mandatory fields are missing" };
 		}
 
-		let result = await sendEmail({ subject: title, html: desc, file: logo, senderEmail: email });
+		let result = await sendEmail({ subject: title, html: desc, file: (fileIsAttached ? logo : undefined), senderEmail: email });
 
 		if (result) {
 			return { status: true, content: "sent" };

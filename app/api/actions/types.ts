@@ -14,7 +14,7 @@ export type NewIncubatorForm = {
 	title: string,
 	description: string,
 	email: string,
-	logo: File,
+	logo?: File,
 	captcha: string
 }
 

@@ -88,7 +88,7 @@ export default function AddIncubator() {
               name="logo"
               placeHolder={"Please submit a logo image for your project"}
               labelText={`Project Logo <small>(only image file: ${acceptedFileExt.join(", ")})</small>`}
-              required={true}
+              required={false}
               accept={acceptedFileExt.join(", ")}
             />
             <Captcha />
