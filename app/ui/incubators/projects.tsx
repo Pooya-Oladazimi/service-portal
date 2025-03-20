@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Project, InucbatorsStatusCmpProps } from "./types";
 import { SelectionInput } from "../commons/snippets";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 
 export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
@@ -73,7 +74,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
             <Image src={'/img/incubator_placeholder.jpg'} width={150} height={150} alt={"Add your project"} className="mx-auto"></Image>
           </div>
           <p className="header-3" key={'title'}><b>Would you like to collaborate with us as an Incubator?</b></p>
-          <a className="btn" href="/incubators/new/" key={"new-incubator-anchor"}>Send us your request</a>
+          <Link className="btn" href="/incubators/new/" key={"new-incubator-anchor"}>Send us your request</Link>
         </div>
         {
           projectsList.map((project: Project) => {
