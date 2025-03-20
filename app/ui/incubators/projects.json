@@ -1,17 +1,17 @@
 {
   "stats": {
-    "In preparation": 3,
-    "Running": 4,
-    "Requested": 3,
+    "In preparation": 0,
+    "Running": 7,
+    "Requested": 2,
     "Finished": 4,
-    "First contact": 0,
+    "First contact": 4,
     "Postponed": 1
   },
   "projects": [
     {
       "title": "TS integration for RADAR",
       "round": 1,
-      "status": "In preparation",
+      "status": "Running",
       "start": "21.02.2025",
       "end": "~",
       "description": "",
@@ -27,7 +27,7 @@
     {
       "title": "TS integration for WDCC",
       "round": 1,
-      "status": "In preparation",
+      "status": "Running",
       "start": "26.02.2025",
       "end": "~",
       "description": "",
@@ -103,7 +103,7 @@
     {
       "title": "NFDI4Cat Central Data Repository (Repo4Cat)",
       "round": 1,
-      "status": "In preparation",
+      "status": "Running",
       "start": "12.02.2025",
       "end": "13.08.2025",
       "description": "",
@@ -127,12 +127,12 @@
       "logoH": 200
     },
     {
-      "title": "Terminology Service for BERD@NFDI",
+      "title": "A terminology service via TS4NFDI for BERD@NFDI knowledge graph infrastructure ",
       "round": 0,
       "status": "Finished",
       "start": "29.05.2024",
       "end": "19.11.2024",
-      "description": "",
+      "description": "Setting up a terminology service for BERD@NFDI using the Terminology Service Suite (TSS)",
       "consortium": ["BERD@NFDI"],
       "contactPersons": [
         {
@@ -145,12 +145,12 @@
       "logoH": 200
     },
     {
-      "title": "Terminology Service for Plasma Physics",
+      "title": "Terminology service for research data management and knowledge discovery in low-temperature plasma physics",
       "round": 0,
       "status": "Finished",
       "start": "~",
       "end": "19.11.2024",
-      "description": "",
+      "description": "Provision of the Plasma Ontology via a terminology service",
       "consortium": ["NFDI4BIOIMAGE"],
       "contactPersons": [
         {
@@ -196,7 +196,7 @@
     {
       "title": "TSS widgets for DiscussData",
       "round": 1,
-      "status": "In preparation",
+      "status": "Running",
       "start": "09.10.2024",
       "end": "~",
       "description": "",
@@ -234,7 +234,7 @@
     {
       "title": "Curation workflow (DPBO)",
       "round": "-",
-      "status": "Requested",
+      "status": "First contact",
       "start": "04.09.2024",
       "end": "~",
       "description": "",
@@ -256,7 +256,7 @@
     {
       "title": "Sensor Management System",
       "round": "-",
-      "status": "Requested",
+      "status": "First contact",
       "start": "~",
       "end": "~",
       "description": "",
@@ -278,6 +278,58 @@
       "logo": "nfdi4earth.png",
       "logoW": 400,
       "logoH": 400
+    },
+    {
+      "title": "Metagenome Metadata submission Wizard",
+      "round": "-",
+      "status": "First contact",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Microbiota"],
+      "contactPersons": [
+        {
+          "person": "Kasmanas, Jonas",
+          "consortium": []
+        },
+        {
+          "person": "Santos, Anderson",
+          "consortium": []
+        }
+      ],
+      "logo": "blank.jpg"
+    },
+    {
+      "title": "Coscine",
+      "round": "-",
+      "status": "First contact",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Ing", "NFDI-MatWerk"],
+      "contactPersons": [
+        {
+          "person": "Lang, Ilona",
+          "consortium": []
+        }
+      ],
+      "logo": "blank.jpg"
+    },
+    {
+      "title": "NFDI4Health Studyhub",
+      "round": "-",
+      "status": "Requested",
+      "start": "~",
+      "end": "~",
+      "description": "",
+      "consortium": ["NFDI4Health"],
+      "contactPersons": [
+        {
+          "person": "Darms, Johannes",
+          "consortium": []
+        }
+      ],
+      "logo": "blank.jpg"
     }
 
   ]
