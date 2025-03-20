@@ -48,7 +48,7 @@ export default function AddIncubator() {
 
   return (
     <div className="md:col-span-2">
-      <p className="header-1">Send us your incubator project info</p>
+      <p className="header-1">New incubator request</p>
       {!loading &&
         <a className="btn" href="/incubators/">
           <LeftArrowIcon />

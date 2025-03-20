@@ -68,6 +68,13 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
         />
       </div>
       <div className="grid md:grid-cols-3 grid-rows-1 gap-8" key={"incubators-grid"}>
+        <div className="incubator-project-card" key={"add-project"}>
+          <div className="w-full" key={'image'}>
+            <Image src={'/img/incubator_placeholder.jpg'} width={150} height={150} alt={"Add your project"} className="mx-auto"></Image>
+          </div>
+          <p className="header-3" key={'title'}><b>Would you like to collaborate with us as an Incubator?</b></p>
+          <a className="btn" href="/incubators/new/" key={"new-incubator-anchor"}>Send us your request</a>
+        </div>
         {
           projectsList.map((project: Project) => {
             if (statusToSkip.includes(project.status)) {
@@ -97,13 +104,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
             )
           })
         }
-        <div className="incubator-project-card" key={"add-project"}>
-          <div className="w-full" key={'image'}>
-            <Image src={'/img/incubator_placeholder.jpg'} width={150} height={150} alt={"Add your project"} className="mx-auto"></Image>
-          </div>
-          <p className="header-3" key={'title'}><b>Not able to find your project?</b></p>
-          <a className="btn" href="/incubators/new/" key={"new-incubator-anchor"}>Add my incubator project</a>
-        </div>
+
       </div>
     </>
   );
