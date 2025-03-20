@@ -80,7 +80,7 @@ function LoginForm() {
             <button type="submit" className="btn mx-auto">Login</button>
           </div>
           <div className="mt-5 ml-10">
-            <a href="/auth/signup/">Not a user yet? Click and signup.</a>
+            <a href="/user/signup/">Not a user yet? Click and signup.</a>
           </div>
         </form>
       </div>

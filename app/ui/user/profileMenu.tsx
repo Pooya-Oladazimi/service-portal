@@ -33,7 +33,7 @@ export default async function UserProfileMenu() {
         </div>
         <ul className="py-2" aria-labelledby="user-menu-button">
           <li>
-            <Link href="#" className="profile-menu-item">Dashboard</Link>
+            <Link href="/user/dashboard/" className="profile-menu-item">Dashboard</Link>
           </li>
           <li>
             <Link href="/collection/myCollections/" className="profile-menu-item">My Collections</Link>
