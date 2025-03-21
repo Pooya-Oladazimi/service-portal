@@ -1,16 +1,14 @@
 import Image from "next/image";
-import { readJsonFile } from "@/app/libs/utils";
 import {
-  PeopleJsonData,
   SectionData,
   PersonData
 } from "./types";
 import { CSSProperties } from "react";
+import peopleJson from './people.json';
 
 
 export default async function AboutPeople() {
   const [imgW, imgH] = [150, 150];
-  const peopleJson = await readJsonFile('app/ui/about/people.json') as PeopleJsonData;
   const imageContainerSyle = {
     position: "relative",
     width: `${imgW}px`,
