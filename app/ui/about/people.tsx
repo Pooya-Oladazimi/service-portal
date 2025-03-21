@@ -10,7 +10,7 @@ import { CSSProperties } from "react";
 
 export default async function AboutPeople() {
   const [imgW, imgH] = [150, 150];
-  const peopleJson = await readJsonFile('/app/ui/about/people.json') as PeopleJsonData;
+  const peopleJson = await readJsonFile('app/ui/about/people.json') as PeopleJsonData;
   const imageContainerSyle = {
     position: "relative",
     width: `${imgW}px`,

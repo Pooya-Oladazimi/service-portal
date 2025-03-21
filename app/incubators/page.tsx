@@ -8,7 +8,7 @@ import { IncubatorProjectList } from '../ui/incubators/types';
 export default async function Incubators() {
 
 
-  const projectsJson = await readJsonFile('/app/ui/incubators/projects.json') as IncubatorProjectList;
+  const projectsJson = await readJsonFile('app/ui/incubators/projects.json') as IncubatorProjectList;
 
   return (
     <div className="md:col-span-3 w-full">
