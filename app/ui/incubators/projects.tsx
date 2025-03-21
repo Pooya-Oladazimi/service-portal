@@ -11,7 +11,7 @@ export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
 
   const [selectedStatus, setSelectedStatus] = useState<string>("");
   const [selectedConsortium, setSelectedConsortium] = useState<string>("");
-  const [projectsList, setProjectsList] = useState<Project[]>(props.projectsJson.projects);
+  const [projectsList, setProjectsList] = useState<Project[]>(props.projectsJson?.projects ?? []);
 
   const statusToSkip = ['Requested', 'First contact', 'Postponed'];
 

@@ -8,6 +8,6 @@ export async function readJsonFile(filePath: string) {
     return data;
   } catch (e) {
     console.error("Error reading JSON file:", e);
-    return null;
+    return [];
   }
 }
