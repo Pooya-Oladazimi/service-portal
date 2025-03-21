@@ -7,7 +7,6 @@ import { signOut } from "next-auth/react";
 export default function Logout() {
 
   function logout() {
-    console.log("ffef")
     signOut({ callbackUrl: "/" });
   }
 
