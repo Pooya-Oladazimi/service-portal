@@ -29,6 +29,6 @@ export type IncubatorProjectList = {
   }
 }
 
-export type InucbatorsStatusCmpProps = {
+export type IncubatorsStatusCmpProps = {
   projectsJson: IncubatorProjectList
 }

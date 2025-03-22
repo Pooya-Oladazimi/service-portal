@@ -1,7 +1,7 @@
-import { InucbatorsStatusCmpProps, ProjectStatus } from "./types";
+import { IncubatorsStatusCmpProps, ProjectStatus } from "./types";
 
 
-export default function IncubatorsStatus(props: InucbatorsStatusCmpProps) {
+export default function IncubatorsStatus(props: IncubatorsStatusCmpProps) {
   const stats = props.projectsJson?.stats ?? {};
   const statusToSkip = ['Requested', 'First contact', 'Postponed'];
 

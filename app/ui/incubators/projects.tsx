@@ -1,13 +1,13 @@
 'use client'
 
 import Image from "next/image";
-import { Project, InucbatorsStatusCmpProps } from "./types";
+import { Project, IncubatorsStatusCmpProps } from "./types";
 import { SelectionInput } from "../commons/snippets";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 
-export default function IncubatorProjects(props: InucbatorsStatusCmpProps) {
+export default function IncubatorProjects(props: IncubatorsStatusCmpProps) {
 
   const [selectedStatus, setSelectedStatus] = useState<string>("");
   const [selectedConsortium, setSelectedConsortium] = useState<string>("");
