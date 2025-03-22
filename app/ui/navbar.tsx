@@ -20,7 +20,7 @@ export default function NavBarOptions() {
       <div className="flex flex-1 items-center sm:items-stretch justify-start">
         <div className="flex shrink-0 items-center">
           <Link href={'/'}>
-            <Image width={50} height={50} alt="logo" src={'/logo.png'} />
+            <Image width={180} height={50} alt="logo" src={'/TS4NFDI-small-white.svg'} />
           </Link>
         </div>
         <div className="hidden sm:ml-6 sm:block">
