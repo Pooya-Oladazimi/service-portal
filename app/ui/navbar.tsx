@@ -38,7 +38,7 @@ export default function NavBarOptions() {
             <Link
               href={'/incubators'}
               className={"navbar-links " + (path.includes("/incubators") ? "navbar-link-active" : "")}
-            >Incubators Projects
+            >Incubator Projects
             </Link>
 
             <Link
@@ -72,7 +72,7 @@ export function NavBarOptionsMobile() {
         <div className="space-y-1 px-2 pt-2 pb-3">
           <Link href={'/'} className="navbar-links">Home</Link>
           <Link href={'/widgets'} className="navbar-links">Lookup Service</Link>
-          <Link href={'/incubators'} className="navbar-links">Incubators Projects</Link>
+          <Link href={'/incubators'} className="navbar-links">Incubator Projects</Link>
           <Link href={'/documentation'} className="navbar-links">Documentation</Link>
           <Link href={'/about'} className="navbar-links">About</Link>
           <Link href={'/help'} className="navbar-links">Contact</Link>

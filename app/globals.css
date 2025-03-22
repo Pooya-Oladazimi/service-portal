@@ -84,6 +84,10 @@ a{
   @apply badge bg-yellow-300;
 }
 
+.cycle-badge{
+  @apply badge bg-green-500;
+}
+
 .name-badge{
   @apply badge bg-blue-950 !text-white;
 }
@@ -101,7 +105,7 @@ input{
 }
 
 .file-input{
-  @apply block w-full text-sm border border-gray-300 rounded-lg cursor-pointer p-0 file:bg-[var(--siteMainColor)] file:text-white file:rounded-lg file:mr-3 file:py-2 file:px-4 file:border-0; 
+  @apply block w-full text-sm border border-gray-300 rounded-lg cursor-pointer p-0 file:bg-[var(--siteMainColor)] file:text-white file:rounded-lg file:mr-3 file:py-2 file:px-4 file:border-0;
 }
 
 textarea{
