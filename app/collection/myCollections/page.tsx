@@ -11,16 +11,16 @@ import { Suspense } from "react";
 
 export default async function MyCollections() {
 
-  let session = await getServerSession(authOptions);
-  if (!session?.user) {
-    notFound();
-  }
+  //let session = await getServerSession(authOptions);
+  //if (!session?.user) {
+  //  notFound();
+  //}
 
 
   let collectionsResp = await getUserCollectionList();
   if (!collectionsResp.status) {
     //throw Error(collectionsResp.content);
-    notFound();
+    return "";
   }
 
   let collections = collectionsResp.content as Collection[];
