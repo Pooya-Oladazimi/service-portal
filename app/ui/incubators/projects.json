@@ -9,12 +9,17 @@
   },
   "projects": [
     {
-      "title": "TS integration for RADAR",
-      "round": 1,
+      "title": "RADAR",
+      "cycle": 1,
       "status": "Running",
       "start": "21.02.2025",
       "end": "~",
-      "description": "",
+      "description": "RADAR is a multidisciplinary research data repository operated by FIZ Karlsruhe, offering institutions a secure and user-friendly platform to archive, manage, let peer review and publish research data. With the cost-free and low-threshold publication services RADAR4Chem (for chemistry) and RADAR4Culture (for cultural heritage and humanities), FIZ Karlsruhe provides tailored solutions for discipline-specific research needs based on RADAR and developed in the framework of the NFDI.",
+      "goals": [
+        "Expand metadata editor: Implement a type-ahead selection in the keyword field for standardized term suggestions via the TS4NFDI Gateway API.",
+        "Enhance landing page: Link keywords directly to their respective standard terms via the TS4NFDI widgets.",
+        "Improve data discoverability: Enable \"Keyword\" as additional filter option in the data publication list."
+      ],
       "consortium": ["NFDI4Chem", "NFDI4Culture", "NFDI4Memory"],
       "contactPersons": [
         {
@@ -22,15 +27,18 @@
           "consortium": []
         }
       ],
-      "logo": "radar.png"
+      "logo": "radar.svg",
+      "logoW": 300,
+      "logoH": 300
     },
     {
-      "title": "TS integration for WDCC",
-      "round": 1,
+      "title": "WDCC - World Data Center for Climate",
+      "cycle": 1,
       "status": "Running",
       "start": "26.02.2025",
       "end": "~",
-      "description": "",
+      "description": "The WDCC has the mission to archive, disseminate and publish Earth System model data and related data products to support the international climate research community. The WDCC is a discipline specific repository providing active preservation for research only. Therefore WDCC is using common metadata standards and is recommending the usage of community data standards like the Climate Forecast (CF) Conventions. The WDCC is certified by Core Trust Seal (CTS) and an accredited regular member of the World Data System. WDCC is following the FAIR principles - all metadata is openly accessible, the access to the data is free of charge. The WDCC is hosted by the German Climate Computing Center (Deutsches Klimarechenzentrum - DKRZ) in Hamburg.",
+      "goals": ["Integration of the NERC Vocabulary Serviceto the API Gateway"],
       "consortium": ["NFDI4Earth"],
       "contactPersons": [
         {
@@ -42,17 +50,18 @@
           "consortium": []
         }
       ],
-      "logo": "nfdi4earth.png",
-      "logoW": 400,
-      "logoH": 400
+      "logo": "wdcc.png",
+      "logoW": 300,
+      "logoH": 300
     },
     {
-      "title": "nmrXiv TSS integration",
-      "round": 0,
+      "title": "nmrXiv",
+      "cycle": 0,
       "status": "Running",
       "start": "~",
       "end": "~",
-      "description": "",
+      "description": "While several attempts have been made recently to create NMR databases from literature, they fall short of meeting the needs of modern chemical and related scientific communities. nmrXiv is the first open archive to preserve NMR data in its original instrument format, while offering tools for their analysis and promoting open data and standards for long-term sustainability and accessibility.\n\nnmrXiv revolutionizes NMR data management and archival by providing an open-access, standardized, and user-friendly platform. Our platform is public and interoperable to ensure that NMR data is freely accessible, transparent, and reproducible. We support standardized data formats to enhance consistency and facilitate data comparison and integration. ",
+      "goals": ["Integration of TSS widgets"],
       "consortium": ["NFDI4Chem"],
       "contactPersons": [
         {
@@ -60,15 +69,18 @@
           "consortium": []
         }
       ],
-      "logo": "nfdi4chem.jpg"
+      "logo": "nmrxiv_repository.png",
+      "logoW": 400,
+      "logoH": 200
     },
     {
-      "title": "ChEBI TSS integration",
-      "round": 1,
+      "title": "ChEBI - Chemical Entities of Biological Interest",
+      "cycle": 1,
       "status": "Running",
-      "start": "~",
+      "start": "10.02.2025",
       "end": "~",
-      "description": "",
+      "description": "Chemical Entities of Biological Interest (ChEBI) is a freely available dictionary of molecular entities focused on ‘small’ chemical compounds. The term ‘molecular entity’ refers to any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer, etc., identifiable as a separately distinguishable entity. The molecular entities in question are either products of nature or synthetic products used to intervene in the processes of living organisms.\n\nChEBI incorporates an ontological classification, whereby the relationships between molecular entities or classes of entities and their parents and/or children are specified.",
+      "goals": ["Integration of the hierarchy widget for visualization and as navigation", "Visualization of the path via the graph widget"],
       "consortium": [],
       "contactPersons": [
         {
@@ -82,15 +94,17 @@
       ],
       "logo": "chebi.png",
       "logoW": 400,
-      "logoH": 400
+      "logoH": 400,
+      "activityPage": "https://wwwdev.ebi.ac.uk/chebi/alpha/CHEBI:24431"
     },
     {
-      "title": "Coconut TSS integration",
-      "round": 0,
+      "title": "Coconut",
+      "cycle": 0,
       "status": "Running",
       "start": "~",
       "end": "~",
-      "description": "",
+      "description": "A comprehensive platform facilitating natural product research by providing data, tools, and services for deposition, curation, and reuse. It aims to provide researchers, scientists, and enthusiasts with comprehensive and easily accessible data on a wide variety of natural compounds. The database includes detailed information on the chemical structures, literature references and sources of these compounds, facilitating research and discovery in natural products.",
+      "goals": ["Integration of TSS widgets"],
       "consortium": ["NFDI4Chem"],
       "contactPersons": [
         {
@@ -98,15 +112,18 @@
           "consortium": []
         }
       ],
-      "logo": "nfdi4chem.jpg"
+      "logo": "coconut.png",
+      "logoW": 400,
+      "logoH": 400
     },
     {
       "title": "NFDI4Cat Central Data Repository (Repo4Cat)",
-      "round": 1,
+      "cycle": 1,
       "status": "Running",
       "start": "12.02.2025",
       "end": "13.08.2025",
-      "description": "",
+      "description": "NFDI4Cat Central Data Repository (Repo4Cat) is a platform dedicated to facilitating the storage, organization, and sharing of research data from catalysis science. Repo4Cat is part of NFDI4Cat. NFDI4Cat is a community-driven and user-oriented initiative to secure the digital future of catalysis",
+      "goals": ["Setup a Skosmos terminology system", "Provide the skos-based Voc4Cat vocabulary via API", "Integration of Voc4Cat to Repo4Cat via Dataverse External Vocabulary Management"],
       "consortium": ["NFDI4Cat"],
       "contactPersons": [
         {
@@ -127,12 +144,13 @@
       "logoH": 200
     },
     {
-      "title": "A terminology service via TS4NFDI for BERD@NFDI knowledge graph infrastructure ",
-      "round": 0,
+      "title": "BERD Terminology Service",
+      "cycle": 0,
       "status": "Finished",
       "start": "29.05.2024",
       "end": "19.11.2024",
-      "description": "Setting up a terminology service for BERD@NFDI using the Terminology Service Suite (TSS)",
+      "description": "BERD@NFDI is dedicated to establishing a research data infrastructure transforming the management of Business, Economic, and Related Data. Our mission is to empower researchers of the social sciences with the tools and services needed to harness the full potential of unstructured data, such as images, videos, audio, and text files. BERD Terminology Service provides a single point of access to terminologies and ontologies from Business, Economics and Related fields.",
+      "goals": ["Setting up a terminology service for BERD@NFDI using the Terminology Service Suite (TSS)", "Provision of BERD related terminlogies"],
       "consortium": ["BERD@NFDI"],
       "contactPersons": [
         {
@@ -142,15 +160,18 @@
       ],
       "logo": "berd.png",
       "logoW": 300,
-      "logoH": 200
+      "logoH": 200,
+      "activityPage": "https://ts.berd-nfdi.de/",
+      "publications": ["https://doi.org/10.5281/zenodo.14230727"]
     },
     {
-      "title": "Terminology service for research data management and knowledge discovery in low-temperature plasma physics",
-      "round": 0,
+      "title": "Terminology service for Plasma-MDS",
+      "cycle": 0,
       "status": "Finished",
       "start": "~",
       "end": "19.11.2024",
-      "description": "Provision of the Plasma Ontology via a terminology service",
+      "description": "The plasma metadata schema (Plasma-MDS) aims to support the standardized documentation of research data in the field of plasma physics. In accordance with typical plasma processes and applications, the schema contains metadata fields to collect annotations about plasma source, plasma medium, and plasma target. Furthermore, metadata for the respectively applied diagnostic and modelling/simulation methods are collected. Finally, resource metadata fields are included to describe the individual digital objects belonging to the dataset. ",
+      "goals": ["Provision of the Plasma-MDS ontology in a selfhosted terminology service"],
       "consortium": ["NFDI4BIOIMAGE"],
       "contactPersons": [
         {
@@ -158,30 +179,35 @@
           "consortium": []
         }
       ],
-      "logo": "bioimage.jpeg",
-      "logoW": 300,
-      "logoH": 300
+      "logo": "plasma-mds.png",
+      "logoW": 200,
+      "logoH": 200,
+      "activityPage": "https://ols.plasma-mds.org/",
+      "publications": ["https://doi.org/10.5281/zenodo.14412030"]
     },
     {
-      "title": "preVIEW TSS integration",
-      "round": 0,
+      "title": "preVIEW",
+      "cycle": 0,
       "status": "Finished",
       "start": "~",
       "end": "~",
-      "description": "",
+      "description": "During the current COVID-19 pandemic, the rapid availability of profound information is crucial in order to derive information about diagnosis, disease trajectory, treatment or to adapt the rules of conduct in public. The increased importance of preprints for COVID-19 research initiated the design of the preprint search engine preVIEW. Conceptually, it is a lightweight semantic search engine focusing on easy inclusion of specialized COVID-19 textual collections and provides a user friendly web interface for semantic information retrieval. In order to support semantic search functionality, we integrated a text mining workflow for indexing with relevant terminologies. Currently, diseases, human genes and SARS-CoV-2 proteins are annotated, and more will be added in future. The system integrates collections from several different preprint servers that are used in the biomedical domain to publish non-peer-reviewed work, thereby enabling one central access point for the users. In addition, our service offers facet searching, export functionality and an API access.",
+      "goals": ["Using terminologies of SemLookP to annotate and search preprints", "Provide information about terms via the TSS metadata widget", "Use the title widget as a facet"],
       "consortium": ["NFDI4Health"],
       "contactPersons": [],
-      "logo": "nfdi4health.png",
+      "logo": "preVIEW.svg",
       "logoW": 300,
-      "logoH": 300
+      "logoH": 300,
+      "activityPage": "https://preview.zbmed.de/"
     },
     {
-      "title": "Metadata Annotation Workbench TSS Integration",
-      "round": 0,
+      "title": "Metadata Annotation Workbench",
+      "cycle": 0,
       "status": "Finished",
       "start": "~",
       "end": "~",
-      "description": "",
+      "description": "The Metadata Annotation Workbench is developed in the NFDI4Health project. The service aims to assist researchers with semantic annotation of data dictionaries, questionnaires or other data collection instruments.",
+      "goals": ["Using terminologies of SemLookP as a source for annotation", "Provide information about terms via the TSS metadata widget"],
       "consortium": ["NFDI4Health"],
       "contactPersons": [
         {
@@ -191,15 +217,17 @@
       ],
       "logo": "nfdi4health.png",
       "logoW": 300,
-      "logoH": 300
+      "logoH": 300,
+      "activityPage": "https://mda.nfdi4health.de/"
     },
     {
-      "title": "TSS widgets for DiscussData",
-      "round": 1,
+      "title": "Discuss Data",
+      "cycle": 1,
       "status": "Running",
-      "start": "09.10.2024",
+      "start": "20.02.2025",
       "end": "~",
-      "description": "",
+      "description": "Discuss Data (www.discuss-data.net) is an open repository for storing, sharing and discussing research data on Eastern Europe, South Caucasus and Central Asia. The platform, launched in September 2020, is funded by the German Research Foundation (DFG) and operated by the Research Centre for East European Studies at the University of Bremen (FSO) and the Göttingen State and University Library (SUB). Discuss Data goes beyond ordinary repositories and offers an interactive online platform for the discussion and quality assessment of research data. Our aim is to create a space for academic communication and for the community-specific publication, curation, annotation and discussion of research data on Eastern Europe, South Caucasus and Central Asia.\n",
+      "goals": ["Setting up a selfhosted terminology service based on OLS", "Adding this TS as backend source to the TS4NFDI API Gateway", "Provision of collection(s) via API Gateway", "Integration of TSS widgets"],
       "consortium": ["Text+"],
       "contactPersons": [
         {
@@ -211,15 +239,18 @@
           "consortium": []
         }
       ],
-      "logo": "textplus.png"
+      "logo": "discuss-data.svg",
+      "logoW": 400,
+      "logoH": 400
     },
     {
       "title": "Open Energy Platform",
-      "round": 2,
+      "cycle": 2,
       "status": "Requested",
       "start": "~",
       "end": "~",
       "description": "",
+      "goals": [],
       "consortium": ["NFDI4Energy"],
       "contactPersons": [
         {
@@ -232,60 +263,13 @@
       "logoH": 300
     },
     {
-      "title": "Curation workflow (DPBO)",
-      "round": "-",
-      "status": "First contact",
-      "start": "04.09.2024",
-      "end": "~",
-      "description": "",
-      "consortium": ["DataPLANT"],
-      "contactPersons": [
-        {
-          "person": "Kranz, Angela",
-          "consortium": []
-        },
-        {
-          "person": "Dörpholz, Hannah",
-          "consortium": []
-        }
-      ],
-      "logo": "dataplant.png",
-      "logoW": 200,
-      "logoH": 200
-    },
-    {
-      "title": "Sensor Management System",
-      "round": "-",
-      "status": "First contact",
-      "start": "~",
-      "end": "~",
-      "description": "",
-      "consortium": ["NFDI4Earth"],
-      "contactPersons": [
-        {
-          "person": "Brinckmann, Nils",
-          "consortium": []
-        },
-        {
-          "person": "Mühlbauer, Felix",
-          "consortium": []
-        },
-        {
-          "person": "Hanisch, Marc",
-          "consortium": []
-        }
-      ],
-      "logo": "nfdi4earth.png",
-      "logoW": 400,
-      "logoH": 400
-    },
-    {
       "title": "Metagenome Metadata submission Wizard",
-      "round": "-",
+      "cycle": "-",
       "status": "First contact",
       "start": "~",
       "end": "~",
       "description": "",
+      "goals": [],
       "consortium": ["NFDI4Microbiota"],
       "contactPersons": [
         {
@@ -301,11 +285,12 @@
     },
     {
       "title": "Coscine",
-      "round": "-",
+      "cycle": "-",
       "status": "First contact",
       "start": "~",
       "end": "~",
       "description": "",
+      "goals": [],
       "consortium": ["NFDI4Ing", "NFDI-MatWerk"],
       "contactPersons": [
         {
@@ -317,11 +302,12 @@
     },
     {
       "title": "NFDI4Health Studyhub",
-      "round": "-",
+      "cycle": "-",
       "status": "Requested",
       "start": "~",
       "end": "~",
       "description": "",
+      "goals": [],
       "consortium": ["NFDI4Health"],
       "contactPersons": [
         {
