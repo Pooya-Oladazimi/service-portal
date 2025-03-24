@@ -1,32 +1,32 @@
-.widget-box{
+.widget-box {
   @apply border-solid border-2 p-5 bg-gray-100 dark:!bg-gray-800;
 }
 
-.function-big-btn{
+.function-big-btn {
   @apply p-7 rounded-lg text-white bg-ts4nfdi-brand-color text-center;
 }
 
-.metadata-widget .euiTab{
+.metadata-widget .euiTab {
   @apply dark:bg-white;
 }
 
-.metadata-widget .euiPanel .euiText{
+.metadata-widget .euiPanel .euiText {
   @apply dark:bg-gray-800;
 }
 
-.metada-widget .euiTab__content{
+.metada-widget .euiTab__content {
   @apply dark:!bg-white;
 }
 
-.metadata-widget .euiPanel{
+.metadata-widget .euiPanel {
   @apply dark:bg-gray-800 dark:border-white dark:border;
 }
 
-.autocomplete-widget .euiComboBox__inputWrap{
+.autocomplete-widget .euiComboBox__inputWrap {
   @apply bg-[#F9FAFB] text-sm dark:!bg-gray-800 dark:text-white;
 }
 
-.autocomplete-widget .euiFormControlLayout__childrenWrapper{
+.autocomplete-widget .euiFormControlLayout__childrenWrapper {
   @apply dark:!border-white dark:border;
 }
 
@@ -38,22 +38,28 @@
   @apply !p-0;
 }
 
-.search-widget .euiFormControlLayout__childrenWrapper .euiComboBox__inputWrap{
+.search-widget .euiFormControlLayout__childrenWrapper .euiComboBox__inputWrap {
   @apply bg-[#F9FAFB] text-sm dark:!bg-gray-800 dark:text-white dark:!border dark:!border-white;
 }
 
-.search-widget .euiComboBox__inputWrap{
+.search-widget .euiComboBox__inputWrap {
   @apply dark:!border;
 }
 
-.search-widget .euiPanel{
- @apply dark:bg-gray-800 dark:border dark:border-white; 
+.search-widget .euiPanel {
+  @apply dark:bg-gray-800 dark:border dark:border-white;
 }
 
-.search-widget h2, .euiButtonEmpty__text, .euiFormLabel{
+.search-widget h2,
+.euiButtonEmpty__text,
+.euiFormLabel {
   @apply dark:!text-white;
 }
 
-.css-h4uroo-euiComboBoxInputWrapper-plainText{
+.css-h4uroo-euiComboBoxInputWrapper-plainText {
   border: solid !important;
+}
+
+.resources-widget .euiScreenReaderOnly {
+  @apply hidden;
 }
