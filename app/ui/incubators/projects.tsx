@@ -73,7 +73,7 @@ export default function IncubatorProjects(props: IncubatorsStatusCmpProps) {
         {
           projectsList.map((project: Project) => {
             if (!statusToSkip.includes(project.status)) {
-              return (<ProjectCard incubator={project} />)
+              return (<ProjectCard incubator={project} key={project.title} />)
             }
           })
         }

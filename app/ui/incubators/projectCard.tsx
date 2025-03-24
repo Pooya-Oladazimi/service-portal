@@ -60,10 +60,10 @@ export default function ProjectCard(props: { incubator: Project }) {
               <p className="header-4" >Publications</p>
               <ul key={project.publications.join("-")}>
                 {
-                  project.publications.map((publication) => {
+                  project.publications.map((publication: string) => {
                     return (
-                      <li className="list-disc ml-6 text-justify mb-2 hover:underline">
-                        <a className="" href={publication} target={"_blank"} key={publication}>{publication}</a>
+                      <li className="list-disc ml-6 text-justify mb-2 hover:underline" key={publication}>
+                        <a className="" href={publication} target={"_blank"}>{publication}</a>
                       </li>
                     )
                   })
@@ -73,11 +73,10 @@ export default function ProjectCard(props: { incubator: Project }) {
           )
         }
         {
-          project.activityPage !== undefined && (
-            <div>
-              <a className="btn float-right mt-5" href={project.activityPage} target={"_blank"} >Activity Page</a>
-            </div>
-          )
+          project.activityPage !== undefined &&
+          <div>
+            <a className="btn float-right mt-5" href={project.activityPage} target={"_blank"} >Activity Page</a>
+          </div>
         }
       </div>
     </>
