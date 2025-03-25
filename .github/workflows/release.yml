@@ -11,6 +11,7 @@ env:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    environment: release 
     permissions:
       contents: read
       packages: write
@@ -42,7 +43,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           secrets: |
-            "npm_token=${{ secrets.NPM_TOKEN }}"
+            npm_token=${{ secrets.NPM_TOKEN }}
       
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2
