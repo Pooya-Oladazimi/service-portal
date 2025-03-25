@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN --mount=type=secret,id=npm_token &&\ 
+RUN --mount=type=secret,id=npm_token \ 
   echo "//npm.pkg.github.com/:_authToken='$(cat /run/secrets/npm_token)'" > "/app/.npmrc" &&\
   echo "@ts4nfdi:registry=https://npm.pkg.github.com" >> "/app/.npmrc"
 
