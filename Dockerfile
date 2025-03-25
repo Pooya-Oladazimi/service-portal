@@ -1,14 +1,10 @@
 FROM node:18-alpine AS builder
 
-ARG NPM_TOKEN
-
-ENV NPM_TOKEN=${NPM_TOKEN}
-
 WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN echo "//npm.pkg.github.com/:_authToken=$NPM_TOKEN" > "/app/.npmrc" &&\
+RUN --mount=type=secret,id=npm_token echo "//npm.pkg.github.com/:_authToken='$(cat /run/secrets/npm_token)'" > "/app/.npmrc" &&\
   echo "@ts4nfdi:registry=https://npm.pkg.github.com" >> "/app/.npmrc"
 
 RUN npm install --force
