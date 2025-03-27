@@ -1,93 +1,87 @@
 'use server'
 
 import { ActionResponse, Collection } from "./types";
-import { authOptions } from "../auth/[...nextauth]/authOptions";
-import { getServerSession } from "next-auth";
+import { getUserToken } from "@/app/libs/auth";
+import { getHttpHeaderForGateway } from "@/app/libs/server_utils";
+import {
+	ACTION_NOT_ALLOWED_MESSAGE,
+	REQUEST_FAILED_MESSAGE,
+	SERVER_ERROR_MESSAGE,
+	MANDATORY_FIELDS_MISSING_MESSAGE
+} from "@/app/libs/responseStrings";
 
 
 export async function getUserCollectionList(): Promise<ActionResponse> {
 	try {
-		let session = await getServerSession(authOptions);
-		if (!session?.user?.token) {
-			return { status: false, content: "action not allowed" }
+		let token = await getUserToken();
+		if (!token) {
+			return { status: false, content: ACTION_NOT_ALLOWED_MESSAGE }
 		}
 		let resp = await fetch((process.env.GATEWAY_BASE_URL! as string) + "/users/collections/", {
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
-				'Authorization': `Bearer ${session.user.token}`
-			}
+			headers: await getHttpHeaderForGateway(token)
 		});
 		if (!resp.ok) {
-			return { status: false, content: "request failed" }
+			return { status: false, content: REQUEST_FAILED_MESSAGE }
 		}
 		let res: Collection[] = await resp.json();
 		return { status: true, content: res }
 
 	} catch {
-		return { status: false, content: "something went wrong" }
+		return { status: false, content: SERVER_ERROR_MESSAGE }
 	}
 }
 
 
 export async function createCollection(formData: Collection): Promise<ActionResponse> {
 	try {
-		let session = await getServerSession(authOptions);
-		if (!session?.user?.token) {
-			return { status: false, content: "action not allowed" }
+		let token = await getUserToken();
+		if (!token) {
+			return { status: false, content: ACTION_NOT_ALLOWED_MESSAGE }
 		}
 
 		if (!formData.label || !formData.description || !formData.terminologies || formData.terminologies.length === 0) {
-			return { status: false, content: "mandatory fields are missing" };
+			return { status: false, content: MANDATORY_FIELDS_MISSING_MESSAGE };
 		}
 
 		let resp = await fetch((process.env.GATEWAY_BASE_URL! as string) + "/users/collections/", {
 			method: "POST",
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
-				'Authorization': `Bearer ${session.user.token}`
-			},
+			headers: await getHttpHeaderForGateway(token),
 			body: JSON.stringify(formData)
 		});
 
 		if (!resp.ok) {
-			return { status: false, content: "request failed" }
+			return { status: false, content: REQUEST_FAILED_MESSAGE }
 		}
 		let res: Collection = await resp.json();
 		return { status: true, content: res }
 
 	} catch {
-		return { status: false, content: "something went wrong" }
+		return { status: false, content: SERVER_ERROR_MESSAGE }
 	}
 }
 
 
 export async function deleteCollection(collectionId: string): Promise<ActionResponse> {
 	try {
-		let session = await getServerSession(authOptions);
-		if (!session?.user?.token) {
-			return { status: false, content: "action not allowed" }
+		let token = await getUserToken();
+		if (!token) {
+			return { status: false, content: ACTION_NOT_ALLOWED_MESSAGE }
 		}
 		if (!collectionId) {
-			return { status: false, content: "mandatory fields are missing" };
+			return { status: false, content: MANDATORY_FIELDS_MISSING_MESSAGE };
 		}
 
 		let resp = await fetch((process.env.GATEWAY_BASE_URL! as string) + "/users/collections/" + collectionId, {
 			method: "DELETE",
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
-				'Authorization': `Bearer ${session.user.token}`
-			}
+			headers: await getHttpHeaderForGateway(token),
 		});
 		if (!resp.ok) {
-			return { status: false, content: "request failed" }
+			return { status: false, content: REQUEST_FAILED_MESSAGE }
 		}
 		return { status: true, content: "deleted" }
 
 
 	} catch {
-		return { status: false, content: "something went wrong" }
+		return { status: false, content: SERVER_ERROR_MESSAGE }
 	}
 }
