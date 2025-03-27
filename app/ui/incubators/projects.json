@@ -122,7 +122,7 @@
       "status": "Running",
       "start": "12.02.2025",
       "end": "13.08.2025",
-      "description": "NFDI4Cat Central Data Repository (Repo4Cat) is a platform dedicated to facilitating the storage, organization, and sharing of research data from catalysis science. Repo4Cat is part of NFDI4Cat. NFDI4Cat is a community-driven and user-oriented initiative to secure the digital future of catalysis",
+      "description": "NFDI4Cat is a community-driven and user-oriented initiative to secure the digital future of catalysis. NFDI4Cat has set up a data repository “Repo4Cat” based on the Dataverse platform (https://repository.nfdi4cat.org/). Due to the lack of catalysis-specific vocabularies and ontologies, NFDI4Cat has also created a community-managed SKOS vocabulary “Voc4Cat” (https://nfdi4cat.github.io/voc4cat/) to provide machine readable term definitions to be used for data annotation and in metadata schemas. Together with TS4NFDI NFDI4Cat wants to provide a better vocabulary  browsing and search experience by serving Voc4Cat via SKOSMOS, a terminology browsing tool specifically optimized for SKOS vocabularies. Moreover, we want to integrate Voc4Cat annotation-widgets in the Repo4Cat data sharing platform in order to improve the metadata entry and interoperability.\n",
       "goals": ["Setup a Skosmos terminology system", "Provide the skos-based Voc4Cat vocabulary via API", "Integration of Voc4Cat to Repo4Cat via Dataverse External Vocabulary Management"],
       "consortium": ["NFDI4Cat"],
       "contactPersons": [
@@ -170,8 +170,8 @@
       "status": "Finished",
       "start": "~",
       "end": "19.11.2024",
-      "description": "The plasma metadata schema (Plasma-MDS) aims to support the standardized documentation of research data in the field of plasma physics. In accordance with typical plasma processes and applications, the schema contains metadata fields to collect annotations about plasma source, plasma medium, and plasma target. Furthermore, metadata for the respectively applied diagnostic and modelling/simulation methods are collected. Finally, resource metadata fields are included to describe the individual digital objects belonging to the dataset. ",
-      "goals": ["Provision of the Plasma-MDS ontology in a selfhosted terminology service"],
+      "description": "The plasma ontology (Plasma-O) is a domain-specific ontology for low-temperature plasma science and technology. It aims to support the standardized documentation and annotation of data and information in this field. The ontology contains classes and properties for the entities which are relevant in typical plasma studies, such as plasma generating devices, media, materials and diagnostic methods.",
+      "goals": ["Provision of Plasma-O in a self-hosted terminology service"],
       "consortium": ["NFDI4BIOIMAGE"],
       "contactPersons": [
         {
@@ -179,7 +179,7 @@
           "consortium": []
         }
       ],
-      "logo": "plasma-mds.png",
+      "logo": "plasma-mds_logo.svg",
       "logoW": 200,
       "logoH": 200,
       "activityPage": "https://ols.plasma-mds.org/",
@@ -226,7 +226,7 @@
       "status": "Running",
       "start": "20.02.2025",
       "end": "~",
-      "description": "Discuss Data (www.discuss-data.net) is an open repository for storing, sharing and discussing research data on Eastern Europe, South Caucasus and Central Asia. The platform, launched in September 2020, is funded by the German Research Foundation (DFG) and operated by the Research Centre for East European Studies at the University of Bremen (FSO) and the Göttingen State and University Library (SUB). Discuss Data goes beyond ordinary repositories and offers an interactive online platform for the discussion and quality assessment of research data. Our aim is to create a space for academic communication and for the community-specific publication, curation, annotation and discussion of research data on Eastern Europe, South Caucasus and Central Asia.\n",
+      "description": "Discuss Data (www.discuss-data.net) is an open repository for storing, sharing and discussing research data on Eastern Europe, South Caucasus and Central Asia and is currently building further Community Spaces, for example for the Digital Humanities .The platform, launched in September 2020, is funded by the German Research Foundation (DFG, Project number 493011772) and operated by the Research Centre for East European Studies at the University of Bremen (FSO) and the Göttingen State and University Library (SUB). Discuss Data goes beyond ordinary repositories and offers an interactive online platform for the discussion and quality assessment of research data and creates a space for academic communication and for the community-specific publication, curation, annotation and discussion of research data. ",
       "goals": ["Setting up a selfhosted terminology service based on OLS", "Adding this TS as backend source to the TS4NFDI API Gateway", "Provision of collection(s) via API Gateway", "Integration of TSS widgets"],
       "consortium": ["Text+"],
       "contactPersons": [
