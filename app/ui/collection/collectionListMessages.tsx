@@ -1,13 +1,15 @@
 'use client';
 
 import { SuccessAlert, ErrorAlert } from "../commons/snippets";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { deleteParamsFromUrl } from "@/app/libs/urlFactory";
 
 
 export function CollectionListMessages() {
 
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const [collectionCreated, setCollectionCreated] = useState<string | null>(searchParams.get('created'));
   const [collectionDeleted, setCollectionDeleted] = useState<string | null>(searchParams.get('deleted'));
@@ -16,6 +18,7 @@ export function CollectionListMessages() {
     setTimeout(() => {
       setCollectionCreated("");
       setCollectionDeleted("");
+      deleteParamsFromUrl(router, ['created', 'deleted']);
     }, 3000);
   }, []);
 
