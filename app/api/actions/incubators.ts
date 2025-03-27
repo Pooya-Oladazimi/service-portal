@@ -4,6 +4,11 @@ import { NewIncubatorForm } from "./types";
 import { sendEmail } from "@/app/libs/email";
 import { ActionResponse } from "./types";
 import { captchaIsValid } from "@/app/libs/captcha";
+import {
+	MANDATORY_FIELDS_MISSING_MESSAGE,
+	SERVER_ERROR_MESSAGE,
+	FILE_TYPE_NOT_ALLOWED_MESSAGE
+} from "@/app/libs/responseStrings";
 
 
 
@@ -20,11 +25,11 @@ export async function sendIncubatorRequest(formData: NewIncubatorForm): Promise<
 		const acceptableMimeTypes = ["image/png", "image/jpeg", "image/svg+xml"]
 		//@ts-ignore
 		if (fileIsAttached && !acceptableMimeTypes.includes(logo.type)) {
-			return { status: false, content: "file type is not accepted" };
+			return { status: false, content: FILE_TYPE_NOT_ALLOWED_MESSAGE };
 		}
 
 		if (!title || !desc || !email || !await captchaIsValid(captcha)) {
-			return { status: false, content: "mandatory fields are missing" };
+			return { status: false, content: MANDATORY_FIELDS_MISSING_MESSAGE };
 		}
 
 		let result = await sendEmail({ subject: title, html: desc, file: (fileIsAttached ? logo : undefined), senderEmail: email });
@@ -32,9 +37,9 @@ export async function sendIncubatorRequest(formData: NewIncubatorForm): Promise<
 		if (result) {
 			return { status: true, content: "sent" };
 		}
-		return { status: false, content: "something went wrong" };
+		return { status: false, content: SERVER_ERROR_MESSAGE };
 	} catch {
 
-		return { status: false, content: "something went wrong" };
+		return { status: false, content: SERVER_ERROR_MESSAGE };
 	}
 }
