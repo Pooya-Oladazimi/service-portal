@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "./ui/footer";
-import Header from "./ui/header";
+import Footer from "./ui/site/footer";
+import Header from "./ui/site/header";
 
 export const metadata: Metadata = {
   title: "TS4NFDI Service Portal",
