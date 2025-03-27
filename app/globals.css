@@ -7,6 +7,7 @@
   --foreground: #171717;
   --fontFamily: Arial, Helvetica, sans-serif;
   --siteMainColor: #445669;
+  --elementDarkModeBgColor: #1f2937;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,18 +17,17 @@
   }
 }
 
+@layer site-globals {
+  .dark-mode-bg-color {
+    @apply dark:bg-gray-800;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--fontFamily);
   @apply overflow-x-hidden text-base dark:text-white;
-}
-
-.navbar-links {
-  @apply rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white;
-}
-.navbar-link-active {
-  @apply bg-gray-900;
 }
 
 .site-content {
@@ -61,7 +61,7 @@ body {
 }
 
 .card {
-  @apply border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2 dark:bg-gray-800;
+  @apply dark-mode-bg-color border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
 }
 
 p {
@@ -101,7 +101,7 @@ a {
 }
 
 input {
-  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[var(--siteMainColor)] focus:border-2 dark:!bg-gray-800 dark:!text-white;
+  @apply bg-gray-50 w-full p-2 rounded-lg border border-gray-300 text-sm focus:ring-0 focus:outline-none focus:border-[var(--siteMainColor)] focus:border-2 dark-mode-bg-color dark:!text-white;
 }
 
 .file-input {
@@ -134,5 +134,5 @@ select {
 }
 
 ul {
-  @apply dark:!bg-gray-800;
+  @apply dark-mode-bg-color;
 }

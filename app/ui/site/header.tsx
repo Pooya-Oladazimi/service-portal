@@ -1,5 +1,6 @@
 import NavBarOptions, { NavBarOptionsMobile } from "./navbar";
-import UserProfileMenu from "./user/profileMenu";
+import UserProfileMenu from "../user/profileMenu";
+import './syles.css';
 
 export default function Header() {
 
