@@ -11,7 +11,7 @@ export default async function UserProfileMenu() {
   if (!session?.user) {
     return (
       <>
-        <div className="flex items-center space-x-6 rtl:space-x-reverse">
+        <div className="flex items-center space-x-6 rtl:space-x-reverse pt-2">
           <a href="/api/auth/signin" className="btn !bg-[#F8F8F8] !text-[#445669]">Login</a>
         </div>
       </>

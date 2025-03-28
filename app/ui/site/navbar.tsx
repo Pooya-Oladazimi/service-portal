@@ -6,6 +6,15 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 
+const navItems = [
+  { href: "/widgets", text: "Lookup Service" },
+  { href: "/incubators", text: "Incubators" },
+  { href: "/documentation", text: "Documentation" },
+  { href: "/about", text: "About" },
+  { href: "/contact", text: "Contact" },
+];
+
+
 export default function NavBarOptions() {
   const currentPath = usePathname();
   const [path, setPath] = useState(currentPath);
@@ -20,7 +29,7 @@ export default function NavBarOptions() {
       <div className="flex flex-1 items-center sm:items-stretch justify-start">
         <div className="flex shrink-0 items-center">
           <Link href={'/'}>
-            <Image width={180} height={50} alt="logo" src={'/TS4NFDI-small-white.svg'} />
+            <Image width={100} height={100} alt="logo" src={'/TS4NFDI-small-white.svg'} />
           </Link>
         </div>
         <div className="hidden sm:ml-6 sm:block">
@@ -30,32 +39,17 @@ export default function NavBarOptions() {
               className={"navbar-links " + (path === "/home" || path === '/' ? "navbar-link-active" : "")}
             >Home
             </Link>
-            <Link
-              href={'/widgets'}
-              className={"navbar-links " + (path.includes("/widgets") ? "navbar-link-active" : "")}
-            >Lookup Service
-            </Link>
-            <Link
-              href={'/incubators'}
-              className={"navbar-links " + (path.includes("/incubators") ? "navbar-link-active" : "")}
-            >Incubator Projects
-            </Link>
-
-            <Link
-              href={'/documentation'}
-              className={"navbar-links " + (path.includes("/documentation") ? "navbar-link-active" : "")}
-            >Documentation
-            </Link>
-            <Link
-              href={'/about'}
-              className={"navbar-links " + (path.includes("/about") ? "navbar-link-active" : "")}
-            >About
-            </Link>
-            <Link
-              href={'/contact'}
-              className={"navbar-links " + (path.includes("/contact") ? "navbar-link-active" : "")}
-            >Contact
-            </Link>
+            {
+              navItems.map((item) => {
+                return (
+                  <Link
+                    href={item.href}
+                    className={"navbar-links " + (path.includes(item.href) ? "navbar-link-active" : "")}
+                  >{item.text}
+                  </Link>
+                )
+              })
+            }
           </div>
         </div>
       </div>
@@ -66,16 +60,32 @@ export default function NavBarOptions() {
 
 
 export function NavBarOptionsMobile() {
+  const currentPath = usePathname();
+  const [path, setPath] = useState(currentPath);
+
+  useEffect(() => {
+    setPath(currentPath);
+  }, [currentPath]);
   return (
     <>
-      <div className="sm:hidden" id="mobile-menu">
+      <div className="hidden" id="mobile-menu">
         <div className="space-y-1 px-2 pt-2 pb-3">
-          <Link href={'/'} className="navbar-links">Home</Link>
-          <Link href={'/widgets'} className="navbar-links">Lookup Service</Link>
-          <Link href={'/incubators'} className="navbar-links">Incubator Projects</Link>
-          <Link href={'/documentation'} className="navbar-links">Documentation</Link>
-          <Link href={'/about'} className="navbar-links">About</Link>
-          <Link href={'/help'} className="navbar-links">Contact</Link>
+          <Link
+            href={'/'}
+            className={"navbar-links-mobile " + (path === "/home" || path === '/' ? "navbar-link-active" : "")}
+          >Home
+          </Link>
+          {
+            navItems.map((item) => {
+              return (
+                <Link
+                  href={item.href}
+                  className={"navbar-links-mobile " + (path.includes(item.href) ? "navbar-link-active" : "")}
+                >{item.text}
+                </Link>
+              )
+            })
+          }
         </div>
       </div>
     </>

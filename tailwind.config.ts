@@ -14,6 +14,12 @@ export default {
         'ts4nfdi-brand-color': "#445669"
       },
     },
+    screens: {
+      sm: '900px',
+      md: '1024px',
+      lg: '1280px',
+      xl: '1536px',
+    }
   },
   plugins: [],
 } satisfies Config;
