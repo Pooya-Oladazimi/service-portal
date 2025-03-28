@@ -45,6 +45,7 @@ export default function NavBarOptions() {
                   <Link
                     href={item.href}
                     className={"navbar-links " + (path.includes(item.href) ? "navbar-link-active" : "")}
+                    key={item.text}
                   >{item.text}
                   </Link>
                 )
@@ -81,6 +82,7 @@ export function NavBarOptionsMobile() {
                 <Link
                   href={item.href}
                   className={"navbar-links-mobile " + (path.includes(item.href) ? "navbar-link-active" : "")}
+                  key={item.text}
                 >{item.text}
                 </Link>
               )
