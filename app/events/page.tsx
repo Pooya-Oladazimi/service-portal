@@ -33,7 +33,7 @@ export default function Events() {
   return (
     <div className='col-span-3'>
       <p className='header-2'>Upcoming Events</p>
-      <div className='grid grid-cols-4' key={'upcoming'}>
+      <div className='grid md:grid-cols-4 md:gap-4' key={'upcoming'}>
         {
           upcomingEvents.map((ev) => {
             return (
@@ -48,7 +48,7 @@ export default function Events() {
         }
       </div>
       <p className='header-2'>Past Events</p>
-      <div className='grid grid-cols-4' key={'past'}>
+      <div className='grid md:grid-cols-4 md:gap-4' key={'past'}>
         {
           pastEvents.map((ev) => {
             return (
