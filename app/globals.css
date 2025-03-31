@@ -61,7 +61,11 @@ body {
 }
 
 .card {
-  @apply dark-mode-bg-color border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
+  @apply border-black bg-white rounded-lg shadow-sm p-2 mb-2 dark:bg-gray-800;
+}
+
+.card-sm {
+  @apply card md:max-w-xs text-sm text-center;
 }
 
 p {
