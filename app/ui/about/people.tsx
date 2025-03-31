@@ -27,7 +27,7 @@ export default async function AboutPeople() {
                 {
                   section.persons.map((person: PersonData) => {
                     return (
-                      <div className="card" key={person.name}>
+                      <div className="card-sm" key={person.name}>
                         <div style={{ ...imageContainerSyle }} key={person.imagePath}>
                           <Image src={"/img/" + person.imagePath} alt={person.name} fill style={{ objectFit: "contain" }}></Image>
                         </div>
