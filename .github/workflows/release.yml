@@ -131,4 +131,4 @@ jobs:
               --set-json='ui.SMTP_HOST_NAME="smtp.mailgun.org"' \
               --set-json='ui.SMTP_PORT="\"587\""' \
               --set-json='ui.SERVICE_EMAIL="brad@sandboxbccd49a83c3742bcb00d487d6018d9ea.mailgun.org"' \
-              service-portal-deployment/k8s/service-portal-ui
+              service-portal-deployment/service-portal-ui
