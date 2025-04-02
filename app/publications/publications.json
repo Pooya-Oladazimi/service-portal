@@ -1,0 +1,32 @@
+[
+  {
+    "citation": "Baum, R., Fillies, J., Karam, N., Koepler, O., Oladazimi, P., & Sasse, J. (2024, July 28). TS4NFDI Initialisation Phase: First Results of the Requirements Analysis. Zenodo.   ",
+    "doi": "https://zenodo.org/records/13118682",
+    "type": "presentation"
+  },
+  {
+    "citation": "Baum, R., Fillies, J., Karam, N., Koepler, O., Oladazimi, P., & Sasse, J. (2024). TS4NFDI: Harmonizing Terminology Services within NFDI. NFDI4Biodiversity All Hands Conference 2024, Munich. Zenodo.",
+    "doi": "https://zenodo.org/records/12542465",
+    "type": "poster"
+  },
+  {
+    "citation": "Koepler, O., Sasse, J., Karam, N., & Baum, R. (2024). Terminology Services 4 NFDI (TS4NFDI). Zenodo.",
+    "doi": "https://zenodo.org/records/12188787",
+    "type": "proposal"
+  },
+  {
+    "citation": "Baum, R., Fillies, J., Karam, N., Koepler, O., Oladazimi, P., & Sasse, J. (2024, March 21). TS4NFDI - Brücken bauen zwischen Wissensdomänen. Forum NFDI4Culture: Brücken schlagen zwischen Terminologien. Herausforderungen und Perspektiven (Forum NFDI4Culture), online. Zenodo.",
+    "doi": "https://zenodo.org/records/10849199",
+    "type": "presentation"
+  },
+  {
+    "citation": "Baum, R., Fillies, J., Karam, N., Koepler, O., Oladazimi, P., & Sasse, J. (2024, January 22). Terminology Services for NFDI (TS4NFDI) - Unleashing the potential of service applications. Zenodo.",
+    "doi": "https://zenodo.org/records/10550341",
+    "type": "presentation"
+  },
+  {
+    "citation": "Julia Sasse, VincentKneip, Semantic Release Bot, rombaum, DelPierroZ, Johannes Darms, julian-schneider, Vera Clemens, Pooya Oladazimi, & llangnickel. (2024). ts4nfdi/terminology-service-suite: v2.3.3 (v2.3.3). Zenodo.",
+    "doi": "https://zenodo.org/records/13254772",
+    "type": "software"
+  }
+]

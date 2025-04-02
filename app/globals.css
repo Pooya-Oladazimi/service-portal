@@ -61,11 +61,15 @@ body {
 }
 
 .card {
-  @apply dark-mode-bg-color border-black bg-white rounded-lg shadow-sm text-center text-sm md:max-w-xs pb-2;
+  @apply border-black bg-white rounded-lg shadow-sm p-2 mb-2 dark:bg-gray-800;
+}
+
+.card-sm {
+  @apply card md:max-w-xs text-sm text-center;
 }
 
 p {
-  @apply md:px-0 mb-2;
+  @apply md:px-0 px-4 mb-2;
 }
 
 a {
@@ -113,7 +117,7 @@ textarea {
 }
 
 .btn {
-  @apply inline-block bg-[var(--siteMainColor)] text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2;
+  @apply inline-block bg-[var(--siteMainColor)] text-white md:font-medium rounded text-sm md:px-5 md:py-2.5 px-3 me-2 mb-2;
 }
 
 .required-label::after {
