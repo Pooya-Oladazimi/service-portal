@@ -11,6 +11,7 @@ export function TextInput(props: TextInputProps) {
         id={props.id}
         placeholder={props.placeHolder}
         required={props.required}
+        defaultValue={props.defaultValue}
         key={"input"}
       />
     </div>

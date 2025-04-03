@@ -10,7 +10,7 @@ export function ModalButton(props: ModalButtonProps) {
         (modal.previousSibling as HTMLDivElement).classList.remove("hidden");
 
       }}
-      className="btn !bg-transparent !p-0 !float-end"
+      className="btn !bg-transparent !p-0 text-end !me-0"
       type="button"
       data-modal-target={props.targetModalId}
       data-modal-toggle={props.targetModalId}
