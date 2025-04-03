@@ -2,22 +2,19 @@
 
 
 import dynamic from 'next/dynamic';
-import { EditorProps } from 'react-draft-wysiwyg'
-
+import { EditorProps } from 'react-draft-wysiwyg';
 
 const Editor = dynamic<EditorProps>(() =>
   import("react-draft-wysiwyg").then((mod) => mod.Editor)
   , { ssr: false }) as React.ComponentType<EditorProps>;
 
-//import { Editor } from 'react-draft-wysiwyg';
+
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import { convertToRaw, EditorState, convertFromRaw, ContentState } from 'draft-js';
-import htmlToDraft from 'html-to-draftjs';
 import draftToHtml from 'draftjs-to-html';
 import DOMPurify from 'dompurify';
 import { TextEditorProps } from '../types';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './style.css';
 
 
@@ -47,16 +44,20 @@ const TextEditor = (props: TextEditorProps) => {
 
 
   useEffect(() => {
-    if (props.content) {
-      const blocksFromHTML = htmlToDraft(props.content ?? "");
-      const contentState = ContentState.createFromBlockArray(
-        blocksFromHTML.contentBlocks,
-        blocksFromHTML.entityMap
-      );
-      let hiddenInput = document.getElementById('hidden-input')! as HTMLInputElement;
-      hiddenInput.value = props.content;
-      setEditorState(EditorState.createWithContent(contentState));
+    const loadHtmlToState = async () => {
+      const { default: htmlToDraft } = await import("html-to-draftjs");
+      if (props.content) {
+        const blocksFromHTML = htmlToDraft(props.content ?? "");
+        const contentState = ContentState.createFromBlockArray(
+          blocksFromHTML.contentBlocks,
+          blocksFromHTML.entityMap
+        );
+        let hiddenInput = document.getElementById('hidden-input')! as HTMLInputElement;
+        hiddenInput.value = props.content;
+        setEditorState(EditorState.createWithContent(contentState));
+      }
     }
+    loadHtmlToState();
   }, [props.content]);
 
 
