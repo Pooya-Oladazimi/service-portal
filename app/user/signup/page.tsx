@@ -34,7 +34,7 @@ export default function SignupForm() {
         setInternalError(true);
         return;
       }
-      window.location.href = '/auth/login?signup=true';
+      window.location.href = '/user/login?signup=true';
 
     } catch {
       setInternalError(true);
