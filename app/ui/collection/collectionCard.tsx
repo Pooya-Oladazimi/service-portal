@@ -1,12 +1,11 @@
 'use client'
 
 import { Collection } from "@/app/api/actions/types";
-import { TrashIcon } from "../commons/icons";
 import { ModalButton, Modal } from "../commons/modal";
 import { WarningAlert } from "../commons/snippets";
 import { deleteCollection } from "@/app/api/actions/collections";
 import { CopyToClipboard } from "../commons/snippets";
-import { TickIcon } from "../commons/icons";
+import { TickIcon, TrashIcon, EditIcon } from "../commons/icons";
 import { useState } from "react";
 import './styles.css';
 
@@ -24,7 +23,7 @@ export default function CollectionCard(props: CmpProps) {
     <div className="collection-card" key={props.collection.id}>
       <div className="grid grid-cols-10" key={"collection-card-header"}>
         <p className="header-4 col-span-9" key={"collection-title"}>{props.collection.label}</p>
-        <div className="col-span-1" key={"trash-icon"}>
+        <div className="col-span-1 grid grid-rows-1 p-0" key={"trash-icon"}>
           <ModalButton label={<TrashIcon />} targetModalId={"delete-collection-conf-" + props.collection.id} />
           <Modal
             id={"delete-collection-conf-" + props.collection.id}
@@ -37,7 +36,7 @@ export default function CollectionCard(props: CmpProps) {
               window.location.href = `/collection/myCollections?deleted=${resp.status}`;
             }}
           />
-
+          <a className="!bg-transparent text-end p-0" href={`/collection/edit/${props.collection.id}`} key={"edit-collection"}><EditIcon /></a>
         </div>
       </div>
       <div key={"label-and-copy"}>

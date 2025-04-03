@@ -12,15 +12,16 @@ const Editor = dynamic<EditorProps>(() =>
 //import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import { convertToRaw, EditorState, convertFromRaw, ContentState } from 'draft-js';
+import htmlToDraft from 'html-to-draftjs';
 import draftToHtml from 'draftjs-to-html';
 import DOMPurify from 'dompurify';
 import { TextEditorProps } from '../types';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './style.css';
 
 
 const TextEditor = (props: TextEditorProps) => {
-
 
   const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
 
@@ -43,6 +44,20 @@ const TextEditor = (props: TextEditorProps) => {
     hiddenInput.value = createHtmlFromEditorState(newState);
     setEditorState(newState);
   }
+
+
+  useEffect(() => {
+    if (props.content) {
+      const blocksFromHTML = htmlToDraft(props.content ?? "");
+      const contentState = ContentState.createFromBlockArray(
+        blocksFromHTML.contentBlocks,
+        blocksFromHTML.entityMap
+      );
+      let hiddenInput = document.getElementById('hidden-input')! as HTMLInputElement;
+      hiddenInput.value = props.content;
+      setEditorState(EditorState.createWithContent(contentState));
+    }
+  }, [props.content]);
 
 
 

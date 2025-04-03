@@ -21,7 +21,8 @@ type CmpType = {
   className?: string,
   placeholder?: string,
   parameter?: string,
-  api?: string
+  api?: string,
+  preselected?: { "label": string, "iri": string }[]
 }
 
 export default function AutoCompleteTSS(props: CmpType) {
@@ -66,7 +67,8 @@ export default function AutoCompleteTSS(props: CmpType) {
             hasShortSelectedLabel={true}
             parameter={props.parameter ?? process.env.NEXT_PUBLIC_API_GATEWAY_DEFAULT_PARAMETERS as string}
             placeholder={props.placeholder ?? "Search for a Concept"}
-            preselected={[]}
+            preselected={props.preselected ?? []}
+            allowCustomTerms={props.preselected ? true : false}
             selectionChangedEvent={handleSelection}
             showApiSource={true}
             ts4nfdiGateway={props.api ? false : true}

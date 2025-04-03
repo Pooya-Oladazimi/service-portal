@@ -6,7 +6,8 @@ export type TextEditorProps = {
 	textSizeOptions: any,
 	labelText: string,
 	required: boolean,
-	name: string
+	name: string,
+	content?: string
 }
 
 export type TextInputProps = {
@@ -15,7 +16,8 @@ export type TextInputProps = {
 	type: "text" | "email" | "password",
 	name: string,
 	placeHolder: string,
-	labelText: string
+	labelText: string,
+	defaultValue?: string,
 }
 
 export type FileInputProps = Omit<TextInputProps, 'type'> & {

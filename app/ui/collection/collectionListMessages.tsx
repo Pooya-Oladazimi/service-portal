@@ -13,12 +13,14 @@ export function CollectionListMessages() {
 
   const [collectionCreated, setCollectionCreated] = useState<string | null>(searchParams.get('created'));
   const [collectionDeleted, setCollectionDeleted] = useState<string | null>(searchParams.get('deleted'));
+  const [collectionEdited, setCollectionEdited] = useState<string | null>(searchParams.get('edited'));
 
   useEffect(() => {
     setTimeout(() => {
       setCollectionCreated("");
       setCollectionDeleted("");
-      deleteParamsFromUrl(router, ['created', 'deleted']);
+      setCollectionEdited("");
+      deleteParamsFromUrl(router, ['created', 'deleted', 'edited']);
     }, 3000);
   }, []);
 
@@ -29,6 +31,12 @@ export function CollectionListMessages() {
       }
       {collectionCreated === "false" &&
         <ErrorAlert message="Something went wrong with your collection creation. Please try later." />
+      }
+      {collectionEdited === "true" &&
+        <SuccessAlert message="Collection has been edited successfully." />
+      }
+      {collectionEdited === "false" &&
+        <ErrorAlert message="Something went wrong with your collection edition. Please try later." />
       }
       {collectionDeleted === "true" &&
         <SuccessAlert message="Collection has been deleted successfully." />
