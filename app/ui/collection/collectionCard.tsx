@@ -24,7 +24,7 @@ export default function CollectionCard(props: CmpProps) {
       <div className="grid grid-cols-10" key={"collection-card-header"}>
         <p className="header-4 col-span-9" key={"collection-title"}>{props.collection.label}</p>
         <div className="col-span-1 grid grid-rows-1 p-0" key={"trash-icon"}>
-          <ModalButton label={<TrashIcon />} targetModalId={"delete-collection-conf-" + props.collection.id} />
+          <ModalButton label={<TrashIcon />} targetModalId={"delete-collection-conf-" + props.collection.id} classNames="!bg-transparent !p-0 !text-white" />
           <Modal
             id={"delete-collection-conf-" + props.collection.id}
             title={"Delete Collection: " + props.collection.label}
