@@ -140,3 +140,7 @@ select {
 ul {
   @apply dark-mode-bg-color;
 }
+
+ol {
+  list-style: decimal !important;
+}
