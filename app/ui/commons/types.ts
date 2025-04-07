@@ -37,7 +37,8 @@ export type SelectionInputProps = {
 
 export type ModalButtonProps = {
 	label: string | React.ReactNode,
-	targetModalId: string
+	targetModalId: string,
+	classNames?: string
 }
 
 
@@ -48,5 +49,6 @@ export type ModalProps = {
 	withCloseBtn?: boolean,
 	actionBtn?: boolean,
 	actionBtnLabel?: string,
+	imageExpandModal?: boolean,
 	actionBtnCallback?: () => void
 }

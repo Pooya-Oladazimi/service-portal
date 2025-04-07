@@ -1,4 +1,5 @@
-import Image from "next/image";
+import ExpandableImage from "../ui/commons/ExpandableImage";
+
 
 export default function Documentation() {
   return (
@@ -37,9 +38,12 @@ export default function Documentation() {
       </p>
 
       <br />
-      <div className="w-full" key={'image'}>
-        <Image src={'/img/architecture.png'} width={600} height={500} alt={"Service Architecture"} className="mx-auto" />
-      </div>
+      <ExpandableImage
+        imagePath="/img/architecture.svg"
+        width={800}
+        height={800}
+        altText="Service Architecture image"
+      />
 
       <a href="#service-portal"><p className="header-2" id="service-portal">2. Service Portal</p></a>
       <p className="text-justify">

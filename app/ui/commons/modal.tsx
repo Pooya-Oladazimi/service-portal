@@ -1,3 +1,5 @@
+'use client'
+
 import { ModalButtonProps, ModalProps } from "./types";
 
 export function ModalButton(props: ModalButtonProps) {
@@ -10,7 +12,7 @@ export function ModalButton(props: ModalButtonProps) {
         (modal.previousSibling as HTMLDivElement).classList.remove("hidden");
 
       }}
-      className="btn !bg-transparent !p-0 text-end !me-0"
+      className={"btn text-end !me-0 " + (props.classNames ?? "")}
       type="button"
       data-modal-target={props.targetModalId}
       data-modal-toggle={props.targetModalId}
@@ -36,7 +38,7 @@ export function Modal(props: ModalProps) {
     <>
       <div className="modal-bg hidden" key={"modal-bg"}></div>
       <div id={props.id} tabIndex={-1} aria-hidden="true" data-modal-backdrop="static" className="hidden overflow-y-auto overflow-x-hidden fixed inset-0 flex z-50 justify-center items-center" key={"modal"}>
-        <div className="relative p-4 w-full max-w-2xl max-h-full">
+        <div className={"relative p-4 w-full  max-h-full " + (!props.imageExpandModal ? "max-w-2xl" : "")}>
           <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200" key={"modal-header"}>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{props.title}</h3>
