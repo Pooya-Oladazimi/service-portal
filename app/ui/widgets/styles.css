@@ -63,3 +63,9 @@
 .resources-widget .euiScreenReaderOnly {
   @apply hidden;
 }
+
+.search-widget li {
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+}
