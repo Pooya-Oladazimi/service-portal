@@ -4,7 +4,7 @@ import AboutPeople from "../ui/about/people";
 export default function About() {
   return (
     <div className="md:col-span-3 grid grid-rows-1">
-      <div className="grid grid-rows-1 mb-20" key={'goals'}>
+      <div className="grid grid-rows-1 mb-2" key={'goals'}>
         <p className="text-justify" key={1}>
           <b>Terminology Services 4 NFDI (TS4NFDI)</b> is a cross-domain initiative aimed at standardizing,
           harmonizing, and enhancing the management of terminologies across scientific disciplines within the
