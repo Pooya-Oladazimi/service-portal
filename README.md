@@ -29,4 +29,4 @@ application with this command:
 ```
 npm run dev
 ```
-The TS4NFDI Service Portal is available via `http://localhost:3000`.
+The TS4NFDI Service Portal is available via https://terminology.services.base4nfdi.de.
