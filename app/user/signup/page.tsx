@@ -82,7 +82,7 @@ export default function SignupForm() {
           />
           <Captcha />
           <div className="text-center">
-            <button type="submit" className="btn mx-auto">Sing up</button>
+            <button type="submit" className="btn mx-auto">Sign up</button>
           </div>
         </form>
       </div>
