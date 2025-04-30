@@ -37,6 +37,7 @@ export default function Footer() {
       </div >
       <div className="bg-ts4nfdi-brand-color text-white text-center">
         <a className="text-white pr-4 pl-4" href='/contact'>Contact</a>|
+        <a className="text-white pr-4 pl-4" href='/termsofuse'>Terms of use</a>|
         <a className="text-white pr-4 pl-4" href="/imprint">Imprint</a>|
         <a className="text-white pr-4 pl-4" href="/privacypolicy">Privacy Policy</a>|
         <a className="text-white pr-4 pl-4" href="/accessibillity">Accessibility</a>
