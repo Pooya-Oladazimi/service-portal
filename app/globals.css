@@ -6,7 +6,7 @@
   --background: #dae3ed;
   --foreground: #171717;
   --fontFamily: Arial, Helvetica, sans-serif;
-  --siteMainColor: #445669;
+  --siteMainColor: rgb(69, 84, 107);
   --elementDarkModeBgColor: #1f2937;
 }
 
@@ -85,15 +85,15 @@ a {
 }
 
 .status-badge {
-  @apply badge bg-yellow-300;
+  @apply badge bg-[rgb(251,188,67)];
 }
 
 .cycle-badge {
-  @apply badge bg-green-500;
+  @apply badge bg-[rgb(163,199,23)];
 }
 
 .name-badge {
-  @apply badge bg-blue-950 !text-white;
+  @apply badge bg-[rgb(69,84,107)] !text-white;
 }
 
 .form {

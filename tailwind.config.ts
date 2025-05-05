@@ -11,7 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'ts4nfdi-brand-color': "#445669"
+        'ts4nfdi-brand-color': "rgb(69,84,107)"
       },
     },
     screens: {
