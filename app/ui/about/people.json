@@ -8,7 +8,7 @@
         {
           "imagePath": "rb.jpg",
           "name": "Baum, Roman",
-          "affiliation": "ZB MED - Information Centre for Life Sciences, Cologne",
+          "affiliation": "ZB MED - Information Centre for Life Sciences, Bonn",
           "orcid": "https://orcid.org/0000-0001-5246-9351"
         },
         {
@@ -37,9 +37,9 @@
         },
         {
           "imagePath": "blank.jpg",
-          "name": "Posthumus, Etienne",
-          "affiliation": "FIZ Karlsruhe",
-          "orcid": "https://orcid.org/0000-0002-0006-7542"
+          "name": "Bailly, Kolja",
+          "affiliation": "TIB - Leibniz Information Centre for Science and Technology, Hannover",
+          "orcid": "https://orcid.org/0009-0001-3533-0275"
         }
       ]
     },
@@ -49,7 +49,7 @@
         {
           "imagePath": "blank.jpg",
           "name": "Sasse, Julia",
-          "affiliation": "ZB MED - Information Centre for Life Sciences, Cologne",
+          "affiliation": "ZB MED - Information Centre for Life Sciences, Bonn",
           "orcid": "https://orcid.org/0000-0002-0660-7597"
         },
         {
@@ -63,6 +63,18 @@
           "name": "Oladazimi, Pooya",
           "affiliation": "TIB - Leibniz Information Centre for Science and Technology, Hannover",
           "orcid": "https://orcid.org/0000-0002-5117-070X"
+        },
+        {
+          "imagePath": "blank.jpg",
+          "name": "Frey, Kevin",
+          "affiliation": "RPTU University of Kaiserslautern-Landau",
+          "orcid": "https://orcid.org/0000-0002-8510-6810"
+        },
+        {
+          "imagePath": "blank.jpg",
+          "name": "Kesper, Arno",
+          "affiliation": "TIB - Leibniz Information Centre for Science and Technology, Hannover",
+          "orcid": "https://orcid.org/0000-0002-5042-1087"
         }
       ]
     },
