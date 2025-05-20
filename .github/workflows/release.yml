@@ -62,7 +62,7 @@ jobs:
       - name: Set up Kubernetes config
         run: |
           mkdir -p .kube
-          echo "${{ secrets.KUBECONFIG }}" > $KUBECONFIG
+          echo "${{ env.KUBECONFIG_FILE }}" > $KUBECONFIG
 
       - name: Create K8s secret for SMTP_API_KEY
         run: |
