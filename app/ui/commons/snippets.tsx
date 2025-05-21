@@ -94,7 +94,7 @@ export function ErrorAlert(props: { message: string }) {
 export function WarningAlert(props: { message: string }) {
   return (
     <div className="text-center font-bold p-4 mb-4 text-sm text-black rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-      {props.message}
+      <p dangerouslySetInnerHTML={{ __html: props.message }} className="text-sm"></p>
     </div>
   );
 }

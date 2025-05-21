@@ -3,7 +3,7 @@
 import { useState } from "react";
 import TextEditor from "../../ui/commons/TextEditor/TextEditor";
 import { highlightEditorIsEmpty, isTextEditorEmpty } from "../../ui/commons/TextEditor/TextEditor";
-import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../ui/commons/snippets";
+import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput, WarningAlert } from "../../ui/commons/snippets";
 import { sendIncubatorRequest } from "@/app/api/actions/incubators";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
 import { NewIncubatorForm } from "@/app/api/actions/types";
@@ -58,6 +58,17 @@ export default function AddIncubator() {
       <br /> <br />
       {!formIsSubmitted &&
         <form onSubmit={submit}>
+          <div className="font-bold p-4 mb-4 text-sm text-black rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+            This feature is currently under active development. At the moment, please send your request to: <br />
+            <a href="mailto:ts4nfdi@lists.nfdi.de">ts4nfdi@lists.nfdi.de</a>
+            <br />
+            Please provide the following:
+            <ul>
+              <li>Title of your project</li>
+              <li>Description</li>
+              <li>(Optional) project logo image </li>
+            </ul>
+          </div>
           <div className="grid grid-rows-1 form">
             <TextInput
               id="title-input"
