@@ -118,4 +118,6 @@ jobs:
             --set-json='ingress.dns="ts4nfdi-service-portal.prod.km.k8s.zbmed.de"'  \
             --set-json='images.ui="ghcr.io/ts4nfdi/service-portal:main"' \
             --set-json='ingress.path="/"' \
+            --set-json='ingress.enableSSL="true"'  \
+            --set-json='ingress.certIssuer="letsencrypt-prod"'  \
             service-portal-deployment/service-portal-ui
