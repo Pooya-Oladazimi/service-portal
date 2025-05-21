@@ -3,7 +3,7 @@
 import { useState } from "react";
 import TextEditor from "../../ui/commons/TextEditor/TextEditor";
 import { highlightEditorIsEmpty, isTextEditorEmpty } from "../../ui/commons/TextEditor/TextEditor";
-import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput, WarningAlert } from "../../ui/commons/snippets";
+import { Loading, SuccessAlert, ErrorAlert, TextInput, FileInput } from "../../ui/commons/snippets";
 import { sendIncubatorRequest } from "@/app/api/actions/incubators";
 import { LeftArrowIcon } from "@/app/ui/commons/icons";
 import { NewIncubatorForm } from "@/app/api/actions/types";
