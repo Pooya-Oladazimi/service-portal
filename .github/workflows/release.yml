@@ -23,6 +23,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - id: generate-image-tag
+        name: Generate Image Tag
+        env:
+          # The branch or tag name that triggered the workflow
+          ref_name: "${{ github.ref_name }}"
+          # The source branch of a pull request (only set in PRs)
+          head_ref: "${{ github.head_ref }}"
+        # Replace slashes in branch names, determine final image name, set output variable imageTag
+        run: |
+          head_ref="${head_ref/\//-}"
+          tag="${head_ref:-${ref_name}}"
+          tag="${tag#v}"
+          echo "imageTag=tag" >> "$GITHUB_OUTPUT"
+
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
@@ -42,7 +56,10 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          # use a) human-readable and b) immutable tag
+          tags: |
+            ghcr.io/${{ github.repository }}/backend:${{ steps.generate-image-tag.outputs.imageTag }}
+            ghcr.io/${{ github.repository }}/backend:${{ github.event.pull_request.head.sha || github.sha }}
           labels: ${{ steps.meta.outputs.labels }}
           secrets: |
             npm_token=${{ secrets.NPM_TOKEN }}
@@ -146,6 +163,6 @@ jobs:
               --install \
               --namespace='ts4nfdi' \
               --set-json='ingress.dns="ts4nfdi-service-portal.qa.km.k8s.zbmed.de"'  \
-              --set-json='images.ui="ghcr.io/ts4nfdi/service-portal:main"' \
+              --set-json='images.ui="ghcr.io/${{ github.repository }}:${{ github.event.pull_request.head.sha || github.sha }}"' \
               --set-json='ingress.path="/"' \
               service-portal-deployment/service-portal-ui
