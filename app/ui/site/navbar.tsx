@@ -48,6 +48,7 @@ export default function NavBarOptions() {
                     href={item.href}
                     className={"navbar-links " + (path.includes(item.href) ? "navbar-link-active" : "")}
                     key={item.text}
+                    prefetch={true}
                   >{item.text}
                   </Link>
                 )
