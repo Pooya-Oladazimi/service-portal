@@ -1,5 +1,5 @@
 
-export function getCurrentDate(date: string | undefined): string {
+export function getCurrentDate(date: string = ""): string {
   /**
    * Return current data. if an input is provided, it convert the given date to a human readable format.
    * */
